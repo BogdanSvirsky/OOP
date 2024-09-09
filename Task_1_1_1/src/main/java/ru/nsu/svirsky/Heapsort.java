@@ -53,6 +53,10 @@ class Heap {
 }
 
 public class Heapsort {
+    public static void main(String[] args) {
+        System.out.println("main works");
+    }
+
     public static int[] heapsort(int[] array) {
         int[] result = array.clone();
         Heap heap = new Heap(array);
@@ -62,4 +66,5 @@ public class Heapsort {
 
         return result;
     }
+
 }
