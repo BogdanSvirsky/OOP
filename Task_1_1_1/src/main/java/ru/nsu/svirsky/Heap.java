@@ -1,11 +1,17 @@
 package ru.nsu.svirsky;
 
+/**
+ * Class Heap is used for implementation of heapsort for array of integers.
+ * 
+ * @author Bogdan Svirsky
+ */
+
 public class Heap {
-    int[] elements;
-    int size = 0;
+    private final int[] elements;
+    private int size = 0;
 
     /**
-     * Class constructor by array of integers which will be contained in a heap
+     * Class constructor by array of integers which will be contained in a heap.
      * 
      * @param array array of integers
      */
@@ -18,7 +24,7 @@ public class Heap {
     }
 
     /**
-     * Deletes minimal integer from the heap and updates it
+     * Deletes minimal integer from the heap and updates it.
      * 
      * @return integer
      */
@@ -30,7 +36,7 @@ public class Heap {
     }
 
     /**
-     * Sifts integer on the index down through the heap
+     * Sifts integer on the index down through the heap.
      * 
      * @param index position in the elements array
      */
@@ -53,7 +59,7 @@ public class Heap {
     }
 
     /**
-     * Sifts integer on the index up through the heap
+     * Sifts integer on the index up through the heap.
      * 
      * @param index position in the elements array
      */
@@ -69,7 +75,7 @@ public class Heap {
     }
 
     /**
-     * Swaps two integers in the elements array
+     * Swaps two integers in the elements array.
      * 
      * @param index1 position if the first integer in the elements array
      * @param index2 position if the second integer in the elements array
