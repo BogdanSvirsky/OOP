@@ -1,14 +1,14 @@
 package ru.nsu.svirsky;
 
 /**
- * Implementation of heapsort
+ * Implementation of heapsort.
  * 
  * @author Bogdan Svirsky
  */
 public class Heapsort {
 
     /**
-     * Simple test of heapsort function
+     * Simple test of heapsort function.
      * 
      * @param args doesn't matter
      */
@@ -20,7 +20,7 @@ public class Heapsort {
     }
 
     /**
-     * Generates heap from array and builds result from it
+     * Generates heap from array and builds result from it.
      * 
      * @param array input array
      * @return sorted array
@@ -29,8 +29,9 @@ public class Heapsort {
         int[] result = array.clone();
         Heap heap = new Heap(array);
 
-        for (int i = 0; i < array.length; i++)
+        for (int i = 0; i < array.length; i++) {
             result[i] = heap.extractMin();
+        }
 
         return result;
     }
