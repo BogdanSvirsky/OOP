@@ -1,6 +1,12 @@
 package ru.nsu.svirsky;
 
+/**
+ * Implementation of heapsort
+ * 
+ * @author Bogdan Svirsky
+ */
 public class Heapsort {
+
     /**
      * Simple test of heapsort function
      * 

@@ -7,6 +7,7 @@ package ru.nsu.svirsky;
  */
 
 public class Heap {
+
     private final int[] elements;
     private int size = 0;
 
