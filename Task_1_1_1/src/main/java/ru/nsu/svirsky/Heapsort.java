@@ -6,17 +6,22 @@ package ru.nsu.svirsky;
  * @author Bogdan Svirsky
  */
 public class Heapsort {
-
     /**
      * Simple test of heapsort function.
      * 
      * @param args doesn't matter
      */
     public static void main(String[] args) {
-        for (int elem : heapsort(new int[] { 5, 1, 4, 2, 3 })) {
-            System.out.print(elem + " ");
+        int[] inputArray = new int[] { 100, -2323, 58585, 49, 563, 823 };
+        System.out.print("Integer array: ");
+        for (int element : inputArray) {
+            System.out.print(element + " ");
         }
-        System.out.println();
+        System.out.print("\nArray after heapsort: ");
+        for (int element : heapsort(inputArray)) {
+            System.out.print(element + " ");
+        }
+
     }
 
     /**
