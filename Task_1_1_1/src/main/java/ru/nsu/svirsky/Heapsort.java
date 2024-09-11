@@ -21,7 +21,7 @@ public class Heapsort {
         for (int element : heapsort(inputArray)) {
             System.out.print(element + " ");
         }
-
+        System.out.println();
     }
 
     /**
