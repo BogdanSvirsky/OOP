@@ -13,7 +13,7 @@ public class Heap {
 
     /**
      * Class constructor by array of integers which will be contained in a heap.
-     * 
+     *
      * @param array array of integers
      */
     public Heap(int[] array) {
@@ -26,7 +26,7 @@ public class Heap {
 
     /**
      * Deletes minimal integer from the heap and updates it.
-     * 
+     *
      * @return integer
      */
     int extractMin() {
@@ -38,7 +38,7 @@ public class Heap {
 
     /**
      * Sifts integer on the index down through the heap.
-     * 
+     *
      * @param index position in the elements array
      */
     private void siftDown(int index) {
@@ -61,7 +61,7 @@ public class Heap {
 
     /**
      * Sifts integer on the index up through the heap.
-     * 
+     *
      * @param index position in the elements array
      */
     private void siftUp(int index) {
@@ -77,7 +77,7 @@ public class Heap {
 
     /**
      * Swaps two integers in the elements array.
-     * 
+     *
      * @param index1 position if the first integer in the elements array
      * @param index2 position if the second integer in the elements array
      */
