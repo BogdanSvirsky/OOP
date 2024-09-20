@@ -1,7 +1,7 @@
 package ru.nsu.svirsky;
 
 public enum Suit {
-    CLUBS("Трефы"), DIAMONDS("Бубны"), HEARTS("Черви"), SPADES("Пики");
+    CLUBS("Крести"), DIAMONDS("Буби"), HEARTS("Черви"), SPADES("Пики");
 
     String name;
 

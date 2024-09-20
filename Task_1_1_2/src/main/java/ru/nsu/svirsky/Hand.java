@@ -13,10 +13,11 @@ public class Hand {
 
         for (Card card : cards) {
             rank = card.getRank();
-            result += rank.value;
             if (rank == Rank.ACE) {
                 acesCount++;
+                card.getRank().value = 11;
             }
+            result += rank.value;
         }
 
         if (result > 21) {
