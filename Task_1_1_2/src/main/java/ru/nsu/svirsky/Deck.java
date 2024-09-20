@@ -3,7 +3,7 @@ package ru.nsu.svirsky;
 import java.util.*;
 
 public class Deck {
-    private ArrayList<Card> cards = new ArrayList<>();
+    private LinkedList<Card> cards = new LinkedList<Card>();
 
     public Deck() {
         initCards();

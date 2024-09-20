@@ -5,7 +5,7 @@ public enum Rank {
     FIVE(5, "Пятёрка"), SIX(6, "Шестёрка"), SEVEN(7, "Семёрка"),
     EIGHT(8, "Восьмёрка"), NINE(9, "Девятка"), TEN(10, "Десятка"),
     JACK(10, "Валет"), QUEEN(10, "Королева"), KING(10, "Король"),
-    ACE(10, "Туз");
+    ACE(11, "Туз");
 
     int value;
     String name;
