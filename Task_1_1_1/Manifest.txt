@@ -1,0 +1,2 @@
+Main-Class: ru.nsu.svirsky.Heapsort
+Manifest-Version: 1.0
