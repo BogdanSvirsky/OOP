@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"ru.nsu.svirsky"},{"l":"ru.nsu.svirsky.entities"},{"l":"ru.nsu.svirsky.enums"},{"l":"ru.nsu.svirsky.utils"}]
