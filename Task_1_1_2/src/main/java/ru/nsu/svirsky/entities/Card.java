@@ -1,4 +1,7 @@
-package ru.nsu.svirsky;
+package ru.nsu.svirsky.entities;
+
+import ru.nsu.svirsky.enums.Rank;
+import ru.nsu.svirsky.enums.Suit;
 
 public class Card {
     private Rank rank;

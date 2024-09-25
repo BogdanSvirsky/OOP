@@ -1,4 +1,4 @@
-package ru.nsu.svirsky;
+package ru.nsu.svirsky.enums;
 
 public enum Rank {
     TWO(2, "Двойка"), THREE(3, "Тройка"), FOUR(4, "Четвёрка"),
@@ -7,8 +7,8 @@ public enum Rank {
     JACK(10, "Валет"), QUEEN(10, "Королева"), KING(10, "Король"),
     ACE(11, "Туз");
 
-    int value;
-    String name;
+    public int value;
+    public String name;
 
     Rank(int value, String name) {
         this.name = name;

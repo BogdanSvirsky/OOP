@@ -1,8 +1,10 @@
-package ru.nsu.svirsky;
+package ru.nsu.svirsky.entities;
 
 import java.util.*;
 
-public class Hand {
+import ru.nsu.svirsky.enums.Rank;
+
+public abstract class Hand {
     private LinkedList<Card> cards = new LinkedList<Card>();
     private int score = 0;
 
@@ -41,15 +43,28 @@ public class Hand {
         recountScore();
     };
 
-    public LinkedList<Card> getCards() {
-        return cards;
+    public Card[] getCards() {
+        Card[] result = new Card[cards.size()];
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = cards.get(i);
+        }
+
+        return result;
     }
 
     public void reload() {
         cards.clear();
+        recountScore();
     }
 
     public boolean hasBlackjack() {
         return cards.size() == 2 && getScore() == 21;
+    }
+
+    abstract String cardsToString();
+
+    public Card getLastCard() {
+        return cards.getLast();
     }
 }

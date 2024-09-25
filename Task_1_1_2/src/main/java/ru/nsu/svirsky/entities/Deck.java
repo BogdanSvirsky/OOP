@@ -1,11 +1,17 @@
-package ru.nsu.svirsky;
+package ru.nsu.svirsky.entities;
 
 import java.util.*;
 
+import ru.nsu.svirsky.enums.Rank;
+import ru.nsu.svirsky.enums.Suit;
+import ru.nsu.svirsky.utils.Notifier;
+
 public class Deck {
     private LinkedList<Card> cards = new LinkedList<Card>();
+    private  final Notifier notifier;
 
-    public Deck() {
+    public Deck(Notifier notifier) {
+        this.notifier = notifier;
         initCards();
     }
 
@@ -31,7 +37,7 @@ public class Deck {
 
             if (cards.isEmpty()) {
                 reload();
-                System.out.println("(!) Карты в колоде кончились. Колода обновлена.");
+                notifier.notify("(!) Карты в колоде кончились. Колода обновлена.");
             }
 
             return card;
