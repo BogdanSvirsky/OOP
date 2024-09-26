@@ -133,6 +133,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Blackjack</span>
 extends java.lang.Object</pre>
+<div class="block">Implementation of Blackjack game logic.</div>
 </li>
 </ul>
 </div>
@@ -177,43 +178,60 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkState(ru.nsu.svirsky.entities.BlackjackState)">checkState</a></span>&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for checking current state for Blackjack or overflow scores.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dealerWins(ru.nsu.svirsky.entities.BlackjackState)">dealerWins</a></span>&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for implementing dealer win moment state changing logic.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#draw(ru.nsu.svirsky.entities.BlackjackState)">draw</a></span>&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for implementing draw moment state changing logic.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#endRound(ru.nsu.svirsky.entities.BlackjackState)">endRound</a></span>&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for implementing ending round moment state changing logic.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#handOutCards(ru.nsu.svirsky.entities.BlackjackState)">handOutCards</a></span>&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for hand out moment changing state logic.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nextRound(ru.nsu.svirsky.entities.BlackjackState)">nextRound</a></span>&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for implementing starting new round
+ (take the cards from the player and the dealer, etc.).</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>static <a href="entities/Card.html" title="class in ru.nsu.svirsky.entities">Card</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#openCard(ru.nsu.svirsky.entities.BlackjackState,ru.nsu.svirsky.enums.OpenCardAction)">openCard</a></span>&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state,
         <a href="enums/OpenCardAction.html" title="enum in ru.nsu.svirsky.enums">OpenCardAction</a>&nbsp;action)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method which change state like opening card in Blackjack.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#playerWins(ru.nsu.svirsky.entities.BlackjackState)">playerWins</a></span>&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for implementing player win moment state changing logic.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -265,6 +283,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>handOutCards</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;handOutCards&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</pre>
+<div class="block">Method for hand out moment changing state logic.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - </dd>
+</dl>
 </li>
 </ul>
 <a id="openCard(ru.nsu.svirsky.entities.BlackjackState,ru.nsu.svirsky.enums.OpenCardAction)">
@@ -275,6 +298,14 @@ extends java.lang.Object</pre>
 <h4>openCard</h4>
 <pre class="methodSignature">public static&nbsp;<a href="entities/Card.html" title="class in ru.nsu.svirsky.entities">Card</a>&nbsp;openCard&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state,
                             <a href="enums/OpenCardAction.html" title="enum in ru.nsu.svirsky.enums">OpenCardAction</a>&nbsp;action)</pre>
+<div class="block">Method which change state like opening card in Blackjack.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - Blackjack state</dd>
+<dd><code>action</code> - open card action type</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>card which was opened</dd>
+</dl>
 </li>
 </ul>
 <a id="checkState(ru.nsu.svirsky.entities.BlackjackState)">
@@ -284,6 +315,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>checkState</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;checkState&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</pre>
+<div class="block">Method for checking current state for Blackjack or overflow scores.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - Blackjack state</dd>
+</dl>
 </li>
 </ul>
 <a id="endRound(ru.nsu.svirsky.entities.BlackjackState)">
@@ -293,6 +329,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>endRound</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;endRound&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</pre>
+<div class="block">Method for implementing ending round moment state changing logic.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - Blackjac state, which will be changing to the end of round state</dd>
+</dl>
 </li>
 </ul>
 <a id="nextRound(ru.nsu.svirsky.entities.BlackjackState)">
@@ -302,6 +343,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>nextRound</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;nextRound&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</pre>
+<div class="block">Method for implementing starting new round
+ (take the cards from the player and the dealer, etc.).</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - Blackjack state, which will change to the new round state</dd>
+</dl>
 </li>
 </ul>
 <a id="playerWins(ru.nsu.svirsky.entities.BlackjackState)">
@@ -311,6 +358,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>playerWins</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;playerWins&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</pre>
+<div class="block">Method for implementing player win moment state changing logic.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - Blackjac state, which will be changing to player win state</dd>
+</dl>
 </li>
 </ul>
 <a id="dealerWins(ru.nsu.svirsky.entities.BlackjackState)">
@@ -320,6 +372,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>dealerWins</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;dealerWins&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</pre>
+<div class="block">Method for implementing dealer win moment state changing logic.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - Blackjac state, which will be changing to dealer win state</dd>
+</dl>
 </li>
 </ul>
 <a id="draw(ru.nsu.svirsky.entities.BlackjackState)">
@@ -329,6 +386,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>draw</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;draw&#8203;(<a href="entities/BlackjackState.html" title="class in ru.nsu.svirsky.entities">BlackjackState</a>&nbsp;state)</pre>
+<div class="block">Method for implementing draw moment state changing logic.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>state</code> - Blackjac state, which will be changing to draw state</dd>
+</dl>
 </li>
 </ul>
 </li>

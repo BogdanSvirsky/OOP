@@ -133,6 +133,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Card</span>
 extends java.lang.Object</pre>
+<div class="block">Class represents card as a game entity.</div>
 </li>
 </ul>
 </div>
@@ -155,7 +156,9 @@ extends java.lang.Object</pre>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.svirsky.enums.Rank,ru.nsu.svirsky.enums.Suit)">Card</a></span>&#8203;(<a href="../enums/Rank.html" title="enum in ru.nsu.svirsky.enums">Rank</a>&nbsp;rank,
     <a href="../enums/Suit.html" title="enum in ru.nsu.svirsky.enums">Suit</a>&nbsp;suit)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs card, which particular rank and suit.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -188,7 +191,9 @@ extends java.lang.Object</pre>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Overriding of toString() method to simplify work with user output.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -222,6 +227,12 @@ extends java.lang.Object</pre>
 <h4>Card</h4>
 <pre>public&nbsp;Card&#8203;(<a href="../enums/Rank.html" title="enum in ru.nsu.svirsky.enums">Rank</a>&nbsp;rank,
             <a href="../enums/Suit.html" title="enum in ru.nsu.svirsky.enums">Suit</a>&nbsp;suit)</pre>
+<div class="block">Constructs card, which particular rank and suit.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>rank</code> - which rank card will has</dd>
+<dd><code>suit</code> - which suit card will has</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -241,9 +252,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>toString</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;toString()</pre>
+<div class="block">Overriding of toString() method to simplify work with user output.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>toString</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a string in the "{rank} {suit} {value}" format</dd>
 </dl>
 </li>
 </ul>
