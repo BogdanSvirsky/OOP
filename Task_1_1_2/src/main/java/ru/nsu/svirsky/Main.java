@@ -1,7 +1,6 @@
 package ru.nsu.svirsky;
 
 import java.util.Scanner;
-
 import ru.nsu.svirsky.entities.BlackjackState;
 import ru.nsu.svirsky.entities.Dealer;
 import ru.nsu.svirsky.entities.Deck;
@@ -9,6 +8,11 @@ import ru.nsu.svirsky.entities.Player;
 import ru.nsu.svirsky.enums.OpenCardAction;
 import ru.nsu.svirsky.enums.RoundState;
 
+/**
+ * Main class, that implements user I/O with Blackjack game.
+ * 
+ * @author Bogdan Svirsky
+ */
 public class Main {
     private static BlackjackState state = new BlackjackState(
             new Deck((text) -> System.out.println(text)),
@@ -16,6 +20,11 @@ public class Main {
     private static String userInput;
     private static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Main method. Catches Exceptions while game is working to prevent memory leak in scanner.
+     * 
+     * @param args command line args, aren't used
+     */
     public static void main(String[] args) {
         System.out.println("Добро пожаловать в Блэкджек!");
 
@@ -29,6 +38,9 @@ public class Main {
         }
     }
 
+    /**
+     * General method with one game round logic.
+     */
     public static void playRound() {
         System.out.printf("Раунд %d\n", state.roundNumber);
 
@@ -40,7 +52,7 @@ public class Main {
         if (state.player.hasBlackjack()) {
             System.out.println("(!) У вас Блэкджек");
         } else {
-            while (state.player.getIsMoves()) {
+            while (state.player.getIsMoves()) { // players moves
                 System.out.println(
                         "Введите “1”, чтобы взять карту, и “0”, чтобы остановиться ...");
                 userInput = scanner.next();
@@ -68,7 +80,7 @@ public class Main {
             if (state.dealer.hasBlackjack()) {
                 System.out.println("(!) У Дилера Блэкджек");
             } else {
-                while (state.dealer.getIsMoves()) {
+                while (state.dealer.getIsMoves()) { // dealer moves
                     System.out.printf(
                             "Дилер открыл карту %s\n",
                             Blackjack.openCard(state, OpenCardAction.DEALER_OPEN_CARD));
@@ -105,6 +117,7 @@ public class Main {
                 break;
             case IN_PROGRESS:
                 System.out.println("(?) IN_PROGRESS has't round result");
+                break;
             default:
                 System.out.println("(?) Unexpected state.roundState value in Main");
                 break;

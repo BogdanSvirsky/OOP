@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.entities.BlackjackState;
 import ru.nsu.svirsky.entities.Card;
 import ru.nsu.svirsky.entities.Dealer;
@@ -15,6 +14,11 @@ import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.RoundState;
 import ru.nsu.svirsky.enums.Suit;
 
+/**
+ * Test class for Blackjack game logic.
+ * 
+ * @author Bogdan Svirsky
+ */
 public class BlackjackTest {
     @Test
     void nextRoundTest() {

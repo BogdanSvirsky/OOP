@@ -1,5 +1,10 @@
 package ru.nsu.svirsky.entities;
 
+/**
+ * Representation of player game entity.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class Player extends Hand {
     private boolean isMoves = true;
 
@@ -12,7 +17,12 @@ public class Player extends Hand {
     public boolean getIsMoves() {
         return isMoves;
     }
-
+    
+    /**
+     * Method for generating human-readable representation of player's cards.
+     * 
+     * @return string with cards and score
+     */
     public String cardsToString() {
         String result = "[";
         Card[] cards = getCards();

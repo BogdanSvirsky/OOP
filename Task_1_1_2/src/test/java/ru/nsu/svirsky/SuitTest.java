@@ -3,9 +3,13 @@ package ru.nsu.svirsky;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.enums.Suit;
 
+/**
+ * Test class for suit enum.
+ * 
+ * @author Bogdan Svirsky
+ */
 public class SuitTest {
     @Test
     void mainTest() {

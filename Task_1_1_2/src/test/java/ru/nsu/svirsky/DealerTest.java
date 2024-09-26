@@ -5,12 +5,16 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.entities.Card;
 import ru.nsu.svirsky.entities.Dealer;
 import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.Suit;
 
+/**
+ * Test class for dealer game entity.
+ * 
+ * @author Bogdan Svirsky
+ */
 public class DealerTest {
     @Test
     void isMovesTest() {

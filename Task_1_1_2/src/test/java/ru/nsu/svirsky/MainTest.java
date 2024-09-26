@@ -3,9 +3,13 @@ package ru.nsu.svirsky;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
-
 import org.junit.jupiter.api.Test;
 
+/**
+ * Test class for user I/O of Blackjack implementation.
+ * 
+ * @author Bogdan Svirsky
+ */
 public class MainTest {
     @Test
     void simpleTest() {

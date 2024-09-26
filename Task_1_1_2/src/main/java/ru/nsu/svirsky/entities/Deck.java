@@ -2,11 +2,15 @@ package ru.nsu.svirsky.entities;
 
 import java.util.Collections;
 import java.util.LinkedList;
-
 import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.Suit;
 import ru.nsu.svirsky.utils.Notifier;
 
+/**
+ * Representation of deck game entity.
+ * 
+ * @author Bogdan Svirsky
+ */
 public class Deck {
     private LinkedList<Card> cards = new LinkedList<Card>();
     private  final Notifier notifier;
@@ -30,6 +34,11 @@ public class Deck {
         initCards();
     }
 
+    /**
+     * Method for getting card from deck which also manages the moment, while deck is over.
+     * 
+     * @return card from deck
+     */
     public Card getCard() {
         if (cards.isEmpty()) {
             return null;

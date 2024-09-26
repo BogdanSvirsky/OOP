@@ -1,5 +1,10 @@
 package ru.nsu.svirsky.enums;
 
+/**
+ * Enum for comfortable work with card's rank.
+ * 
+ * @author Bogdan Svirsky
+ */
 public enum Rank {
     TWO(2, "Двойка"), THREE(3, "Тройка"), FOUR(4, "Четвёрка"),
     FIVE(5, "Пятёрка"), SIX(6, "Шестёрка"), SEVEN(7, "Семёрка"),

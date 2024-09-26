@@ -1,5 +1,10 @@
 package ru.nsu.svirsky.entities;
 
+/**
+ * Class represents dealer entity in game.
+ * 
+ * @author Bogdan Svirsky
+ */
 public class Dealer extends Hand {
     private boolean isMoves = true;
     private boolean isCardClosed = true;
@@ -14,6 +19,12 @@ public class Dealer extends Hand {
         return isMoves;
     }
 
+    /**
+     * Method for generating human-readable representation of current Dealer cards.
+     * It also hides last card until dealer doesn't open it.
+     * 
+     * @return string with representation
+     */
     public String cardsToString() {
         String result = "[";
         Card[] cards = getCards();

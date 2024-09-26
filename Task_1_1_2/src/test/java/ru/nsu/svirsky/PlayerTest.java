@@ -6,12 +6,16 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.entities.Card;
 import ru.nsu.svirsky.entities.Player;
 import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.Suit;
 
+/**
+ * Test class for player game entity.
+ * 
+ * @author Bogdan Svirsky
+ */
 public class PlayerTest {
     @Test
     void checkIsMoves() {
