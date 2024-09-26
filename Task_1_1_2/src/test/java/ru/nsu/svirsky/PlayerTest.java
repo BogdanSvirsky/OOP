@@ -1,16 +1,15 @@
 package ru.nsu.svirsky;
 
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.entities.Card;
 import ru.nsu.svirsky.entities.Player;
 import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.Suit;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class PlayerTest {
     @Test

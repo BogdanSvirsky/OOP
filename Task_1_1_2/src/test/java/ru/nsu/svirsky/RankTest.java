@@ -1,8 +1,7 @@
 package ru.nsu.svirsky;
 
-import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.enums.Rank;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

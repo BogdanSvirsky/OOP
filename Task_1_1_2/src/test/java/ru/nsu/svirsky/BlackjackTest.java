@@ -1,7 +1,6 @@
 package ru.nsu.svirsky;
 
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.entities.BlackjackState;
 import ru.nsu.svirsky.entities.Card;
 import ru.nsu.svirsky.entities.Dealer;
@@ -12,8 +11,8 @@ import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.RoundState;
 import ru.nsu.svirsky.enums.Suit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BlackjackTest {
     @Test
@@ -21,10 +20,10 @@ public class BlackjackTest {
         Player player = new Player();
         Dealer dealer = new Dealer();
 
+        dealer.takeCard(new Card(Rank.EIGHT, Suit.HEARTS));
         player.takeCard(new Card(Rank.QUEEN, Suit.CLUBS));
         player.takeCard(new Card(Rank.JACK, Suit.CLUBS));
         player.takeCard(new Card(Rank.KING, Suit.CLUBS));
-        dealer.takeCard(new Card(Rank.EIGHT, Suit.HEARTS));
 
         BlackjackState state = new BlackjackState(
                 new Deck((a) -> {

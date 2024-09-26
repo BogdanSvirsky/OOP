@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CardTest {
     static Card card = new Card(Rank.ACE, Suit.HEARTS);
+    
     @Test
     void toStringTest() {
         assertTrue(card.toString().equals("Туз Черви (11)"));

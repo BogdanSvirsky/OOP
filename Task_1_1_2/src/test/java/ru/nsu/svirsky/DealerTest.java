@@ -1,15 +1,14 @@
 package ru.nsu.svirsky;
 
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.entities.Card;
 import ru.nsu.svirsky.entities.Dealer;
 import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.Suit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DealerTest {
     @Test
