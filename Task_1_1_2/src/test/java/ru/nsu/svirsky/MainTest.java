@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Test class for user I/O of Blackjack implementation.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class MainTest {

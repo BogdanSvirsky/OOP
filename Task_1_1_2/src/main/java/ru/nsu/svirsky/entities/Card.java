@@ -4,7 +4,7 @@ import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.Suit;
 /**
  * Class represents card as a game entity.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class Card {
@@ -13,7 +13,7 @@ public class Card {
 
     /**
      * Constructs card, which particular rank and suit.
-     * 
+     *
      * @param rank which rank card will has
      * @param suit which suit card will has
      */
@@ -24,7 +24,7 @@ public class Card {
 
     /**
      * Overriding of toString() method to simplify work with user output.
-     * 
+     *
      * @return a string in the "{rank} {suit} {value}" format
      */
     @Override

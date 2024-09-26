@@ -7,13 +7,13 @@ import ru.nsu.svirsky.enums.RoundState;
 
 /**
  * Implementation of Blackjack game logic.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class Blackjack {
     /**
      * Method for hand out moment changing state logic.
-     * 
+     *
      * @param state
      */
     public static void handOutCards(BlackjackState state) {
@@ -26,7 +26,7 @@ public class Blackjack {
 
     /**
      * Method which change state like opening card in Blackjack.
-     * 
+     *
      * @param state Blackjack state
      * @param action open card action type
      * @return card which was opened 
@@ -58,7 +58,7 @@ public class Blackjack {
 
     /**
      * Method for checking current state for Blackjack or overflow scores.
-     * 
+     *
      * @param state Blackjack state
      */
     public static void checkState(BlackjackState state) {
@@ -84,7 +84,7 @@ public class Blackjack {
 
     /**
      * Method for implementing ending round moment state changing logic.
-     * 
+     *
      * @param state Blackjac state, which will be changing to the end of round state
      */
     public static void endRound(BlackjackState state) {
@@ -104,7 +104,7 @@ public class Blackjack {
     /**
      * Method for implementing starting new round
      * (take the cards from the player and the dealer, etc.).
-     * 
+     *
      * @param state Blackjack state, which will change to the new round state
      */
     public static void nextRound(BlackjackState state) {
@@ -116,7 +116,7 @@ public class Blackjack {
 
     /**
      * Method for implementing player win moment state changing logic.
-     * 
+     *
      * @param state Blackjac state, which will be changing to player win state
      */
     public static void playerWins(BlackjackState state) {
@@ -126,7 +126,7 @@ public class Blackjack {
 
     /**
      * Method for implementing dealer win moment state changing logic.
-     * 
+     *
      * @param state Blackjac state, which will be changing to dealer win state
      */
     public static void dealerWins(BlackjackState state) {
@@ -136,7 +136,7 @@ public class Blackjack {
 
     /**
      * Method for implementing draw moment state changing logic.
-     * 
+     *
      * @param state Blackjac state, which will be changing to draw state
      */
     public static void draw(BlackjackState state) {

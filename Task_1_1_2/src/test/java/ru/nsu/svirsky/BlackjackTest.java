@@ -16,7 +16,7 @@ import ru.nsu.svirsky.enums.Suit;
 
 /**
  * Test class for Blackjack game logic.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class BlackjackTest {

@@ -10,7 +10,7 @@ import ru.nsu.svirsky.enums.Suit;
 
 /**
  * Test class for card game entity.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class CardTest {

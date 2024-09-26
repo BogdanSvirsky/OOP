@@ -7,7 +7,7 @@ import ru.nsu.svirsky.enums.Rank;
 
 /**
  * Tesl class for rank enum.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class RankTest {

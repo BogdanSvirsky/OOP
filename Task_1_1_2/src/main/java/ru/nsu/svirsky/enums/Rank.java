@@ -2,7 +2,7 @@ package ru.nsu.svirsky.enums;
 
 /**
  * Enum for comfortable work with card's rank.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public enum Rank {

@@ -3,7 +3,7 @@ package ru.nsu.svirsky.entities;
 import ru.nsu.svirsky.enums.RoundState;
 /**
  * Class for controlling Blackjack game state.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class BlackjackState {
@@ -17,7 +17,7 @@ public class BlackjackState {
 
     /**
      * Class constructor.
-     * 
+     *
      * @param deck cards storage
      * @param player user game enity 
      * @param dealer bot game entity

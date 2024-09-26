@@ -2,7 +2,7 @@ package ru.nsu.svirsky.enums;
 
 /**
  * Enum for round state managment.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public enum RoundState {

@@ -9,7 +9,7 @@ import ru.nsu.svirsky.entities.Deck;
 
 /**
  * Test class for deck game entity.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class DeckTest {

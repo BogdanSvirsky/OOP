@@ -2,7 +2,7 @@ package ru.nsu.svirsky.enums;
 
 /**
  * Enum for generalization Blackjack.openCard method
- * 
+ *
  * @author Bogdan Svirsky
  */
 public enum OpenCardAction {

@@ -6,7 +6,7 @@ import ru.nsu.svirsky.enums.Rank;
 /**
  * Reprentation of Hand game entity.
  * Class is abstract, because it implements the basic methods of "Hand" (something that holds cards)
- * 
+ *
  * @author Bogdan Svirsky
  */
 public abstract class Hand {
@@ -51,7 +51,7 @@ public abstract class Hand {
     /**
      * Method for getting all of cards from hand.
      * Creates a new static array for result to keep cards field private and make result universal.
-     * 
+     *
      * @return staic array with cards
      */
     public Card[] getCards() {

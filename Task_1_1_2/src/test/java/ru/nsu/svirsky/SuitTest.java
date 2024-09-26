@@ -7,7 +7,7 @@ import ru.nsu.svirsky.enums.Suit;
 
 /**
  * Test class for suit enum.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class SuitTest {

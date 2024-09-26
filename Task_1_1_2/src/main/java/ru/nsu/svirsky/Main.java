@@ -10,7 +10,7 @@ import ru.nsu.svirsky.enums.RoundState;
 
 /**
  * Main class, that implements user I/O with Blackjack game.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class Main {
@@ -22,7 +22,7 @@ public class Main {
 
     /**
      * Main method. Catches Exceptions while game is working to prevent memory leak in scanner.
-     * 
+     *
      * @param args command line args, aren't used
      */
     public static void main(String[] args) {

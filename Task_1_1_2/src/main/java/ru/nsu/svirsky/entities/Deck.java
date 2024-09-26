@@ -8,7 +8,7 @@ import ru.nsu.svirsky.utils.Notifier;
 
 /**
  * Representation of deck game entity.
- * 
+ *
  * @author Bogdan Svirsky
  */
 public class Deck {
@@ -36,7 +36,7 @@ public class Deck {
 
     /**
      * Method for getting card from deck which also manages the moment, while deck is over.
-     * 
+     *
      * @return card from deck
      */
     public Card getCard() {
