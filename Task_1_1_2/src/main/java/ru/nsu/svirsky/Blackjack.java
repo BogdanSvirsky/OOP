@@ -29,6 +29,9 @@ public class Blackjack {
             case DEALER_OPEN_CLOSED_CARD:
                 card = state.dealer.openClosedCard();
                 break;
+            default:
+                System.out.println("(?) Unexpected action value in Blackjack");
+                break;
         }
 
         checkState(state);
@@ -45,8 +48,8 @@ public class Blackjack {
             dealerWins(state);
         } else if (state.dealer.getScore() > 21) {
             playerWins(state);
-        } else if (!state.dealer.getIsCardClosed() &&
-                (state.player.hasBlackjack() || state.dealer.hasBlackjack())) { // check Blackjack
+        } else if (!state.dealer.getIsCardClosed()
+            && (state.player.hasBlackjack() || state.dealer.hasBlackjack())) { // check Blackjack
             if (state.player.hasBlackjack() && state.dealer.hasBlackjack()) {
                 draw(state);
             } else if (state.player.hasBlackjack()) {

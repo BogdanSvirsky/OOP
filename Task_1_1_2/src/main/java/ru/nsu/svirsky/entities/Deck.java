@@ -1,6 +1,7 @@
 package ru.nsu.svirsky.entities;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
 
 import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.Suit;

@@ -1,9 +1,10 @@
 package ru.nsu.svirsky;
 
-import ru.nsu.svirsky.enums.Rank;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import ru.nsu.svirsky.enums.Rank;
 
 public class RankTest {
     @Test

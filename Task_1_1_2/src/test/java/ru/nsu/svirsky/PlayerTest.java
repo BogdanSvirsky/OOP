@@ -1,15 +1,16 @@
 package ru.nsu.svirsky;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
+
 import ru.nsu.svirsky.entities.Card;
 import ru.nsu.svirsky.entities.Player;
 import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.Suit;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class PlayerTest {
     @Test
@@ -42,7 +43,7 @@ public class PlayerTest {
     @Test
     void cardsToStringTest() {
         Card[] cards = new Card[] { new Card(Rank.EIGHT, Suit.CLUBS),
-                new Card(Rank.EIGHT, Suit.HEARTS) };
+            new Card(Rank.EIGHT, Suit.HEARTS) };
         Player player = new Player();
 
         player.takeCard(cards[0]);
@@ -52,7 +53,7 @@ public class PlayerTest {
 
         assertEquals(
                 player.cardsToString(),
-                "[" + cards[0] + ", " + cards[1] +
-                        "] => " + String.valueOf(player.getScore()));
+                "[" + cards[0] + ", " + cards[1] 
+                + "] => " + String.valueOf(player.getScore()));
     }
 }

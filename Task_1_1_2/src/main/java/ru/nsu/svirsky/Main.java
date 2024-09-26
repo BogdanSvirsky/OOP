@@ -105,6 +105,9 @@ public class Main {
                 break;
             case IN_PROGRESS:
                 System.out.println("(?) IN_PROGRESS has't round result");
+            default:
+                System.out.println("(?) Unexpected state.roundState value in Main");
+                break;
         }
 
         System.out.printf("Счёт %d:%d", state.playersPoints, state.dealersPoints);

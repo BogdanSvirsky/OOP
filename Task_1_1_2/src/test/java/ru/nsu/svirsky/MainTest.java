@@ -1,9 +1,10 @@
 package ru.nsu.svirsky;
 
-import java.io.ByteArrayInputStream;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.ByteArrayInputStream;
+
+import org.junit.jupiter.api.Test;
 
 public class MainTest {
     @Test

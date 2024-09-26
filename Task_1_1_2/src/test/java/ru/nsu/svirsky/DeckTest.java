@@ -1,11 +1,12 @@
 package ru.nsu.svirsky;
 
-import org.junit.jupiter.api.Test;
-import ru.nsu.svirsky.entities.Deck;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+
+import ru.nsu.svirsky.entities.Deck;
 
 public class DeckTest {
     private static String output = "";
