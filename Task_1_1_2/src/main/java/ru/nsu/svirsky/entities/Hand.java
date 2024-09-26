@@ -46,7 +46,7 @@ public abstract class Hand {
     public void takeCard(Card card) {
         cards.add(card);
         recountScore();
-    };
+    }
 
     /**
      * Method for getting all of cards from hand.

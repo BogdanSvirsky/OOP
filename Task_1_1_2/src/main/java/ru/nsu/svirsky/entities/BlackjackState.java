@@ -1,6 +1,7 @@
 package ru.nsu.svirsky.entities;
 
 import ru.nsu.svirsky.enums.RoundState;
+
 /**
  * Class for controlling Blackjack game state.
  *

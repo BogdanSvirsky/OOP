@@ -2,6 +2,7 @@ package ru.nsu.svirsky.entities;
 
 import ru.nsu.svirsky.enums.Rank;
 import ru.nsu.svirsky.enums.Suit;
+
 /**
  * Class represents card as a game entity.
  *

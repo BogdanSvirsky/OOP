@@ -14,7 +14,7 @@ public class Blackjack {
     /**
      * Method for hand out moment changing state logic.
      *
-     * @param state
+     * @param state Blackjack state
      */
     public static void handOutCards(BlackjackState state) {
         state.player.takeCard(state.deck.getCard());
