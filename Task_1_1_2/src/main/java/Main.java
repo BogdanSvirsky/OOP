@@ -81,7 +81,7 @@ public class Main {
 
         Blackjack.endRound(state);
         printRoundResults();
-        state.reset();
+        Blackjack.nextRound(state);
         pause(2);
     }
 
