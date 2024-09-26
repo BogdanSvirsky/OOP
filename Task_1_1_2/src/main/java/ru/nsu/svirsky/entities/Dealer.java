@@ -43,6 +43,10 @@ public class Dealer extends Hand {
         return getLastCard();
     }
 
+    public boolean getIsCardClosed() {
+        return isCardClosed;
+    }
+
     @Override
     public void reload() {
         isMoves = true;

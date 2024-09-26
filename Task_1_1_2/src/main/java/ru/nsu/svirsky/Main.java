@@ -1,7 +1,7 @@
+package ru.nsu.svirsky;
 
 import java.util.Scanner;
 
-import ru.nsu.svirsky.Blackjack;
 import ru.nsu.svirsky.entities.BlackjackState;
 import ru.nsu.svirsky.entities.Dealer;
 import ru.nsu.svirsky.entities.Deck;
@@ -10,10 +10,9 @@ import ru.nsu.svirsky.enums.OpenCardAction;
 import ru.nsu.svirsky.enums.RoundState;
 
 public class Main {
-    private static Deck deck = new Deck((text) -> System.out.println(text));
-    private static Player player = new Player();
-    private static Dealer dealer = new Dealer();
-    private static BlackjackState state = new BlackjackState(deck, player, dealer);
+    private static BlackjackState state = new BlackjackState(
+            new Deck((text) -> System.out.println(text)),
+            new Player(), new Dealer());
     private static String userInput;
     private static Scanner scanner = new Scanner(System.in);
 
@@ -38,7 +37,7 @@ public class Main {
         printCards();
 
         System.out.printf("Ваш ход\n-------\n");
-        if (player.hasBlackjack()) {
+        if (state.player.hasBlackjack()) {
             System.out.println("(!) У вас Блэкджек");
         } else {
             while (state.player.getIsMoves()) {
@@ -66,10 +65,10 @@ public class Main {
             printCards();
             pause(1);
 
-            if (dealer.hasBlackjack()) {
+            if (state.dealer.hasBlackjack()) {
                 System.out.println("(!) У Дилера Блэкджек");
             } else {
-                while (dealer.getIsMoves()) {
+                while (state.dealer.getIsMoves()) {
                     System.out.printf(
                             "Дилер открыл карту %s\n",
                             Blackjack.openCard(state, OpenCardAction.DEALER_OPEN_CARD));
@@ -86,9 +85,9 @@ public class Main {
     }
 
     private static void printCards() {
-        System.out.print("\tВаши карты: " + player.cardsToString() + "\n");
+        System.out.print("\tВаши карты: " + state.player.cardsToString() + "\n");
 
-        System.out.print("\tКарты дилера: " + dealer.cardsToString() + "\n");
+        System.out.print("\tКарты дилера: " + state.dealer.cardsToString() + "\n");
 
         System.out.println();
     }

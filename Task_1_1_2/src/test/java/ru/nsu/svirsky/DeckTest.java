@@ -4,18 +4,23 @@ import org.junit.jupiter.api.Test;
 
 import ru.nsu.svirsky.entities.Deck;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DeckTest {
+    private static String output = "";
     @Test
     void reloadTest() {
         Deck deck = new Deck((t) -> {
+            output = t;
         });
 
         for (int i = 0; i < 60; i++) {
             assertTrue(deck.getCard() != null);
         }
+
+        assertFalse(output.isEmpty());
     }
 
     @Test

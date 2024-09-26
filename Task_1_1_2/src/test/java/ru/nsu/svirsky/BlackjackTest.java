@@ -57,7 +57,7 @@ public class BlackjackTest {
         assertEquals(state.roundState, RoundState.PLAYER_WINS);
         assertEquals(state.playersPoints, 1);
         Blackjack.nextRound(state);
-        
+
         state.player.takeCard(new Card(Rank.QUEEN, Suit.CLUBS));
         state.player.takeCard(new Card(Rank.FIVE, Suit.CLUBS));
         state.dealer.takeCard(new Card(Rank.FIVE, Suit.CLUBS));
@@ -71,7 +71,7 @@ public class BlackjackTest {
         assertEquals(state.roundState, RoundState.DEALER_WINS);
         assertEquals(state.dealersPoints, 1);
         Blackjack.nextRound(state);
-        
+
         state.player.takeCard(new Card(Rank.QUEEN, Suit.CLUBS));
         state.player.takeCard(new Card(Rank.TWO, Suit.CLUBS));
         state.player.takeCard(new Card(Rank.NINE, Suit.CLUBS));
@@ -128,6 +128,7 @@ public class BlackjackTest {
         state.player.takeCard(new Card(Rank.TEN, Suit.DIAMONDS));
         state.dealer.takeCard(new Card(Rank.ACE, Suit.DIAMONDS));
         state.dealer.takeCard(new Card(Rank.TWO, Suit.DIAMONDS));
+        state.dealer.openClosedCard();
         Blackjack.checkState(state);
 
         assertEquals(state.roundState, RoundState.PLAYER_WINS);
@@ -137,6 +138,7 @@ public class BlackjackTest {
         state.dealer.takeCard(new Card(Rank.TEN, Suit.DIAMONDS));
         state.player.takeCard(new Card(Rank.ACE, Suit.DIAMONDS));
         state.player.takeCard(new Card(Rank.TWO, Suit.DIAMONDS));
+        state.dealer.openClosedCard();
         Blackjack.checkState(state);
 
         assertEquals(state.roundState, RoundState.DEALER_WINS);
@@ -146,6 +148,7 @@ public class BlackjackTest {
         state.dealer.takeCard(new Card(Rank.TEN, Suit.DIAMONDS));
         state.player.takeCard(new Card(Rank.ACE, Suit.HEARTS));
         state.player.takeCard(new Card(Rank.TEN, Suit.HEARTS));
+        state.dealer.openClosedCard();
         Blackjack.checkState(state);
 
         assertEquals(state.roundState, RoundState.DRAW);
@@ -156,6 +159,7 @@ public class BlackjackTest {
         state.dealer.takeCard(new Card(Rank.TEN, Suit.DIAMONDS));
         state.player.takeCard(new Card(Rank.ACE, Suit.DIAMONDS));
         state.player.takeCard(new Card(Rank.TWO, Suit.DIAMONDS));
+        state.dealer.openClosedCard();
         Blackjack.checkState(state);
 
         assertEquals(state.roundState, RoundState.PLAYER_WINS);
@@ -166,6 +170,7 @@ public class BlackjackTest {
         state.player.takeCard(new Card(Rank.TEN, Suit.DIAMONDS));
         state.player.takeCard(new Card(Rank.TEN, Suit.DIAMONDS));
         state.player.takeCard(new Card(Rank.TWO, Suit.DIAMONDS));
+        state.dealer.openClosedCard();
         Blackjack.checkState(state);
 
         assertEquals(state.roundState, RoundState.DEALER_WINS);
