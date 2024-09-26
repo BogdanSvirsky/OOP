@@ -86,9 +86,9 @@ public class Main {
     }
 
     private static void printCards() {
-        System.out.print("\tВаши карты: " + player.cardsToString());
+        System.out.print("\tВаши карты: " + player.cardsToString() + "\n");
 
-        System.out.print("\tКарты дилера: " + dealer.cardsToString());
+        System.out.print("\tКарты дилера: " + dealer.cardsToString() + "\n");
 
         System.out.println();
     }

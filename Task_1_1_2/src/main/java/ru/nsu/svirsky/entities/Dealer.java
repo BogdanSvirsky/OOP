@@ -32,7 +32,7 @@ public class Dealer extends Hand {
         result += "]";
 
         if (!isCardClosed) {
-            result += String.format(" => %d\n", getScore());
+            result += String.format(" => %d", getScore());
         }
         
         return result;
