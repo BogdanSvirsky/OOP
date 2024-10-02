@@ -1,0 +1,61 @@
+package ru.nsu.svirsky;
+
+public class Mul extends Expression {
+    private Expression firstMultiplier;
+    private Expression secondMultiplier;
+
+    public Mul(Expression firstMultiplier, Expression secondMultiplier) {
+        this.firstMultiplier = firstMultiplier;
+        this.secondMultiplier = secondMultiplier;
+    }
+
+    @Override
+    public float eval(String vars) {
+        return firstMultiplier.eval(vars) * secondMultiplier.eval(vars);
+    }
+
+    @Override
+    public Expression derivative(String var) {
+        return new Add(new Mul(firstMultiplier.derivative(var), secondMultiplier),
+                new Mul(firstMultiplier, secondMultiplier.derivative(var)));
+    }
+
+    @Override
+    public String toString() {
+        return String.format("(%s * %s)", firstMultiplier, secondMultiplier);
+    }
+
+    @Override
+    public boolean hasVariables() {
+        return firstMultiplier.hasVariables() || secondMultiplier.hasVariables();
+    }
+
+    @Override
+    public Expression simplify() {
+        Expression res;
+        Expression simplifiedFirstMultiplier = firstMultiplier.simplify();
+        Expression simplifiedSecondMultiplier = secondMultiplier.simplify();
+
+        if (simplifiedFirstMultiplier instanceof Number &&
+                simplifiedFirstMultiplier.eval("") == 0) {
+            return new Number(0);
+        } else if (simplifiedSecondMultiplier instanceof Number &&
+                simplifiedSecondMultiplier.eval("") == 0) {
+            return new Number(0);
+        } else if (simplifiedFirstMultiplier instanceof Number &&
+                simplifiedFirstMultiplier.eval("") == 1) {
+            res = simplifiedSecondMultiplier;
+        } else if (simplifiedSecondMultiplier instanceof Number &&
+                simplifiedSecondMultiplier.eval("") == 1) {
+            res = simplifiedFirstMultiplier;
+        } else {
+            res = new Mul(simplifiedFirstMultiplier, simplifiedSecondMultiplier);
+        }
+
+        if (!res.hasVariables()) {
+            res = new Number(res.eval(""));
+        }
+
+        return res;
+    }
+}
