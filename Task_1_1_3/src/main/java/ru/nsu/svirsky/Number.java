@@ -1,14 +1,14 @@
 package ru.nsu.svirsky;
 
 public class Number extends Expression {
-    private float value;
+    private double value;
 
-    public Number(float value) {
+    public Number(double value) {
         this.value = value;
     }
 
     @Override
-    public float eval(String vars) {
+    public double eval(String vars) {
         return value;
     }
 

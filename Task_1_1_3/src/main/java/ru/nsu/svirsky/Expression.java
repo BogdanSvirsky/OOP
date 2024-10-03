@@ -9,7 +9,7 @@ public abstract class Expression {
 
     public abstract Expression derivative(String var);
 
-    public abstract float eval(String vars);
+    public abstract double eval(String vars);
 
     public abstract boolean hasVariables();
 

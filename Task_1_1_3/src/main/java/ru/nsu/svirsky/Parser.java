@@ -1,7 +1,7 @@
 package ru.nsu.svirsky;
 
 public class Parser {
-    private static final String LANGUAGE = "([a-zA-Z]|[0-9]|(\\(|\\))|\\+|\\-|\\|\\*|\\=)";
+    private static final String LANGUAGE = "([a-zA-Z]|([0-9]+((\\.)[0-9]+)?)|(\\(|\\))|\\+|\\-|/|\\*|\\=)";
     private static String expression = null;
     private static int currentIndex = 0;
 
@@ -26,7 +26,17 @@ public class Parser {
         int left = currentIndex - 1;
 
         while (currentIndex < expression.length() &&
-                expression.substring(left, currentIndex + 1).matches("[0-9a-zA-Z]")) {
+                expression.substring(left, currentIndex + 1).matches("([0-9]+((\\.)[0-9]+)?)|([a-zA-Z]+)")) {
+            currentIndex++;
+        }
+
+        if (currentIndex + 1 < expression.length() &&
+                expression.substring(left, currentIndex + 2).matches("([0-9]+((\\.)[0-9]+)?)|([a-zA-Z]+)")) {
+            currentIndex += 2;
+        }
+        
+        while (currentIndex < expression.length() &&
+                expression.substring(left, currentIndex + 1).matches("([0-9]+((\\.)[0-9]+)?)|([a-zA-Z]+)")) {
             currentIndex++;
         }
 
@@ -70,14 +80,20 @@ public class Parser {
 
     private static Expression parseAtom() {
         Expression res;
+        boolean isNegative = false;
+
+        if (peekToken().equals("-")) {
+            isNegative = true;
+            readToken();
+        }
 
         if (peekToken().equals("(")) {
             readToken();
             res = parseExpression();
             readToken();
         } else {
-            if (peekToken().matches("[0-9]")) {
-                res = new Number(Float.parseFloat(readToken()));
+            if (peekToken().matches("([0-9]+((\\.)[0-9]+)?)")) {
+                res = new Number((isNegative ? -1 : 1) * Double.parseDouble(readToken()));
             } else {
                 res = new Variable(readToken());
             }

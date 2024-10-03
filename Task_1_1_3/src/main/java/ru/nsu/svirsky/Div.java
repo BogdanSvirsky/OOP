@@ -10,14 +10,17 @@ public class Div extends Expression {
     }
 
     @Override
-    public float eval(String vars) {
+    public double eval(String vars) throws ArithmeticException {
+        if (divider.eval(vars) == 0) {
+            throw new ArithmeticException("Division by zero in " + this);
+        }
         return divisible.eval(vars) / divider.eval(vars);
     }
 
     @Override
     public Expression derivative(String var) {
         return new Div(
-                new Add(
+                new Sub(
                         new Mul(divisible.derivative(var), divider),
                         new Mul(divisible, divider.derivative(var))),
                 new Mul(divider, divider));

@@ -10,7 +10,7 @@ public class Add extends Expression {
     }
 
     @Override
-    public float eval(String vars) {
+    public double eval(String vars) {
         return firstSummand.eval(vars) + secondSummand.eval(vars);
     }
 

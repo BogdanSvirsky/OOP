@@ -8,7 +8,7 @@ public class Variable extends Expression {
     }
 
     @Override
-    public float eval(String vars) {
+    public double eval(String vars) {
         String[] keyValuePair;
         String[] varsValues;
 
@@ -30,7 +30,7 @@ public class Variable extends Expression {
 
     @Override
     public Expression derivative(String var) {
-        return new Number(1);
+        return new Number(var.equals(variableName)? 1: 0);
     }
 
     @Override

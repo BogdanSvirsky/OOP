@@ -10,7 +10,7 @@ public class Sub extends Expression {
     }
 
     @Override
-    public float eval(String vars) {
+    public double eval(String vars) {
         return diminutive.eval(vars) - deductible.eval(vars);
     }
 

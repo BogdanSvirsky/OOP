@@ -10,7 +10,7 @@ public class Mul extends Expression {
     }
 
     @Override
-    public float eval(String vars) {
+    public double eval(String vars) {
         return firstMultiplier.eval(vars) * secondMultiplier.eval(vars);
     }
 
