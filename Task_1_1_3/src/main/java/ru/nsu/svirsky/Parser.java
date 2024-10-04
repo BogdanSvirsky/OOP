@@ -2,7 +2,7 @@ package ru.nsu.svirsky;
 
 /**
  * Implementation of expression's parser.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class Parser {
@@ -14,7 +14,7 @@ public class Parser {
 
     /**
      * Main method of parser.
-     * 
+     *
      * @param expr string expression
      * @return new Expression object
      */

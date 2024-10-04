@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Tests for division.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class DivTest {

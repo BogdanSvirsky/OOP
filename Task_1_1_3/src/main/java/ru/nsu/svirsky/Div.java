@@ -2,7 +2,7 @@ package ru.nsu.svirsky;
 
 /**
  * Implementation of division expression.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class Div extends Expression {
@@ -26,9 +26,9 @@ public class Div extends Expression {
     public Expression derivative(String var) {
         return new Div(
                 new Sub(
-                        new Mul(divisible.derivative(var), divider),
-                        new Mul(divisible, divider.derivative(var))),
-                new Mul(divider, divider));
+                        new Mul(divisible.derivative(var), divider.clone()),
+                        new Mul(divisible.clone(), divider.derivative(var))),
+                new Mul(divider.clone(), divider.clone()));
     }
 
     @Override
@@ -59,5 +59,10 @@ public class Div extends Expression {
         }
 
         return res;
+    }
+
+    @Override
+    public Expression clone() {
+        return new Div(divisible.clone(), divider.clone());
     }
 }

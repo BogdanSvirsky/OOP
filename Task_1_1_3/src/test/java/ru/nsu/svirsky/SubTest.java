@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Tests for subtraction.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class SubTest {

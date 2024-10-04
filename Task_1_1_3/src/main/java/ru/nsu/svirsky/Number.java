@@ -2,7 +2,7 @@ package ru.nsu.svirsky;
 
 /**
  * Implementation of Number expression.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class Number extends Expression {
@@ -34,6 +34,11 @@ public class Number extends Expression {
 
     @Override
     public Expression simplify() {
+        return new Number(value);
+    }
+
+    @Override
+    public Expression clone() {
         return new Number(value);
     }
 }

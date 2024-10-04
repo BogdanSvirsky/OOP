@@ -2,7 +2,7 @@ package ru.nsu.svirsky;
 
 /**
  * Implementaion of variable expression's entity.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class Variable extends Expression {
@@ -48,6 +48,11 @@ public class Variable extends Expression {
 
     @Override
     public Expression simplify() {
+        return new Variable(variableName);
+    }
+
+    @Override
+    public Expression clone() {
         return new Variable(variableName);
     }
 }

@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Tests for numbers.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class NumberTest {

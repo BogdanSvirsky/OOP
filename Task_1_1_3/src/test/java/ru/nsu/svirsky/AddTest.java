@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Tests for adding.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class AddTest {

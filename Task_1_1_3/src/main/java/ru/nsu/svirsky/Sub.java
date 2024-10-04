@@ -2,7 +2,7 @@ package ru.nsu.svirsky;
 
 /**
  * Implementation of subtraction expression.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class Sub extends Expression {
@@ -55,5 +55,10 @@ public class Sub extends Expression {
         }
 
         return res;
+    }
+
+    @Override
+    public Expression clone() {
+        return new Sub(diminutive.clone(), deductible.clone());
     }
 }

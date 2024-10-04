@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Tests for variables.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class VariableTest {

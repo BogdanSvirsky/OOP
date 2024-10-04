@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Tests for multiplication.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class MulTest {

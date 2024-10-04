@@ -2,7 +2,7 @@ package ru.nsu.svirsky;
 
 /**
  * Main abstract class which declares basic methods of expression.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public abstract class Expression {
@@ -19,4 +19,6 @@ public abstract class Expression {
     public abstract boolean hasVariables();
 
     public abstract Expression simplify();
+
+    public abstract Expression clone();
 }

@@ -2,7 +2,7 @@ package ru.nsu.svirsky;
 
 /**
  * Implementation of multiplication in expression.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class Mul extends Expression {
@@ -21,8 +21,9 @@ public class Mul extends Expression {
 
     @Override
     public Expression derivative(String var) {
-        return new Add(new Mul(firstMultiplier.derivative(var), secondMultiplier),
-                new Mul(firstMultiplier, secondMultiplier.derivative(var)));
+        return new Add(
+                new Mul(firstMultiplier.derivative(var), secondMultiplier.clone()),
+                new Mul(firstMultiplier.clone(), secondMultiplier.derivative(var)));
     }
 
     @Override
@@ -62,5 +63,10 @@ public class Mul extends Expression {
         }
 
         return res;
+    }
+
+    @Override
+    public Expression clone() {
+        return new Mul(firstMultiplier.clone(), secondMultiplier.clone());
     }
 }

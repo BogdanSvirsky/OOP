@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 /**
  * Implementation of user I/O with expressions.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class Main {
     /**
      * Main method.
-     * 
+     *
      * @param args string arguments (isn't used)
      */
     public static void main(String[] args) {

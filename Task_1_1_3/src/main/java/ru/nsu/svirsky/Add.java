@@ -2,7 +2,7 @@ package ru.nsu.svirsky;
 
 /**
  * Implementation of adding expression.
- * 
+ *
  * @author Svirsky Bogdan
  */
 public class Add extends Expression {
@@ -55,5 +55,10 @@ public class Add extends Expression {
         }
 
         return res;
+    }
+
+    @Override
+    public Expression clone() {
+        return new Add(firstSummand.clone(), secondSummand.clone());
     }
 }
