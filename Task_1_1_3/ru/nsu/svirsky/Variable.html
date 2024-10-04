@@ -137,6 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Variable</span>
 extends <a href="Expression.html" title="class in ru.nsu.svirsky">Expression</a></pre>
+<div class="block">Implementaion of variable expression's entity.</div>
 </li>
 </ul>
 </div>
@@ -259,10 +260,13 @@ extends <a href="Expression.html" title="class in ru.nsu.svirsky">Expression</a>
 <ul class="blockList">
 <li class="blockList">
 <h4>eval</h4>
-<pre class="methodSignature">public&nbsp;double&nbsp;eval&#8203;(java.lang.String&nbsp;vars)</pre>
+<pre class="methodSignature">public&nbsp;double&nbsp;eval&#8203;(java.lang.String&nbsp;vars)
+            throws java.lang.ArithmeticException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Expression.html#eval(java.lang.String)">eval</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.svirsky">Expression</a></code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.ArithmeticException</code></dd>
 </dl>
 </li>
 </ul>
