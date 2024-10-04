@@ -26,7 +26,8 @@ public class MulTest {
 
     @Test
     void derivativeTest() {
-        assertEquals(new Mul(new Number(5), new Variable("x")).derivative("x").eval(""), 5);
+        assertEquals(new Mul(new Number(5), new Variable("x"))
+            .derivative("x").simplify().eval(""), 5);
 
         Expression firstMultiplier = new Add(new Number(5), new Variable("x"));
         Expression secondMultiplier = new Div(new Variable("x"), new Number(10));
