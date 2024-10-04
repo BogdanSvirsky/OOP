@@ -5,6 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests for division.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class DivTest {
     @Test
     void basicTest() {

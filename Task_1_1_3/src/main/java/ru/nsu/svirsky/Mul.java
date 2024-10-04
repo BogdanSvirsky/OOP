@@ -1,5 +1,10 @@
 package ru.nsu.svirsky;
 
+/**
+ * Implementation of multiplication in expression.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class Mul extends Expression {
     private Expression firstMultiplier;
     private Expression secondMultiplier;
@@ -36,17 +41,17 @@ public class Mul extends Expression {
         Expression simplifiedFirstMultiplier = firstMultiplier.simplify();
         Expression simplifiedSecondMultiplier = secondMultiplier.simplify();
 
-        if (simplifiedFirstMultiplier instanceof Number &&
-                simplifiedFirstMultiplier.eval("") == 0) {
+        if (simplifiedFirstMultiplier instanceof Number 
+            && simplifiedFirstMultiplier.eval("") == 0) {
             return new Number(0);
-        } else if (simplifiedSecondMultiplier instanceof Number &&
-                simplifiedSecondMultiplier.eval("") == 0) {
+        } else if (simplifiedSecondMultiplier instanceof Number 
+            && simplifiedSecondMultiplier.eval("") == 0) {
             return new Number(0);
-        } else if (simplifiedFirstMultiplier instanceof Number &&
-                simplifiedFirstMultiplier.eval("") == 1) {
+        } else if (simplifiedFirstMultiplier instanceof Number 
+            && simplifiedFirstMultiplier.eval("") == 1) {
             res = simplifiedSecondMultiplier;
-        } else if (simplifiedSecondMultiplier instanceof Number &&
-                simplifiedSecondMultiplier.eval("") == 1) {
+        } else if (simplifiedSecondMultiplier instanceof Number 
+            && simplifiedSecondMultiplier.eval("") == 1) {
             res = simplifiedFirstMultiplier;
         } else {
             res = new Mul(simplifiedFirstMultiplier, simplifiedSecondMultiplier);

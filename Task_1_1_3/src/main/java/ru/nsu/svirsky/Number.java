@@ -1,5 +1,10 @@
 package ru.nsu.svirsky;
 
+/**
+ * Implementation of Number expression.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class Number extends Expression {
     private double value;
 

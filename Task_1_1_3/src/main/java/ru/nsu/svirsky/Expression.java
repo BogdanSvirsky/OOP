@@ -1,9 +1,14 @@
 package ru.nsu.svirsky;
 
+/**
+ * Main abstract class which declares basic methods of expression.
+ * 
+ * @author Svirsky Bogdan
+ */
 public abstract class Expression {
     public void print() {
         System.out.println(this.toString());
-    };
+    }
 
     public abstract String toString();
 

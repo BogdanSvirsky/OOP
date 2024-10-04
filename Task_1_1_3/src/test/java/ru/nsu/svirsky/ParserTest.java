@@ -3,10 +3,14 @@ package ru.nsu.svirsky;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Random;
 import org.junit.jupiter.api.Test;
 
-import java.util.Random;
-
+/**
+ * Tests for parser.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class ParserTest {
     @Test
     void basicTest() {

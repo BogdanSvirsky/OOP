@@ -1,5 +1,10 @@
 package ru.nsu.svirsky;
 
+/**
+ * Implementation of adding expression.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class Add extends Expression {
     private Expression firstSummand;
     private Expression secondSummand;
@@ -35,11 +40,11 @@ public class Add extends Expression {
         Expression simplifiedFirstSummand = firstSummand.simplify();
         Expression simplifiedSecondSummand = secondSummand.simplify();
 
-        if (simplifiedFirstSummand instanceof Number &&
-                simplifiedFirstSummand.eval("") == 0) {
+        if (simplifiedFirstSummand instanceof Number 
+            && simplifiedFirstSummand.eval("") == 0) {
             res = simplifiedSecondSummand;
-        } else if (simplifiedSecondSummand instanceof Number &&
-                simplifiedSecondSummand.eval("") == 0) {
+        } else if (simplifiedSecondSummand instanceof Number 
+            && simplifiedSecondSummand.eval("") == 0) {
             res = simplifiedFirstSummand;
         } else {
             res = new Add(simplifiedFirstSummand, simplifiedSecondSummand);

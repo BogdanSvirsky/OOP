@@ -1,5 +1,10 @@
 package ru.nsu.svirsky;
 
+/**
+ * Implementation of division expression.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class Div extends Expression {
     private Expression divisible;
     private Expression divider;
@@ -42,8 +47,8 @@ public class Div extends Expression {
         Expression simplifiedDivisible = divisible.simplify();
         Expression simplifiedDivider = divider.simplify();
 
-        if (simplifiedDivisible instanceof Number &&
-                simplifiedDivisible.eval("") == 0) {
+        if (simplifiedDivisible instanceof Number 
+            && simplifiedDivisible.eval("") == 0) {
             return new Number(0);
         } else {
             res = new Div(simplifiedDivisible, simplifiedDivider);

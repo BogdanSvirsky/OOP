@@ -1,5 +1,10 @@
 package ru.nsu.svirsky;
 
+/**
+ * Implementaion of variable expression's entity.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class Variable extends Expression {
     String variableName;
 
@@ -8,7 +13,7 @@ public class Variable extends Expression {
     }
 
     @Override
-    public double eval(String vars) {
+    public double eval(String vars) throws ArithmeticException {
         String[] keyValuePair;
         String[] varsValues;
 
@@ -23,14 +28,12 @@ public class Variable extends Expression {
             }
         }
 
-        System.out.printf("\n(!) Variable %s hasn't value\n", variableName);
-
-        return 0;
+        throw new ArithmeticException("Variable " + variableName + " hasn't value");
     }
 
     @Override
     public Expression derivative(String var) {
-        return new Number(var.equals(variableName)? 1: 0);
+        return new Number(var.equals(variableName) ? 1 : 0);
     }
 
     @Override

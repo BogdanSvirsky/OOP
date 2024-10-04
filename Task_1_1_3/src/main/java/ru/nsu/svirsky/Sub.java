@@ -1,5 +1,10 @@
 package ru.nsu.svirsky;
 
+/**
+ * Implementation of subtraction expression.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class Sub extends Expression {
     private Expression diminutive;
     private Expression deductible;
@@ -35,11 +40,11 @@ public class Sub extends Expression {
         Expression simplifiedDiminutive = diminutive.simplify();
         Expression simplifiedDeductible = deductible.simplify();
 
-        if (simplifiedDiminutive instanceof Number &&
-                simplifiedDiminutive.eval("") == 0) {
+        if (simplifiedDiminutive instanceof Number 
+            && simplifiedDiminutive.eval("") == 0) {
             res = new Mul(new Number(-1), simplifiedDeductible);
-        } else if (simplifiedDeductible instanceof Number &&
-                simplifiedDeductible.eval("") == 0) {
+        } else if (simplifiedDeductible instanceof Number 
+            && simplifiedDeductible.eval("") == 0) {
             res = simplifiedDiminutive;
         } else {
             res = new Sub(simplifiedDiminutive, simplifiedDeductible);

@@ -5,6 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests for adding.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class AddTest {
     @Test
     void basicTest() {

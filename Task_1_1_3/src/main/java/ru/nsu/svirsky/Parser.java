@@ -1,10 +1,23 @@
 package ru.nsu.svirsky;
 
+/**
+ * Implementation of expression's parser.
+ * 
+ * @author Svirsky Bogdan
+ */
 public class Parser {
-    private static final String LANGUAGE = "([a-zA-Z]|([0-9]+((\\.)[0-9]+)?)|(\\(|\\))|\\+|\\-|/|\\*|\\=)";
+    private static final String 
+            LANGUAGE = "([a-zA-Z]|([0-9]+((\\.)[0-9]+)?)|(\\(|\\))|\\+|\\-|/|\\*|\\=)";
+
     private static String expression = null;
     private static int currentIndex = 0;
 
+    /**
+     * Main method of parser.
+     * 
+     * @param expr string expression
+     * @return new Expression object
+     */
     public static Expression parse(String expr) {
         expression = expr.replaceAll("[^" + LANGUAGE + "]", "");
         currentIndex = 0;
@@ -13,8 +26,9 @@ public class Parser {
     }
 
     private static String readToken() {
-        if (currentIndex == expression.length())
+        if (currentIndex == expression.length()) {
             return "";
+        }
 
         char symb = expression.charAt(currentIndex++);
 
@@ -25,18 +39,21 @@ public class Parser {
 
         int left = currentIndex - 1;
 
-        while (currentIndex < expression.length() &&
-                expression.substring(left, currentIndex + 1).matches("([0-9]+((\\.)[0-9]+)?)|([a-zA-Z]+)")) {
+        while (currentIndex < expression.length() 
+            && expression.substring(left, currentIndex + 1)
+                .matches("([0-9]+((\\.)[0-9]+)?)|([a-zA-Z]+)")) {
             currentIndex++;
         }
 
-        if (currentIndex + 1 < expression.length() &&
-                expression.substring(left, currentIndex + 2).matches("([0-9]+((\\.)[0-9]+)?)|([a-zA-Z]+)")) {
+        if (currentIndex + 1 < expression.length() 
+            && expression.substring(left, currentIndex + 2)
+                .matches("([0-9]+((\\.)[0-9]+)?)|([a-zA-Z]+)")) {
             currentIndex += 2;
         }
-        
-        while (currentIndex < expression.length() &&
-                expression.substring(left, currentIndex + 1).matches("([0-9]+((\\.)[0-9]+)?)|([a-zA-Z]+)")) {
+
+        while (currentIndex < expression.length() 
+            && expression.substring(left, currentIndex + 1)
+                .matches("([0-9]+((\\.)[0-9]+)?)|([a-zA-Z]+)")) {
             currentIndex++;
         }
 
@@ -51,7 +68,8 @@ public class Parser {
     }
 
     private static Expression parseExpression() {
-        Expression firstExp = parseMonome(), res = firstExp;
+        Expression firstExp = parseMonome();
+        Expression res = firstExp;
 
         if (peekToken().equals("+") || peekToken().equals("-")) {
             if (readToken().equals("+")) {
@@ -65,7 +83,8 @@ public class Parser {
     }
 
     private static Expression parseMonome() {
-        Expression firstExpr = parseAtom(), res = firstExpr;
+        Expression firstExpr = parseAtom();
+        Expression res = firstExpr;
 
         if (peekToken().equals("*") || peekToken().equals("/")) {
             if (readToken().equals("*")) {
