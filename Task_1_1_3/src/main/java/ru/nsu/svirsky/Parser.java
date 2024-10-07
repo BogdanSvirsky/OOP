@@ -113,9 +113,14 @@ public class Parser {
         } else {
             if (peekToken().matches("([0-9]+((\\.)[0-9]+)?)")) {
                 res = new Number((isNegative ? -1 : 1) * Double.parseDouble(readToken()));
+                isNegative = false;
             } else {
                 res = new Variable(readToken());
             }
+        }
+
+        if (isNegative) {
+            res = new Mul(new Number(-1), res);
         }
 
         return res;
