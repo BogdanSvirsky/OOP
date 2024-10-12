@@ -7,22 +7,27 @@ import ru.nsu.svirsky.uitls.CycleFoundException;
 import ru.nsu.svirsky.uitls.VertexNotFoundException;
 
 public class TopologicalSorter {
-    private HashMap<Vertex, Boolean> used = new HashMap<>();
+    private HashMap<Vertex, Integer> vertexState = new HashMap<>();
+    /* 0 - isn't processed
+     * 1 - in processing
+     * 2 - is processed
+     */
     private Graph currentGraph;
     private ArrayList<Vertex> result = new ArrayList<>();
 
+    @SuppressWarnings("unchecked")
     public ArrayList<Vertex> sort(Graph graph) throws CycleFoundException {
         currentGraph = graph;
-        used.clear();
+        vertexState.clear();
         result.clear();
         ArrayList<Vertex> vertecies = graph.getVertices();
 
         for (Vertex vertex : vertecies) {
-            used.put(vertex, false);
+            vertexState.put(vertex, 0);
         }
 
         for (Vertex vertex : vertecies) {
-            if (!used.get(vertex)) {
+            if (vertexState.get(vertex) == 0) {
                 dfs(vertex);
             }
         }
@@ -30,21 +35,23 @@ public class TopologicalSorter {
         return new ArrayList<Vertex>(result.reversed());
     }
 
+    @SuppressWarnings("unchecked")
     private void dfs(Vertex vertex) throws CycleFoundException {
-        used.put(vertex, true);
+        vertexState.put(vertex, 1);
 
         try {
             for (Vertex neighbor : (ArrayList<Vertex>) currentGraph.getNeighbors(vertex)) {
-                if (!used.get(neighbor)) {
+                if (vertexState.get(neighbor) == 0) {
                     dfs(neighbor);
-                } else {
-                    throw new CycleFoundException("\nCycle is founded in Toposort");
+                } else if (vertexState.get(neighbor) == 1) {
+                    throw new CycleFoundException("\nCycle was founded in Toposort");
                 }
             }
         } catch (VertexNotFoundException e) {
             System.err.println("Bad neighbor in Toposort.dfs()");
         }
 
+        vertexState.put(vertex, 2);
         result.add(vertex);
     }
 }
