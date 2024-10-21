@@ -42,17 +42,17 @@ public class Mul extends Expression {
         Expression simplifiedFirstMultiplier = firstMultiplier.simplify();
         Expression simplifiedSecondMultiplier = secondMultiplier.simplify();
 
-        if (simplifiedFirstMultiplier instanceof Number 
-            && simplifiedFirstMultiplier.eval("") == 0) {
+        if (simplifiedFirstMultiplier instanceof Number
+                && simplifiedFirstMultiplier.eval("") == 0) {
             return new Number(0);
-        } else if (simplifiedSecondMultiplier instanceof Number 
-            && simplifiedSecondMultiplier.eval("") == 0) {
+        } else if (simplifiedSecondMultiplier instanceof Number
+                && simplifiedSecondMultiplier.eval("") == 0) {
             return new Number(0);
-        } else if (simplifiedFirstMultiplier instanceof Number 
-            && simplifiedFirstMultiplier.eval("") == 1) {
+        } else if (simplifiedFirstMultiplier instanceof Number
+                && simplifiedFirstMultiplier.eval("") == 1) {
             res = simplifiedSecondMultiplier;
-        } else if (simplifiedSecondMultiplier instanceof Number 
-            && simplifiedSecondMultiplier.eval("") == 1) {
+        } else if (simplifiedSecondMultiplier instanceof Number
+                && simplifiedSecondMultiplier.eval("") == 1) {
             res = simplifiedFirstMultiplier;
         } else {
             res = new Mul(simplifiedFirstMultiplier, simplifiedSecondMultiplier);
@@ -68,5 +68,25 @@ public class Mul extends Expression {
     @Override
     public Expression clone() {
         return new Mul(firstMultiplier.clone(), secondMultiplier.clone());
+    }
+
+    public Expression getFirstMultiplier() {
+        return firstMultiplier.clone();
+    }
+
+    public Expression getSecondMultiplier() {
+        return secondMultiplier.clone();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Mul other) {
+            return (this.firstMultiplier.equals(other.getFirstMultiplier())
+                    && this.secondMultiplier.equals(other.getSecondMultiplier()))
+                    || (this.firstMultiplier.equals(other.getSecondMultiplier())
+                            && this.secondMultiplier.equals(other.getFirstMultiplier()));
+        }
+
+        return false;
     }
 }

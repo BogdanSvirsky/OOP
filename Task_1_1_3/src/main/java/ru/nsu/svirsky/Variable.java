@@ -24,7 +24,7 @@ public class Variable extends Expression {
         for (String varValue : varsValues) {
             keyValuePair = varValue.split("=");
             if (variableName.equals(keyValuePair[0])) {
-                return Integer.parseInt(keyValuePair[1]);
+                return Double.parseDouble(keyValuePair[1]);
             }
         }
 
@@ -54,5 +54,18 @@ public class Variable extends Expression {
     @Override
     public Expression clone() {
         return new Variable(variableName);
+    }
+
+    public String getVariableName() {
+        return variableName;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Variable other) {
+            return this.variableName.equals(other.getVariableName());
+        }
+
+        return false;
     }
 }

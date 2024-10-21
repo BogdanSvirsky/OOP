@@ -47,8 +47,12 @@ public class Div extends Expression {
         Expression simplifiedDivisible = divisible.simplify();
         Expression simplifiedDivider = divider.simplify();
 
-        if (simplifiedDivisible instanceof Number 
-            && simplifiedDivisible.eval("") == 0) {
+        if (simplifiedDivider.equals(simplifiedDivider)) {
+            return new Number(1);
+        }
+
+        if (simplifiedDivisible instanceof Number
+                && simplifiedDivisible.eval("") == 0) {
             return new Number(0);
         } else {
             res = new Div(simplifiedDivisible, simplifiedDivider);
@@ -59,6 +63,24 @@ public class Div extends Expression {
         }
 
         return res;
+    }
+
+    public Expression getDivisible() {
+        return divisible.clone();
+    }
+
+    public Expression getDivider() {
+        return divider.clone();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Div other) {
+            return this.divisible.equals(other.getDivisible())
+                    && this.divider.equals(other.getDivider());
+        }
+
+        return false;
     }
 
     @Override

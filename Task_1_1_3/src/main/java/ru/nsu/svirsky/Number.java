@@ -41,4 +41,13 @@ public class Number extends Expression {
     public Expression clone() {
         return new Number(value);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Number other) {
+            return this.value == other.eval("");
+        }
+
+        return false;
+    }
 }

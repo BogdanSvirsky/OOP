@@ -21,4 +21,7 @@ public abstract class Expression {
     public abstract Expression simplify();
 
     public abstract Expression clone();
+
+    @Override
+    public abstract boolean equals(Object obj);
 }

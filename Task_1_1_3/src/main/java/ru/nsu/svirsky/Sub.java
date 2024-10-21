@@ -40,11 +40,15 @@ public class Sub extends Expression {
         Expression simplifiedDiminutive = diminutive.simplify();
         Expression simplifiedDeductible = deductible.simplify();
 
-        if (simplifiedDiminutive instanceof Number 
-            && simplifiedDiminutive.eval("") == 0) {
+        if (simplifiedDeductible.equals(simplifiedDiminutive)) {
+            return new Number(0);
+        }
+
+        if (simplifiedDiminutive instanceof Number
+                && simplifiedDiminutive.eval("") == 0) {
             res = new Mul(new Number(-1), simplifiedDeductible);
-        } else if (simplifiedDeductible instanceof Number 
-            && simplifiedDeductible.eval("") == 0) {
+        } else if (simplifiedDeductible instanceof Number
+                && simplifiedDeductible.eval("") == 0) {
             res = simplifiedDiminutive;
         } else {
             res = new Sub(simplifiedDiminutive, simplifiedDeductible);
@@ -60,5 +64,23 @@ public class Sub extends Expression {
     @Override
     public Expression clone() {
         return new Sub(diminutive.clone(), deductible.clone());
+    }
+
+    public Expression getDiminutive() {
+        return diminutive.clone();
+    }
+
+    public Expression getDeductible() {
+        return deductible.clone();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Sub other) {
+            return this.deductible.equals(other.getDeductible())
+                    && this.diminutive.equals(other.getDiminutive());
+        }
+
+        return false;
     }
 }

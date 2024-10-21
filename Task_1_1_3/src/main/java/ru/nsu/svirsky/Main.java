@@ -17,6 +17,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter expression (don't forget brackets!): ");
         Expression expr = Parser.parse(scanner.nextLine());
+        
+        System.out.println("Simplified expression: " + expr.simplify());
         System.out.print("Entet assignment (separate by ';'): ");
         try {
             System.out.println("Result: " + String.valueOf(expr.eval(scanner.nextLine())));

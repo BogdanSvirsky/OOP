@@ -40,14 +40,18 @@ public class Add extends Expression {
         Expression simplifiedFirstSummand = firstSummand.simplify();
         Expression simplifiedSecondSummand = secondSummand.simplify();
 
-        if (simplifiedFirstSummand instanceof Number 
-            && simplifiedFirstSummand.eval("") == 0) {
+        if (simplifiedFirstSummand instanceof Number
+                && simplifiedFirstSummand.eval("") == 0) {
             res = simplifiedSecondSummand;
-        } else if (simplifiedSecondSummand instanceof Number 
-            && simplifiedSecondSummand.eval("") == 0) {
+        } else if (simplifiedSecondSummand instanceof Number
+                && simplifiedSecondSummand.eval("") == 0) {
             res = simplifiedFirstSummand;
         } else {
-            res = new Add(simplifiedFirstSummand, simplifiedSecondSummand);
+            if (simplifiedFirstSummand.equals(simplifiedSecondSummand)) {
+                res = new Mul(new Number(2), simplifiedFirstSummand);
+            } else {
+                res = new Add(simplifiedFirstSummand, simplifiedSecondSummand);
+            }
         }
 
         if (!res.hasVariables()) {
@@ -60,5 +64,25 @@ public class Add extends Expression {
     @Override
     public Expression clone() {
         return new Add(firstSummand.clone(), secondSummand.clone());
+    }
+
+    public Expression getFirstSummand() {
+        return firstSummand.clone();
+    }
+
+    public Expression getSecondSummand() {
+        return secondSummand.clone();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Add other) {
+            return (this.firstSummand.equals(other.getFirstSummand())
+             && this.secondSummand.equals(other.getSecondSummand()))
+             || (this.firstSummand.equals(other.getSecondSummand())
+             && this.secondSummand.equals(other.getFirstSummand()));
+        }
+
+        return false;
     }
 }
