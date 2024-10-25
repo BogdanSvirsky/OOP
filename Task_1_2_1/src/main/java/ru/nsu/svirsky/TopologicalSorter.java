@@ -47,7 +47,7 @@ public class TopologicalSorter {
         vertexState.put(vertex, 1);
 
         try {
-            for (Vertex neighbor : (ArrayList<Vertex>) currentGraph.getNeighbors(vertex)) {
+            for (Vertex neighbor : (Set<Vertex>) currentGraph.getNeighbors(vertex)) {
                 if (vertexState.get(neighbor) == 0) {
                     dfs(neighbor);
                 } else if (vertexState.get(neighbor) == 1) {

@@ -53,6 +53,8 @@ public class AdjacencyListsTest {
         }
 
         assertEquals(graph.getEdges(), edges);
+
+        graph.toString();
     }
 
     @Test

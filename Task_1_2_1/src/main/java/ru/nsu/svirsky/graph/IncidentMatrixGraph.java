@@ -207,4 +207,18 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
 
         return result;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj instanceof Graph other) {
+            return this.getVertices().equals(other.getVertices())
+                    && this.getEdges().equals(other.getEdges());
+        } else {
+            return false;
+        }
+    }
 }

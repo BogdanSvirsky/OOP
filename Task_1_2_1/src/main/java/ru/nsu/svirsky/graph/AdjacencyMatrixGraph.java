@@ -195,4 +195,18 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
         vertexEnumeration.clear();
         adjacencyMatrix.clear();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj instanceof Graph other) {
+            return this.getVertices().equals(other.getVertices())
+                    && this.getEdges().equals(other.getEdges());
+        } else {
+            return false;
+        }
+    }
 }

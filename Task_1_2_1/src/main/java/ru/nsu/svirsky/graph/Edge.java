@@ -25,7 +25,7 @@ public class Edge<VertexNameType, EdgeWeightType extends Number> {
         if (obj instanceof Edge other) {
             if (this.weight == null) {
                 return this.from.equals(other.from) && this.to.equals(other.to)
-                && (other.weight == null);
+                        && (other.weight == null);
             } else {
                 return this.from.equals(other.from) && this.to.equals(other.to)
                         && this.weight.equals(other.weight);

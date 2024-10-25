@@ -24,8 +24,8 @@ public class GraphScanner {
      * First string is a integer N - count of vertices.
      * Next N strings is a vertex's names.
      * After that string with integer M - count of edges.
-     * Next M strings is a vertex's edges in format "<name> -> <name>"
-     * and optional part " = <weight>" with edge's weight.
+     * Next M strings is a vertex's edges in format "name -> name"
+     * and optional part " = weight" with edge's weight.
      * 
      * @param <VertexNameType>  vertex name type
      * @param <EdgeWeightType>  edge weight type

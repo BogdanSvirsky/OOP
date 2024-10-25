@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import ru.nsu.svirsky.graph.IncidentMatrixGraph;
 import ru.nsu.svirsky.graph.IncidentMatrixGraph;
+import ru.nsu.svirsky.graph.AdjacencyListsGraph;
 import ru.nsu.svirsky.graph.Edge;
 import ru.nsu.svirsky.graph.Vertex;
 import ru.nsu.svirsky.uitls.exceptions.GraphException;
@@ -54,6 +55,7 @@ public class IncidentMatrixTest {
         }
 
         assertEquals(graph.getEdges(), edges);
+        graph.toString();
     }
 
     @Test

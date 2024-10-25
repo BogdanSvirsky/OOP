@@ -101,7 +101,7 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
 
         if (!adjacencyLists.get(edge.getFrom()).contains(edge)) {
             throw new EdgeNotFoundException();
-        } 
+        }
 
         adjacencyLists.get(edge.getFrom()).remove(edge);
     }
@@ -130,7 +130,6 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
         if (!vertices.contains(vertex)) {
             throw new VertexNotFoundException();
         }
-        
         HashSet<Vertex<VertexNameType>> result = new HashSet<>();
 
         for (Edge<VertexNameType, EdgeWeightType> edge : adjacencyLists.get(vertex)) {
@@ -174,5 +173,21 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
         }
 
         return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj instanceof Graph other) {
+            return this.vertices.containsAll(other.getVertices())
+            && other.getVertices().containsAll(this.vertices)
+                    && this.getEdges().containsAll(other.getEdges())
+                    && other.getEdges().containsAll(this.getEdges());
+        } else {
+            return false;
+        }
     }
 }
