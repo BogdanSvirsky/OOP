@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.svirsky"},{"l":"ru.nsu.svirsky.graph"},{"l":"ru.nsu.svirsky.uitls"},{"l":"ru.nsu.svirsky.uitls.exceptions"}];updateSearchResults();
