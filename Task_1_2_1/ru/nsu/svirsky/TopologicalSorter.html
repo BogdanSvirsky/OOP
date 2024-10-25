@@ -91,6 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">TopologicalSorter</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Topological sorting class.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -120,7 +121,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="graph/Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sort(ru.nsu.svirsky.graph.Graph)" class="member-name-link">sort</a><wbr>(<a href="graph/Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&nbsp;graph)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Toposort method.</div>
+</div>
 </div>
 </div>
 </div>
@@ -157,9 +160,14 @@ loadScripts(document, 'script');</script>
 <h3>sort</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="graph/Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&gt;</span>&nbsp;<span class="element-name">sort</span><wbr><span class="parameters">(<a href="graph/Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&nbsp;graph)</span>
                        throws <span class="exceptions"><a href="uitls/exceptions/CycleFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">CycleFoundException</a></span></div>
+<div class="block">Toposort method.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>graph</code> - graph for sorting</dd>
+<dt>Returns:</dt>
+<dd>list of sorted vertices</dd>
 <dt>Throws:</dt>
-<dd><code><a href="uitls/exceptions/CycleFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">CycleFoundException</a></code></dd>
+<dd><code><a href="uitls/exceptions/CycleFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">CycleFoundException</a></code> - if cycle was founded</dd>
 </dl>
 </section>
 </li>

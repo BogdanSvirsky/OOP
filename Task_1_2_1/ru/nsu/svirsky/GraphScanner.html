@@ -119,12 +119,12 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;VertexNameType,<wbr>
-EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;<br>void</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;V,<wbr>
+E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;<br>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#scan(java.lang.String,ru.nsu.svirsky.uitls.Transformer,ru.nsu.svirsky.uitls.Transformer,ru.nsu.svirsky.graph.Graph)" class="member-name-link">scan</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
- <a href="uitls/Transformer.html" title="interface in ru.nsu.svirsky.uitls">Transformer</a>&lt;VertexNameType&gt;&nbsp;nameTransformer,
- <a href="uitls/Transformer.html" title="interface in ru.nsu.svirsky.uitls">Transformer</a>&lt;EdgeWeightType&gt;&nbsp;weightTransformer,
- <a href="graph/Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;VertexNameType,<wbr>EdgeWeightType&gt;&nbsp;graph)</code></div>
+ <a href="uitls/Transformer.html" title="interface in ru.nsu.svirsky.uitls">Transformer</a>&lt;V&gt;&nbsp;nameTransformer,
+ <a href="uitls/Transformer.html" title="interface in ru.nsu.svirsky.uitls">Transformer</a>&lt;E&gt;&nbsp;weightTransformer,
+ <a href="graph/Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;V,<wbr>E&gt;&nbsp;graph)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">First string is a integer N - count of vertices.</div>
 </div>
@@ -162,13 +162,12 @@ EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/a
 <li>
 <section class="detail" id="scan(java.lang.String,ru.nsu.svirsky.uitls.Transformer,ru.nsu.svirsky.uitls.Transformer,ru.nsu.svirsky.graph.Graph)">
 <h3>scan</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;VertexNameType,<wbr>
-EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</span>
-<span class="return-type">void</span>&nbsp;<span class="element-name">scan</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
- <a href="uitls/Transformer.html" title="interface in ru.nsu.svirsky.uitls">Transformer</a>&lt;VertexNameType&gt;&nbsp;nameTransformer,
- <a href="uitls/Transformer.html" title="interface in ru.nsu.svirsky.uitls">Transformer</a>&lt;EdgeWeightType&gt;&nbsp;weightTransformer,
- <a href="graph/Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;VertexNameType,<wbr>EdgeWeightType&gt;&nbsp;graph)</span>
-   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;V,<wbr>
+E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scan</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
+ <a href="uitls/Transformer.html" title="interface in ru.nsu.svirsky.uitls">Transformer</a>&lt;V&gt;&nbsp;nameTransformer,
+ <a href="uitls/Transformer.html" title="interface in ru.nsu.svirsky.uitls">Transformer</a>&lt;E&gt;&nbsp;weightTransformer,
+ <a href="graph/Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;V,<wbr>E&gt;&nbsp;graph)</span>
+                                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a>,
 <a href="uitls/exceptions/MultipleEdgesFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">MultipleEdgesFoundException</a></span></div>
 <div class="block">First string is a integer N - count of vertices.
@@ -178,12 +177,12 @@ EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/a
  and optional part " = weight" with edge's weight.</div>
 <dl class="notes">
 <dt>Type Parameters:</dt>
-<dd><code>VertexNameType</code> - vertex name type</dd>
-<dd><code>EdgeWeightType</code> - edge weight type</dd>
+<dd><code>V</code> - vertex name type</dd>
+<dd><code>E</code> - edge weight type</dd>
 <dt>Parameters:</dt>
 <dd><code>path</code> - path to file</dd>
-<dd><code>nameTransformer</code> - transformer from string to VertexNameType</dd>
-<dd><code>weightTransformer</code> - transformer from string to EdgeWeightType</dd>
+<dd><code>nameTransformer</code> - transformer from string to V</dd>
+<dd><code>weightTransformer</code> - transformer from string to E</dd>
 <dd><code>graph</code> - graph, that will be cleared and created by file</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - some IO troubles</dd>

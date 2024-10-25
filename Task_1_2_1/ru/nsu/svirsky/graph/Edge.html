@@ -82,15 +82,16 @@ loadScripts(document, 'script');</script>
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.svirsky.graph</a></div>
-<h1 title="Class Edge" class="title">Class Edge&lt;VertexNameType,<wbr>EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</h1>
+<h1 title="Class Edge" class="title">Class Edge&lt;V,<wbr>E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">ru.nsu.svirsky.graph.Edge&lt;VertexNameType,<wbr>EdgeWeightType&gt;</div>
+<div class="inheritance">ru.nsu.svirsky.graph.Edge&lt;V,<wbr>E&gt;</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Edge&lt;VertexNameType,<wbr>EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</span>
+<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Edge&lt;V,<wbr>E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Edge class.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -102,13 +103,15 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.svirsky.graph.Vertex,ru.nsu.svirsky.graph.Vertex)" class="member-name-link">Edge</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;&nbsp;from,
- <a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;&nbsp;to)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.svirsky.graph.Vertex,ru.nsu.svirsky.graph.Vertex)" class="member-name-link">Edge</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;&nbsp;from,
+ <a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;&nbsp;to)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(ru.nsu.svirsky.graph.Vertex,ru.nsu.svirsky.graph.Vertex,EdgeWeightType)" class="member-name-link">Edge</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;&nbsp;from,
- <a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;&nbsp;to,
- <a href="Edge.html" title="type parameter in Edge">EdgeWeightType</a>&nbsp;weight)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(ru.nsu.svirsky.graph.Vertex,ru.nsu.svirsky.graph.Vertex,E)" class="member-name-link">Edge</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;&nbsp;from,
+ <a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;&nbsp;to,
+ <a href="Edge.html" title="type parameter in Edge">E</a>&nbsp;weight)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -123,19 +126,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a><wbr>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>,<wbr><a href="Edge.html" title="type parameter in Edge">EdgeWeightType</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a><wbr>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>,<wbr><a href="Edge.html" title="type parameter in Edge">E</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clone()" class="member-name-link">clone</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a><wbr>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a><wbr>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFrom()" class="member-name-link">getFrom</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a><wbr>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a><wbr>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTo()" class="member-name-link">getTo</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Edge.html" title="type parameter in Edge">EdgeWeightType</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Edge.html" title="type parameter in Edge">E</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeight()" class="member-name-link">getWeight</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -159,18 +162,25 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(ru.nsu.svirsky.graph.Vertex,ru.nsu.svirsky.graph.Vertex,EdgeWeightType)">
+<section class="detail" id="&lt;init&gt;(ru.nsu.svirsky.graph.Vertex,ru.nsu.svirsky.graph.Vertex,E)">
 <h3 id="&lt;init&gt;(ru.nsu.svirsky.graph.Vertex,ru.nsu.svirsky.graph.Vertex,java.lang.Number)">Edge</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Edge</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;&nbsp;from,
- <a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;&nbsp;to,
- <a href="Edge.html" title="type parameter in Edge">EdgeWeightType</a>&nbsp;weight)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Edge</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;&nbsp;from,
+ <a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;&nbsp;to,
+ <a href="Edge.html" title="type parameter in Edge">E</a>&nbsp;weight)</span></div>
+<div class="block">Constructor.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - vertex from</dd>
+<dd><code>to</code> - vertex to</dd>
+<dd><code>weight</code> - weight</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;(ru.nsu.svirsky.graph.Vertex,ru.nsu.svirsky.graph.Vertex)">
 <h3>Edge</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Edge</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;&nbsp;from,
- <a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;&nbsp;to)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Edge</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;&nbsp;from,
+ <a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;&nbsp;to)</span></div>
 </section>
 </li>
 </ul>
@@ -204,25 +214,25 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getFrom()">
 <h3>getFrom</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;</span>&nbsp;<span class="element-name">getFrom</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;</span>&nbsp;<span class="element-name">getFrom</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getTo()">
 <h3>getTo</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>&gt;</span>&nbsp;<span class="element-name">getTo</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>&gt;</span>&nbsp;<span class="element-name">getTo</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getWeight()">
 <h3>getWeight</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Edge.html" title="type parameter in Edge">EdgeWeightType</a></span>&nbsp;<span class="element-name">getWeight</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Edge.html" title="type parameter in Edge">E</a></span>&nbsp;<span class="element-name">getWeight</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="clone()">
 <h3>clone</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Edge.html" title="type parameter in Edge">VertexNameType</a>,<wbr><a href="Edge.html" title="type parameter in Edge">EdgeWeightType</a>&gt;</span>&nbsp;<span class="element-name">clone</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Edge.html" title="type parameter in Edge">V</a>,<wbr><a href="Edge.html" title="type parameter in Edge">E</a>&gt;</span>&nbsp;<span class="element-name">clone</span>()</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>

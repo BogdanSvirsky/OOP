@@ -82,7 +82,7 @@ loadScripts(document, 'script');</script>
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.svirsky.graph</a></div>
-<h1 title="Interface Graph" class="title">Interface Graph&lt;VertexNameType,<wbr>EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</h1>
+<h1 title="Interface Graph" class="title">Interface Graph&lt;V,<wbr>E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
@@ -90,7 +90,8 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="AdjacencyListsGraph.html" title="class in ru.nsu.svirsky.graph">AdjacencyListsGraph</a></code>, <code><a href="AdjacencyMatrixGraph.html" title="class in ru.nsu.svirsky.graph">AdjacencyMatrixGraph</a></code>, <code><a href="IncidentMatrixGraph.html" title="class in ru.nsu.svirsky.graph">IncidentMatrixGraph</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Graph&lt;VertexNameType,<wbr>EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</span></div>
+<div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Graph&lt;V,<wbr>E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</span></div>
+<div class="block">Graph interface.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -106,27 +107,27 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addEdge(ru.nsu.svirsky.graph.Edge)" class="member-name-link">addEdge</a><wbr>(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>,<wbr><a href="Graph.html" title="type parameter in Graph">EdgeWeightType</a>&gt;&nbsp;edge)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addEdge(ru.nsu.svirsky.graph.Edge)" class="member-name-link">addEdge</a><wbr>(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;&nbsp;edge)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addVertex(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">addVertex</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&nbsp;vertex)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addVertex(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">addVertex</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;vertex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteEdge(ru.nsu.svirsky.graph.Edge)" class="member-name-link">deleteEdge</a><wbr>(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>,<wbr><a href="Graph.html" title="type parameter in Graph">EdgeWeightType</a>&gt;&nbsp;edge)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteEdge(ru.nsu.svirsky.graph.Edge)" class="member-name-link">deleteEdge</a><wbr>(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;&nbsp;edge)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteVertex(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">deleteVertex</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&nbsp;vertex)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteVertex(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">deleteVertex</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;vertex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>,<wbr><a href="Graph.html" title="type parameter in Graph">EdgeWeightType</a>&gt;&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getEdges()" class="member-name-link">getEdges</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getNeighbors(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">getNeighbors</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&nbsp;vertex)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getNeighbors(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">getNeighbors</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;vertex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getVertices()" class="member-name-link">getVertices</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
@@ -146,13 +147,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="addVertex(ru.nsu.svirsky.graph.Vertex)">
 <h3>addVertex</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&nbsp;vertex)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;vertex)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="deleteVertex(ru.nsu.svirsky.graph.Vertex)">
 <h3>deleteVertex</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">deleteVertex</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&nbsp;vertex)</span>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">deleteVertex</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;vertex)</span>
            throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
@@ -163,13 +164,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getVertices()">
 <h3>getVertices</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&gt;</span>&nbsp;<span class="element-name">getVertices</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&gt;</span>&nbsp;<span class="element-name">getVertices</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="addEdge(ru.nsu.svirsky.graph.Edge)">
 <h3>addEdge</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>,<wbr><a href="Graph.html" title="type parameter in Graph">EdgeWeightType</a>&gt;&nbsp;edge)</span>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;&nbsp;edge)</span>
       throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a>,
 <a href="../uitls/exceptions/MultipleEdgesFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">MultipleEdgesFoundException</a></span></div>
 <dl class="notes">
@@ -182,7 +183,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="deleteEdge(ru.nsu.svirsky.graph.Edge)">
 <h3>deleteEdge</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">deleteEdge</span><wbr><span class="parameters">(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>,<wbr><a href="Graph.html" title="type parameter in Graph">EdgeWeightType</a>&gt;&nbsp;edge)</span>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">deleteEdge</span><wbr><span class="parameters">(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;&nbsp;edge)</span>
          throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a>,
 <a href="../uitls/exceptions/EdgeNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">EdgeNotFoundException</a></span></div>
 <dl class="notes">
@@ -195,14 +196,14 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getEdges()">
 <h3>getEdges</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>,<wbr><a href="Graph.html" title="type parameter in Graph">EdgeWeightType</a>&gt;&gt;</span>&nbsp;<span class="element-name">getEdges</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>,<wbr><a href="Graph.html" title="type parameter in Graph">E</a>&gt;&gt;</span>&nbsp;<span class="element-name">getEdges</span>()</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getNeighbors(ru.nsu.svirsky.graph.Vertex)">
 <h3>getNeighbors</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&gt;</span>&nbsp;<span class="element-name">getNeighbors</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">VertexNameType</a>&gt;&nbsp;vertex)</span>
-                                  throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&gt;</span>&nbsp;<span class="element-name">getNeighbors</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="Graph.html" title="type parameter in Graph">V</a>&gt;&nbsp;vertex)</span>
+                     throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></code></dd>

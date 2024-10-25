@@ -82,20 +82,21 @@ loadScripts(document, 'script');</script>
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.svirsky.graph</a></div>
-<h1 title="Class IncidentMatrixGraph" class="title">Class IncidentMatrixGraph&lt;VertexNameType,<wbr>EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</h1>
+<h1 title="Class IncidentMatrixGraph" class="title">Class IncidentMatrixGraph&lt;V,<wbr>E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">ru.nsu.svirsky.graph.IncidentMatrixGraph&lt;VertexNameType,<wbr>EdgeWeightType&gt;</div>
+<div class="inheritance">ru.nsu.svirsky.graph.IncidentMatrixGraph&lt;V,<wbr>E&gt;</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;VertexNameType,<wbr>EdgeWeightType&gt;</code></dd>
+<dd><code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;V,<wbr>E&gt;</code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">IncidentMatrixGraph&lt;VertexNameType,<wbr>EdgeWeightType extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</span>
+<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">IncidentMatrixGraph&lt;V,<wbr>E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;VertexNameType,<wbr>EdgeWeightType&gt;</span></div>
+implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;V,<wbr>E&gt;</span></div>
+<div class="block">Incident matrix graph class.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -109,11 +110,15 @@ implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph<
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">IncidentMatrixGraph</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.Iterable)" class="member-name-link">IncidentMatrixGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&gt;&nbsp;vertices)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Iterable,java.lang.Iterable)" class="member-name-link">IncidentMatrixGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&gt;&nbsp;vertices,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a>&gt;&gt;&nbsp;edges)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.Iterable)" class="member-name-link">IncidentMatrixGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&gt;&nbsp;vertices)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Constructor.</div>
+</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Iterable,java.lang.Iterable)" class="member-name-link">IncidentMatrixGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&gt;&nbsp;vertices,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a>&gt;&gt;&nbsp;edges)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -129,30 +134,30 @@ implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph<
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdge(ru.nsu.svirsky.graph.Edge)" class="member-name-link">addEdge</a><wbr>(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a>&gt;&nbsp;edge)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdge(ru.nsu.svirsky.graph.Edge)" class="member-name-link">addEdge</a><wbr>(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a>&gt;&nbsp;edge)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addVertex(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">addVertex</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&nbsp;vertex)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addVertex(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">addVertex</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&nbsp;vertex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteEdge(ru.nsu.svirsky.graph.Edge)" class="member-name-link">deleteEdge</a><wbr>(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a>&gt;&nbsp;edge)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteEdge(ru.nsu.svirsky.graph.Edge)" class="member-name-link">deleteEdge</a><wbr>(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a>&gt;&nbsp;edge)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteVertex(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">deleteVertex</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&nbsp;deletedVertex)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteVertex(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">deleteVertex</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&nbsp;deletedVertex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;obj)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a>&gt;&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a>&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEdges()" class="member-name-link">getEdges</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNeighbors(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">getNeighbors</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&nbsp;vertex)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNeighbors(ru.nsu.svirsky.graph.Vertex)" class="member-name-link">getNeighbors</a><wbr>(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&nbsp;vertex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVertices()" class="member-name-link">getVertices</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -184,20 +189,29 @@ implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph<
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.Iterable)">
 <h3>IncidentMatrixGraph</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">IncidentMatrixGraph</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&gt;&nbsp;vertices)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">IncidentMatrixGraph</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&gt;&nbsp;vertices)</span></div>
+<div class="block">Constructor.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertices</code> - vertices from graph construct</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.Iterable,java.lang.Iterable)">
 <h3>IncidentMatrixGraph</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">IncidentMatrixGraph</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&gt;&nbsp;vertices,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a>&gt;&gt;&nbsp;edges)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">IncidentMatrixGraph</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&gt;&nbsp;vertices,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a>&gt;&gt;&nbsp;edges)</span>
                     throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a>,
 <a href="../uitls/exceptions/MultipleEdgesFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">MultipleEdgesFoundException</a></span></div>
+<div class="block">Constructor.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertices</code> - vertices from graph construct</dd>
+<dd><code>edges</code> - edges from graph construct</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></code></dd>
-<dd><code><a href="../uitls/exceptions/MultipleEdgesFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">MultipleEdgesFoundException</a></code></dd>
+<dd><code><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></code> - if vertex not found in graph</dd>
+<dd><code><a href="../uitls/exceptions/MultipleEdgesFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">MultipleEdgesFoundException</a></code> - if edge already exists in graph</dd>
 </dl>
 </section>
 </li>
@@ -212,21 +226,21 @@ implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph<
 <li>
 <section class="detail" id="addVertex(ru.nsu.svirsky.graph.Vertex)">
 <h3>addVertex</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&nbsp;vertex)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&nbsp;vertex)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Graph.html#addVertex(ru.nsu.svirsky.graph.Vertex)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#addVertex(ru.nsu.svirsky.graph.Vertex)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="deleteVertex(ru.nsu.svirsky.graph.Vertex)">
 <h3>deleteVertex</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteVertex</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&nbsp;deletedVertex)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteVertex</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&nbsp;deletedVertex)</span>
                   throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Graph.html#deleteVertex(ru.nsu.svirsky.graph.Vertex)">deleteVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#deleteVertex(ru.nsu.svirsky.graph.Vertex)">deleteVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></code></dd>
 </dl>
@@ -235,12 +249,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph<
 <li>
 <section class="detail" id="addEdge(ru.nsu.svirsky.graph.Edge)">
 <h3>addEdge</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a>&gt;&nbsp;edge)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a>&gt;&nbsp;edge)</span>
              throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a>,
 <a href="../uitls/exceptions/MultipleEdgesFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">MultipleEdgesFoundException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Graph.html#addEdge(ru.nsu.svirsky.graph.Edge)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#addEdge(ru.nsu.svirsky.graph.Edge)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></code></dd>
 <dd><code><a href="../uitls/exceptions/MultipleEdgesFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">MultipleEdgesFoundException</a></code></dd>
@@ -250,12 +264,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph<
 <li>
 <section class="detail" id="deleteEdge(ru.nsu.svirsky.graph.Edge)">
 <h3>deleteEdge</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteEdge</span><wbr><span class="parameters">(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a>&gt;&nbsp;edge)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deleteEdge</span><wbr><span class="parameters">(<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a>&gt;&nbsp;edge)</span>
                 throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a>,
 <a href="../uitls/exceptions/EdgeNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">EdgeNotFoundException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Graph.html#deleteEdge(ru.nsu.svirsky.graph.Edge)">deleteEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#deleteEdge(ru.nsu.svirsky.graph.Edge)">deleteEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></code></dd>
 <dd><code><a href="../uitls/exceptions/EdgeNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">EdgeNotFoundException</a></code></dd>
@@ -265,10 +279,10 @@ implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph<
 <li>
 <section class="detail" id="getEdges()">
 <h3>getEdges</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a>&gt;&gt;</span>&nbsp;<span class="element-name">getEdges</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Edge.html" title="class in ru.nsu.svirsky.graph">Edge</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a>&gt;&gt;</span>&nbsp;<span class="element-name">getEdges</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Graph.html#getEdges()">getEdges</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#getEdges()">getEdges</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
@@ -278,28 +292,28 @@ implements <a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph<
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Graph.html#clear()">clear</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#clear()">clear</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getVertices()">
 <h3>getVertices</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&gt;</span>&nbsp;<span class="element-name">getVertices</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&gt;</span>&nbsp;<span class="element-name">getVertices</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Graph.html#getVertices()">getVertices</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#getVertices()">getVertices</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getNeighbors(ru.nsu.svirsky.graph.Vertex)">
 <h3>getNeighbors</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&gt;</span>&nbsp;<span class="element-name">getNeighbors</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>&gt;&nbsp;vertex)</span>
-                                         throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&gt;</span>&nbsp;<span class="element-name">getNeighbors</span><wbr><span class="parameters">(<a href="Vertex.html" title="class in ru.nsu.svirsky.graph">Vertex</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>&gt;&nbsp;vertex)</span>
+                            throws <span class="exceptions"><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Graph.html#getNeighbors(ru.nsu.svirsky.graph.Vertex)">getNeighbors</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">VertexNameType</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">EdgeWeightType</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#getNeighbors(ru.nsu.svirsky.graph.Vertex)">getNeighbors</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.svirsky.graph">Graph</a>&lt;<a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">V</a>,<wbr><a href="IncidentMatrixGraph.html" title="type parameter in IncidentMatrixGraph">E</a> extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Number.html" title="class or interface in java.lang" class="external-link">Number</a>&gt;</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="../uitls/exceptions/VertexNotFoundException.html" title="class in ru.nsu.svirsky.uitls.exceptions">VertexNotFoundException</a></code></dd>
 </dl>
