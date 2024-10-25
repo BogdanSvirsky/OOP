@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import ru.nsu.svirsky.graph.AdjacencyListsGraph;
 import ru.nsu.svirsky.graph.AdjacencyMatrixGraph;
-import ru.nsu.svirsky.graph.Edge;
 import ru.nsu.svirsky.graph.Vertex;
 import ru.nsu.svirsky.uitls.exceptions.CycleFoundException;
 import ru.nsu.svirsky.uitls.exceptions.GraphException;

@@ -1,6 +1,7 @@
 package ru.nsu.svirsky;
 
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.HashMap;
 import java.util.Collections;
 
@@ -24,7 +25,7 @@ public class TopologicalSorter {
         currentGraph = graph;
         vertexState.clear();
         result.clear();
-        ArrayList<Vertex> vertecies = graph.getVertices();
+        Set<Vertex> vertecies = graph.getVertices();
 
         for (Vertex vertex : vertecies) {
             vertexState.put(vertex, 0);

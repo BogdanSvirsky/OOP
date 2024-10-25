@@ -18,9 +18,18 @@ public class Edge<VertexNameType, EdgeWeightType extends Number> {
 
     @Override
     public final boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
         if (obj instanceof Edge other) {
-            return this.from.equals(other.from) && this.to.equals(other.to)
-                    && this.weight.equals(other.weight);
+            if (this.weight == null) {
+                return this.from.equals(other.from) && this.to.equals(other.to)
+                && (other.weight == null);
+            } else {
+                return this.from.equals(other.from) && this.to.equals(other.to)
+                        && this.weight.equals(other.weight);
+            }
         } else {
             return false;
         }
@@ -29,7 +38,7 @@ public class Edge<VertexNameType, EdgeWeightType extends Number> {
     @Override
     public String toString() {
         return from.toString() + " -> " + to.toString()
-         + (weight != null ? " (" + weight.toString() + ")" : "");
+                + (weight != null ? " (" + weight.toString() + ")" : "");
     }
 
     public Vertex<VertexNameType> getFrom() {

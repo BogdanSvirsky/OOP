@@ -1,7 +1,9 @@
 package ru.nsu.svirsky.graph;
 
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.HashMap;
+import java.util.HashSet;
 
 import ru.nsu.svirsky.uitls.exceptions.EdgeNotFoundException;
 import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
@@ -87,6 +89,7 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
 
             incidentMatrix.put(vertex, newRow);
         }
+        incidentMatrix.remove(deletedVertex);
     }
 
     @Override
@@ -101,11 +104,17 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
             throw new MultipleEdgesFoundException();
         }
 
-
         edges.add(edge);
 
-        incidentMatrix.get(edge.getFrom()).add(-1);
-        incidentMatrix.get(edge.getTo()).add(1);
+        for (Vertex<VertexNameType> vertex : incidentMatrix.keySet()) {
+            if (edge.getFrom().equals(vertex)) {
+                incidentMatrix.get(vertex).add(-1);
+            } else if (edge.getTo().equals(vertex)) {
+                incidentMatrix.get(vertex).add(1);
+            } else {
+                incidentMatrix.get(vertex).add(0);
+            }
+        }
     }
 
     @Override
@@ -130,8 +139,8 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public ArrayList<Edge<VertexNameType, EdgeWeightType>> getEdges() {
-        return new ArrayList<>(edges);
+    public Set<Edge<VertexNameType, EdgeWeightType>> getEdges() {
+        return new HashSet<>(edges);
     }
 
     @Override
@@ -141,22 +150,58 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public ArrayList<Vertex<VertexNameType>> getVertices() {
-        return new ArrayList<>(incidentMatrix.keySet());
+    public Set<Vertex<VertexNameType>> getVertices() {
+        return new HashSet<>(incidentMatrix.keySet());
     }
 
     @Override
-    public ArrayList<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
+    public Set<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
             throws VertexNotFoundException {
         if (!incidentMatrix.containsKey(vertex)) {
             throw new VertexNotFoundException();
         }
 
-        ArrayList<Vertex<VertexNameType>> result = new ArrayList<>();
+        HashSet<Vertex<VertexNameType>> result = new HashSet<>();
 
         for (Edge<VertexNameType, EdgeWeightType> edge : edges) {
             if (edge.getFrom().equals(vertex)) {
                 result.add(edge.getTo());
+            }
+        }
+
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+        Set<Vertex<VertexNameType>> vertices = getVertices();
+        int verteciesCount = vertices.size();
+
+        if (verteciesCount > 0) {
+            result += "vertices: ";
+            for (Vertex<VertexNameType> vertex : vertices) {
+                result += vertex;
+                if (--verteciesCount > 0) {
+                    result += ", ";
+                }
+            }
+
+            result += "\n";
+            int edgesCount = edges.size();
+
+            if (edgesCount > 0) {
+
+                for (Vertex<VertexNameType> vertex : vertices) {
+                    for (Integer element : incidentMatrix.get(vertex)) {
+                        result += String.format("%2d ", element.intValue());
+                    }
+
+                    result += "\n";
+                }
+
+            } else {
+                result += "no edges";
             }
         }
 

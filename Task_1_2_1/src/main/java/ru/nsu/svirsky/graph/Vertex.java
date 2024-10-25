@@ -29,4 +29,9 @@ public class Vertex<T> {
     protected Vertex<T> clone() {
         return new Vertex<T>(name);
     }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
 }

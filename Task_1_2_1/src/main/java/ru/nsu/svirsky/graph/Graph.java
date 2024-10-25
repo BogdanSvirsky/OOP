@@ -1,6 +1,6 @@
 package ru.nsu.svirsky.graph;
 
-import java.util.ArrayList;
+import java.util.Set;
 
 import ru.nsu.svirsky.uitls.exceptions.EdgeNotFoundException;
 import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
@@ -11,8 +11,8 @@ public interface Graph<VertexNameType, EdgeWeightType extends Number> {
     public void addVertex(Vertex<VertexNameType> vertex);
 
     public void deleteVertex(Vertex<VertexNameType> vertex) throws VertexNotFoundException;
-
-    public ArrayList<Vertex<VertexNameType>> getVertices();
+    
+    public Set<Vertex<VertexNameType>> getVertices();
 
     public void addEdge(Edge<VertexNameType, EdgeWeightType> edge)
             throws VertexNotFoundException, MultipleEdgesFoundException;
@@ -20,9 +20,9 @@ public interface Graph<VertexNameType, EdgeWeightType extends Number> {
     public void deleteEdge(Edge<VertexNameType, EdgeWeightType> edge)
             throws VertexNotFoundException, EdgeNotFoundException;
 
-    public ArrayList<Edge<VertexNameType, EdgeWeightType>> getEdges();
+    public Set<Edge<VertexNameType, EdgeWeightType>> getEdges();
 
-    public ArrayList<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
+    public Set<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
             throws VertexNotFoundException;
 
     public void clear();

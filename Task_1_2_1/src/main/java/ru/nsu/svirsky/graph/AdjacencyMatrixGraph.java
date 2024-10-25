@@ -1,13 +1,12 @@
 package ru.nsu.svirsky.graph;
 
-import java.nio.file.Path;
-import java.text.ParseException;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Set;
+import java.util.HashSet;
 
-import ru.nsu.svirsky.uitls.Transformer;
 import ru.nsu.svirsky.uitls.VertexEnumeration;
+import ru.nsu.svirsky.uitls.exceptions.EdgeNotFoundException;
+import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
 public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
@@ -34,7 +33,7 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
 
     public AdjacencyMatrixGraph(
             Iterable<Vertex<VertexNameType>> vertices, Iterable<Edge<VertexNameType, EdgeWeightType>> edges)
-            throws VertexNotFoundException {
+            throws VertexNotFoundException, MultipleEdgesFoundException {
         this(vertices);
 
         if (edges == null) {
@@ -78,15 +77,22 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public ArrayList<Vertex<VertexNameType>> getVertices() {
+    public Set<Vertex<VertexNameType>> getVertices() {
         return vertexEnumeration.getVertices();
     }
 
     @Override
-    public void addEdge(Edge<VertexNameType, EdgeWeightType> edge) throws VertexNotFoundException {
+    public void addEdge(Edge<VertexNameType, EdgeWeightType> edge)
+            throws VertexNotFoundException, MultipleEdgesFoundException {
         if (!vertexEnumeration.contains(edge.getFrom())
                 || !vertexEnumeration.contains(edge.getTo())) {
             throw new VertexNotFoundException();
+        }
+
+        if (adjacencyMatrix
+                .get(vertexEnumeration.get(edge.getFrom()))
+                .get(vertexEnumeration.get(edge.getTo())) != null) {
+            throw new MultipleEdgesFoundException();
         }
 
         adjacencyMatrix
@@ -95,10 +101,17 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public void deleteEdge(Edge<VertexNameType, EdgeWeightType> edge) throws VertexNotFoundException {
+    public void deleteEdge(Edge<VertexNameType, EdgeWeightType> edge)
+            throws VertexNotFoundException, EdgeNotFoundException {
         if (!vertexEnumeration.contains(edge.getFrom())
                 || !vertexEnumeration.contains(edge.getTo())) {
             throw new VertexNotFoundException();
+        }
+
+        if (!adjacencyMatrix
+                .get(vertexEnumeration.get(edge.getFrom()))
+                .get(vertexEnumeration.get(edge.getTo())).equals(edge)) {
+            throw new EdgeNotFoundException();
         }
 
         adjacencyMatrix
@@ -107,8 +120,8 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public ArrayList<Edge<VertexNameType, EdgeWeightType>> getEdges() {
-        ArrayList<Edge<VertexNameType, EdgeWeightType>> result = new ArrayList<Edge<VertexNameType, EdgeWeightType>>();
+    public Set<Edge<VertexNameType, EdgeWeightType>> getEdges() {
+        HashSet<Edge<VertexNameType, EdgeWeightType>> result = new HashSet<>();
 
         for (ArrayList<Edge<VertexNameType, EdgeWeightType>> matrixRow : adjacencyMatrix) {
             for (Edge<VertexNameType, EdgeWeightType> edge : matrixRow) {
@@ -122,14 +135,14 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public ArrayList<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
+    public Set<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
             throws VertexNotFoundException {
         if (!vertexEnumeration.contains(vertex)) {
             throw new VertexNotFoundException("in AdjacencyMatrixGraph.getNeighbors()");
         }
 
         ArrayList<Edge<VertexNameType, EdgeWeightType>> matrixRow = adjacencyMatrix.get(vertexEnumeration.get(vertex));
-        ArrayList<Vertex<VertexNameType>> result = new ArrayList<Vertex<VertexNameType>>();
+        HashSet<Vertex<VertexNameType>> result = new HashSet<>();
 
         for (Edge<VertexNameType, EdgeWeightType> edge : matrixRow) {
             if (edge != null) {

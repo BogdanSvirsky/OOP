@@ -4,7 +4,9 @@ import ru.nsu.svirsky.graph.Vertex;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class VertexEnumeration<VertexNameType> {
     private int verticesCount = 0;
@@ -62,8 +64,8 @@ public class VertexEnumeration<VertexNameType> {
         return verticesCount;
     }
 
-    public ArrayList<Vertex<VertexNameType>> getVertices() {
-        return new ArrayList<>(vertices);
+    public Set<Vertex<VertexNameType>> getVertices() {
+        return new HashSet<>(vertices);
     }
 
     public boolean contains(Vertex<VertexNameType> vertex) {
