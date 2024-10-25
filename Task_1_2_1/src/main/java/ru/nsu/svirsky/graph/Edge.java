@@ -1,17 +1,29 @@
 package ru.nsu.svirsky.graph;
 
-public class Edge<VertexNameType, EdgeWeightType extends Number> {
-    private Vertex<VertexNameType> from;
-    private Vertex<VertexNameType> to;
-    private EdgeWeightType weight = null;
+/**
+ * Edge class.
+ *
+ * @author Bogdan Svirsky
+ */
+public class Edge<V, E extends Number> {
+    private Vertex<V> from;
+    private Vertex<V> to;
+    private E weight = null;
 
-    public Edge(Vertex<VertexNameType> from, Vertex<VertexNameType> to, EdgeWeightType weight) {
+    /**
+     * Constructor.
+     *
+     * @param from vertex from
+     * @param to vertex to
+     * @param weight weight
+     */
+    public Edge(Vertex<V> from, Vertex<V> to, E weight) {
         this.from = from;
         this.to = to;
         this.weight = weight;
     }
 
-    public Edge(Vertex<VertexNameType> from, Vertex<VertexNameType> to) {
+    public Edge(Vertex<V> from, Vertex<V> to) {
         this.from = from;
         this.to = to;
     }
@@ -41,20 +53,20 @@ public class Edge<VertexNameType, EdgeWeightType extends Number> {
                 + (weight != null ? " (" + weight.toString() + ")" : "");
     }
 
-    public Vertex<VertexNameType> getFrom() {
+    public Vertex<V> getFrom() {
         return from;
     }
 
-    public Vertex<VertexNameType> getTo() {
+    public Vertex<V> getTo() {
         return to;
     }
 
-    public EdgeWeightType getWeight() {
+    public E getWeight() {
         return weight;
     }
 
     @Override
-    protected Edge<VertexNameType, EdgeWeightType> clone() {
-        return new Edge<VertexNameType, EdgeWeightType>(from.clone(), to.clone());
+    protected Edge<V, E> clone() {
+        return new Edge<V, E>(from.clone(), to.clone());
     }
 }

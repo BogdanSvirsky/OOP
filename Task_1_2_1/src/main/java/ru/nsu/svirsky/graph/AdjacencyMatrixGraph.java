@@ -1,38 +1,56 @@
 package ru.nsu.svirsky.graph;
 
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 import ru.nsu.svirsky.uitls.VertexEnumeration;
 import ru.nsu.svirsky.uitls.exceptions.EdgeNotFoundException;
 import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
-public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
-        implements Graph<VertexNameType, EdgeWeightType> {
-    private VertexEnumeration<VertexNameType> vertexEnumeration;
-    private ArrayList<ArrayList<Edge<VertexNameType, EdgeWeightType>>> adjacencyMatrix;
+/**
+ * Adjacency matrix graph.
+ *
+ * @author Bogdan Svirsky
+ */
+public class AdjacencyMatrixGraph<V, E extends Number>
+        implements Graph<V, E> {
+    private VertexEnumeration<V> vertexEnumeration;
+    private ArrayList<ArrayList<Edge<V, E>>> adjacencyMatrix;
 
     public AdjacencyMatrixGraph() {
-        vertexEnumeration = new VertexEnumeration<VertexNameType>();
-        adjacencyMatrix = new ArrayList<ArrayList<Edge<VertexNameType, EdgeWeightType>>>();
+        vertexEnumeration = new VertexEnumeration<V>();
+        adjacencyMatrix = new ArrayList<ArrayList<Edge<V, E>>>();
     }
 
-    public AdjacencyMatrixGraph(Iterable<Vertex<VertexNameType>> vertices) {
+    /**
+     * Constructor.
+     *
+     * @param vertices vertices from graph construct
+     */
+    public AdjacencyMatrixGraph(Iterable<Vertex<V>> vertices) {
         this();
 
         if (vertices == null) {
             return;
         }
 
-        for (Vertex<VertexNameType> vertex : vertices) {
+        for (Vertex<V> vertex : vertices) {
             addVertex(vertex);
         }
     }
 
+    /**
+     * Constructor.
+     *
+     * @param vertices vertices from graph construct
+     * @param edges    edges from graph construct
+     * @throws VertexNotFoundException     if vertex not found in graph
+     * @throws MultipleEdgesFoundException if edge already exists in graph
+     */
     public AdjacencyMatrixGraph(
-            Iterable<Vertex<VertexNameType>> vertices, Iterable<Edge<VertexNameType, EdgeWeightType>> edges)
+            Iterable<Vertex<V>> vertices, Iterable<Edge<V, E>> edges)
             throws VertexNotFoundException, MultipleEdgesFoundException {
         this(vertices);
 
@@ -40,20 +58,20 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
             return;
         }
 
-        for (Edge<VertexNameType, EdgeWeightType> edge : edges) {
+        for (Edge<V, E> edge : edges) {
             addEdge(edge);
         }
     }
 
     @Override
-    public void addVertex(Vertex<VertexNameType> vertex) {
+    public void addVertex(Vertex<V> vertex) {
         vertexEnumeration.add(vertex);
 
-        for (ArrayList<Edge<VertexNameType, EdgeWeightType>> list : adjacencyMatrix) {
+        for (ArrayList<Edge<V, E>> list : adjacencyMatrix) {
             list.add(null);
         }
 
-        ArrayList<Edge<VertexNameType, EdgeWeightType>> newMatrixRow = new ArrayList<>();
+        ArrayList<Edge<V, E>> newMatrixRow = new ArrayList<>();
         int verticesCount = vertexEnumeration.getVerticesCount();
 
         for (int i = 0; i < verticesCount; i++) {
@@ -64,12 +82,12 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public void deleteVertex(Vertex<VertexNameType> deletedVertex) throws VertexNotFoundException {
+    public void deleteVertex(Vertex<V> deletedVertex) throws VertexNotFoundException {
         int deletedIndex = vertexEnumeration.get(deletedVertex);
 
         vertexEnumeration.remove(deletedVertex);
 
-        for (ArrayList<Edge<VertexNameType, EdgeWeightType>> list : adjacencyMatrix) {
+        for (ArrayList<Edge<V, E>> list : adjacencyMatrix) {
             list.remove(deletedIndex);
         }
 
@@ -77,12 +95,12 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public Set<Vertex<VertexNameType>> getVertices() {
+    public Set<Vertex<V>> getVertices() {
         return vertexEnumeration.getVertices();
     }
 
     @Override
-    public void addEdge(Edge<VertexNameType, EdgeWeightType> edge)
+    public void addEdge(Edge<V, E> edge)
             throws VertexNotFoundException, MultipleEdgesFoundException {
         if (!vertexEnumeration.contains(edge.getFrom())
                 || !vertexEnumeration.contains(edge.getTo())) {
@@ -101,7 +119,7 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public void deleteEdge(Edge<VertexNameType, EdgeWeightType> edge)
+    public void deleteEdge(Edge<V, E> edge)
             throws VertexNotFoundException, EdgeNotFoundException {
         if (!vertexEnumeration.contains(edge.getFrom())
                 || !vertexEnumeration.contains(edge.getTo())) {
@@ -120,11 +138,11 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public Set<Edge<VertexNameType, EdgeWeightType>> getEdges() {
-        HashSet<Edge<VertexNameType, EdgeWeightType>> result = new HashSet<>();
+    public Set<Edge<V, E>> getEdges() {
+        HashSet<Edge<V, E>> result = new HashSet<>();
 
-        for (ArrayList<Edge<VertexNameType, EdgeWeightType>> matrixRow : adjacencyMatrix) {
-            for (Edge<VertexNameType, EdgeWeightType> edge : matrixRow) {
+        for (ArrayList<Edge<V, E>> matrixRow : adjacencyMatrix) {
+            for (Edge<V, E> edge : matrixRow) {
                 if (edge != null) {
                     result.add(edge);
                 }
@@ -135,16 +153,16 @@ public class AdjacencyMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public Set<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
+    public Set<Vertex<V>> getNeighbors(Vertex<V> vertex)
             throws VertexNotFoundException {
         if (!vertexEnumeration.contains(vertex)) {
             throw new VertexNotFoundException("in AdjacencyMatrixGraph.getNeighbors()");
         }
 
-        ArrayList<Edge<VertexNameType, EdgeWeightType>> matrixRow = adjacencyMatrix.get(vertexEnumeration.get(vertex));
-        HashSet<Vertex<VertexNameType>> result = new HashSet<>();
+        ArrayList<Edge<V, E>> matrixRow = adjacencyMatrix.get(vertexEnumeration.get(vertex));
+        HashSet<Vertex<V>> result = new HashSet<>();
 
-        for (Edge<VertexNameType, EdgeWeightType> edge : matrixRow) {
+        for (Edge<V, E> edge : matrixRow) {
             if (edge != null) {
                 result.add(edge.getTo());
             }

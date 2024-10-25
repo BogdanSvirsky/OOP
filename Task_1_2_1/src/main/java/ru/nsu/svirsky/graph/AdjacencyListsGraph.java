@@ -1,38 +1,56 @@
 package ru.nsu.svirsky.graph;
 
-import java.util.Set;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Set;
 
 import ru.nsu.svirsky.uitls.exceptions.EdgeNotFoundException;
 import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
-public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
-        implements Graph<VertexNameType, EdgeWeightType> {
-    HashMap<Vertex<VertexNameType>, HashSet<Edge<VertexNameType, EdgeWeightType>>> adjacencyLists;
-    HashSet<Vertex<VertexNameType>> vertices;
+/**
+ * Adjacency lists graph class.
+ *
+ * @author Bogdan Svisrky
+ */
+public class AdjacencyListsGraph<V, E extends Number>
+        implements Graph<V, E> {
+    HashMap<Vertex<V>, HashSet<Edge<V, E>>> adjacencyLists;
+    HashSet<Vertex<V>> vertices;
 
     public AdjacencyListsGraph() {
         adjacencyLists = new HashMap<>();
         vertices = new HashSet<>();
     }
 
-    public AdjacencyListsGraph(Iterable<Vertex<VertexNameType>> vertices) {
+    /**
+     * Constructor.
+     *
+     * @param vertices vertices from graph construct
+     */
+    public AdjacencyListsGraph(Iterable<Vertex<V>> vertices) {
         this();
 
         if (vertices == null) {
             return;
         }
 
-        for (Vertex<VertexNameType> vertex : vertices) {
+        for (Vertex<V> vertex : vertices) {
             addVertex(vertex);
         }
     }
 
+    /**
+     * Constructor.
+     *
+     * @param vertices vertices from graph construct
+     * @param edges    edges from graph construct
+     * @throws VertexNotFoundException     if vertex not found in graph
+     * @throws MultipleEdgesFoundException if edge already exists in graph
+     */
     public AdjacencyListsGraph(
-            Iterable<Vertex<VertexNameType>> vertices,
-            Iterable<Edge<VertexNameType, EdgeWeightType>> edges)
+            Iterable<Vertex<V>> vertices,
+            Iterable<Edge<V, E>> edges)
             throws VertexNotFoundException, MultipleEdgesFoundException {
         this(vertices);
 
@@ -40,19 +58,19 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
             return;
         }
 
-        for (Edge<VertexNameType, EdgeWeightType> edge : edges) {
+        for (Edge<V, E> edge : edges) {
             addEdge(edge);
         }
     }
 
     @Override
-    public void addVertex(Vertex<VertexNameType> vertex) {
+    public void addVertex(Vertex<V> vertex) {
         adjacencyLists.put(vertex, new HashSet<>());
         vertices.add(vertex);
     }
 
     @Override
-    public void deleteVertex(Vertex<VertexNameType> deletedVertex) throws VertexNotFoundException {
+    public void deleteVertex(Vertex<V> deletedVertex) throws VertexNotFoundException {
         if (!adjacencyLists.containsKey(deletedVertex)) {
             throw new VertexNotFoundException();
         }
@@ -60,12 +78,12 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
         adjacencyLists.remove(deletedVertex);
         vertices.remove(deletedVertex);
 
-        HashSet<Edge<VertexNameType, EdgeWeightType>> newList;
+        HashSet<Edge<V, E>> newList;
 
-        for (Vertex<VertexNameType> vertex : vertices) {
+        for (Vertex<V> vertex : vertices) {
             newList = new HashSet<>();
 
-            for (Edge<VertexNameType, EdgeWeightType> edge : adjacencyLists.get(vertex)) {
+            for (Edge<V, E> edge : adjacencyLists.get(vertex)) {
                 if (!edge.getTo().equals(deletedVertex)) {
                     newList.add(edge);
                 }
@@ -76,9 +94,9 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public void addEdge(Edge<VertexNameType, EdgeWeightType> edge)
+    public void addEdge(Edge<V, E> edge)
             throws VertexNotFoundException, MultipleEdgesFoundException {
-        Vertex<VertexNameType> vertexFrom = edge.getFrom();
+        Vertex<V> vertexFrom = edge.getFrom();
 
         if (!adjacencyLists.containsKey(vertexFrom) || !adjacencyLists.containsKey(edge.getTo())) {
             throw new VertexNotFoundException();
@@ -92,7 +110,7 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public void deleteEdge(Edge<VertexNameType, EdgeWeightType> edge)
+    public void deleteEdge(Edge<V, E> edge)
             throws VertexNotFoundException, EdgeNotFoundException {
         if (!adjacencyLists.containsKey(edge.getFrom())
                 || !adjacencyLists.containsKey(edge.getTo())) {
@@ -107,11 +125,11 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public Set<Edge<VertexNameType, EdgeWeightType>> getEdges() {
-        HashSet<Edge<VertexNameType, EdgeWeightType>> result = new HashSet<>();
+    public Set<Edge<V, E>> getEdges() {
+        HashSet<Edge<V, E>> result = new HashSet<>();
 
-        for (Vertex<VertexNameType> vertex : vertices) {
-            for (Edge<VertexNameType, EdgeWeightType> edge : adjacencyLists.get(vertex)) {
+        for (Vertex<V> vertex : vertices) {
+            for (Edge<V, E> edge : adjacencyLists.get(vertex)) {
                 result.add(edge);
             }
         }
@@ -120,19 +138,19 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public Set<Vertex<VertexNameType>> getVertices() {
+    public Set<Vertex<V>> getVertices() {
         return new HashSet<>(vertices);
     }
 
     @Override
-    public Set<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
+    public Set<Vertex<V>> getNeighbors(Vertex<V> vertex)
             throws VertexNotFoundException {
         if (!vertices.contains(vertex)) {
             throw new VertexNotFoundException();
         }
-        HashSet<Vertex<VertexNameType>> result = new HashSet<>();
+        HashSet<Vertex<V>> result = new HashSet<>();
 
-        for (Edge<VertexNameType, EdgeWeightType> edge : adjacencyLists.get(vertex)) {
+        for (Edge<V, E> edge : adjacencyLists.get(vertex)) {
             result.add(edge.getTo());
         }
 
@@ -150,13 +168,13 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
         String result = "";
         int remainingVerticesCount = vertices.size();
 
-        for (Vertex<VertexNameType> vertex : vertices) {
+        for (Vertex<V> vertex : vertices) {
             result += vertex + ": ";
 
             if (adjacencyLists.get(vertex).size() > 0) {
                 int remainingEdgesNumber = adjacencyLists.get(vertex).size();
 
-                for (Edge<VertexNameType, EdgeWeightType> edge : adjacencyLists.get(vertex)) {
+                for (Edge<V, E> edge : adjacencyLists.get(vertex)) {
                     result += edge.getTo() + (edge.getWeight() != null ? " (" + edge.getWeight() + ")" : "");
 
                     if (--remainingEdgesNumber != 0) {
@@ -173,21 +191,5 @@ public class AdjacencyListsGraph<VertexNameType, EdgeWeightType extends Number>
         }
 
         return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-
-        if (obj instanceof Graph other) {
-            return this.vertices.containsAll(other.getVertices())
-            && other.getVertices().containsAll(this.vertices)
-                    && this.getEdges().containsAll(other.getEdges())
-                    && other.getEdges().containsAll(this.getEdges());
-        } else {
-            return false;
-        }
     }
 }

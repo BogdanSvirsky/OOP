@@ -3,14 +3,13 @@ package ru.nsu.svirsky;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashSet;
+
 import org.junit.jupiter.api.Test;
 
-import ru.nsu.svirsky.graph.AdjacencyListsGraph;
 import ru.nsu.svirsky.graph.Edge;
 import ru.nsu.svirsky.graph.Graph;
 import ru.nsu.svirsky.graph.Vertex;
@@ -18,6 +17,11 @@ import ru.nsu.svirsky.uitls.exceptions.EdgeNotFoundException;
 import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
+/**
+ * Graph tests.
+ *
+ * @author Bogdan Svirsky
+ */
 public class GraphTest {
     @Test
     public static void checkVertexMethods(Graph<String, Integer> graph) {

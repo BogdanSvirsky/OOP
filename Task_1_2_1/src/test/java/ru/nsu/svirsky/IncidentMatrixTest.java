@@ -5,17 +5,21 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashSet;
+
 import org.junit.jupiter.api.Test;
 
-import ru.nsu.svirsky.graph.IncidentMatrixGraph;
-import ru.nsu.svirsky.graph.IncidentMatrixGraph;
-import ru.nsu.svirsky.graph.AdjacencyListsGraph;
 import ru.nsu.svirsky.graph.Edge;
+import ru.nsu.svirsky.graph.IncidentMatrixGraph;
 import ru.nsu.svirsky.graph.Vertex;
 import ru.nsu.svirsky.uitls.exceptions.GraphException;
 import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
+/**
+ * Incident matrix tests.
+ *
+ * @author Bogdan Svirsky
+ */
 public class IncidentMatrixTest {
     @Test
     void constructorsCheck() {

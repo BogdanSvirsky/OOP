@@ -1,7 +1,6 @@
 package ru.nsu.svirsky;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 import org.junit.jupiter.api.Test;
@@ -11,6 +10,11 @@ import ru.nsu.svirsky.graph.Edge;
 import ru.nsu.svirsky.graph.Graph;
 import ru.nsu.svirsky.graph.Vertex;
 
+/**
+ * Graph scanner tests.
+ *
+ * @author Bogdan Svirsky
+ */
 public class GraphScannerTest {
     @Test
     void test() {

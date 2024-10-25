@@ -6,23 +6,28 @@ import ru.nsu.svirsky.uitls.exceptions.EdgeNotFoundException;
 import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
-public interface Graph<VertexNameType, EdgeWeightType extends Number> {
+/**
+ * Graph interface.
+ *
+ * @author Bogdan Svirsky
+ */
+public interface Graph<V, E extends Number> {
 
-    public void addVertex(Vertex<VertexNameType> vertex);
+    public void addVertex(Vertex<V> vertex);
 
-    public void deleteVertex(Vertex<VertexNameType> vertex) throws VertexNotFoundException;
+    public void deleteVertex(Vertex<V> vertex) throws VertexNotFoundException;
     
-    public Set<Vertex<VertexNameType>> getVertices();
+    public Set<Vertex<V>> getVertices();
 
-    public void addEdge(Edge<VertexNameType, EdgeWeightType> edge)
+    public void addEdge(Edge<V, E> edge)
             throws VertexNotFoundException, MultipleEdgesFoundException;
 
-    public void deleteEdge(Edge<VertexNameType, EdgeWeightType> edge)
+    public void deleteEdge(Edge<V, E> edge)
             throws VertexNotFoundException, EdgeNotFoundException;
 
-    public Set<Edge<VertexNameType, EdgeWeightType>> getEdges();
+    public Set<Edge<V, E>> getEdges();
 
-    public Set<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
+    public Set<Vertex<V>> getNeighbors(Vertex<V> vertex)
             throws VertexNotFoundException;
 
     public void clear();

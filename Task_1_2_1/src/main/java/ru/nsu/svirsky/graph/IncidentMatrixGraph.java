@@ -1,39 +1,57 @@
 package ru.nsu.svirsky.graph;
 
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Set;
 
 import ru.nsu.svirsky.uitls.exceptions.EdgeNotFoundException;
 import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
-public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
-        implements Graph<VertexNameType, EdgeWeightType> {
-    private HashMap<Vertex<VertexNameType>, ArrayList<Integer>> incidentMatrix;
-    private ArrayList<Edge<VertexNameType, EdgeWeightType>> edges;
+/**
+ * Incident matrix graph class.
+ *
+ * @author Bogdan Svirsky
+ */
+public class IncidentMatrixGraph<V, E extends Number>
+        implements Graph<V, E> {
+    private HashMap<Vertex<V>, ArrayList<Integer>> incidentMatrix;
+    private ArrayList<Edge<V, E>> edges;
 
     public IncidentMatrixGraph() {
         incidentMatrix = new HashMap<>();
         edges = new ArrayList<>();
     }
 
-    public IncidentMatrixGraph(Iterable<Vertex<VertexNameType>> vertices) {
+    /**
+     * Constructor.
+     *
+     * @param vertices vertices from graph construct
+     */
+    public IncidentMatrixGraph(Iterable<Vertex<V>> vertices) {
         this();
 
         if (vertices == null) {
             return;
         }
 
-        for (Vertex<VertexNameType> vertex : vertices) {
+        for (Vertex<V> vertex : vertices) {
             addVertex(vertex);
         }
     }
 
+    /**
+     * Constructor.
+     *
+     * @param vertices vertices from graph construct
+     * @param edges edges from graph construct
+     * @throws VertexNotFoundException if vertex not found in graph
+     * @throws MultipleEdgesFoundException if edge already exists in graph
+     */
     public IncidentMatrixGraph(
-            Iterable<Vertex<VertexNameType>> vertices,
-            Iterable<Edge<VertexNameType, EdgeWeightType>> edges)
+            Iterable<Vertex<V>> vertices,
+            Iterable<Edge<V, E>> edges)
             throws VertexNotFoundException, MultipleEdgesFoundException {
         this(vertices);
 
@@ -41,13 +59,13 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
             return;
         }
 
-        for (Edge<VertexNameType, EdgeWeightType> edge : edges) {
+        for (Edge<V, E> edge : edges) {
             addEdge(edge);
         }
     }
 
     @Override
-    public void addVertex(Vertex<VertexNameType> vertex) {
+    public void addVertex(Vertex<V> vertex) {
         int edgesCount = edges.size();
         ArrayList<Integer> newMatrixRow = new ArrayList<>();
 
@@ -59,14 +77,14 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public void deleteVertex(Vertex<VertexNameType> deletedVertex) throws VertexNotFoundException {
+    public void deleteVertex(Vertex<V> deletedVertex) throws VertexNotFoundException {
         if (!incidentMatrix.containsKey(deletedVertex)) {
             throw new VertexNotFoundException();
         }
 
-        ArrayList<Edge<VertexNameType, EdgeWeightType>> newEdges = new ArrayList<>();
+        ArrayList<Edge<V, E>> newEdges = new ArrayList<>();
 
-        for (Edge<VertexNameType, EdgeWeightType> edge : edges) {
+        for (Edge<V, E> edge : edges) {
             if (!edge.getTo().equals(deletedVertex) && !edge.getFrom().equals(deletedVertex)) {
                 newEdges.add(edge);
             }
@@ -74,10 +92,10 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
 
         edges = newEdges;
 
-        for (Vertex<VertexNameType> vertex : incidentMatrix.keySet()) {
+        for (Vertex<V> vertex : incidentMatrix.keySet()) {
             ArrayList<Integer> newRow = new ArrayList<>();
 
-            for (Edge<VertexNameType, EdgeWeightType> edge : newEdges) {
+            for (Edge<V, E> edge : newEdges) {
                 if (edge.getFrom().equals(vertex)) {
                     newRow.add(-1);
                 } else if (edge.getTo().equals(vertex)) {
@@ -93,7 +111,7 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public void addEdge(Edge<VertexNameType, EdgeWeightType> edge)
+    public void addEdge(Edge<V, E> edge)
             throws VertexNotFoundException, MultipleEdgesFoundException {
         if (!incidentMatrix.containsKey(edge.getFrom())
                 || !incidentMatrix.containsKey(edge.getTo())) {
@@ -106,7 +124,7 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
 
         edges.add(edge);
 
-        for (Vertex<VertexNameType> vertex : incidentMatrix.keySet()) {
+        for (Vertex<V> vertex : incidentMatrix.keySet()) {
             if (edge.getFrom().equals(vertex)) {
                 incidentMatrix.get(vertex).add(-1);
             } else if (edge.getTo().equals(vertex)) {
@@ -118,7 +136,7 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public void deleteEdge(Edge<VertexNameType, EdgeWeightType> edge)
+    public void deleteEdge(Edge<V, E> edge)
             throws VertexNotFoundException, EdgeNotFoundException {
         if (!incidentMatrix.containsKey(edge.getFrom())
                 || !incidentMatrix.containsKey(edge.getTo())) {
@@ -131,7 +149,7 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
 
         int edgeIndex = edges.indexOf(edge);
 
-        for (Vertex<VertexNameType> vertex : incidentMatrix.keySet()) {
+        for (Vertex<V> vertex : incidentMatrix.keySet()) {
             incidentMatrix.get(vertex).remove(edgeIndex);
         }
 
@@ -139,7 +157,7 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public Set<Edge<VertexNameType, EdgeWeightType>> getEdges() {
+    public Set<Edge<V, E>> getEdges() {
         return new HashSet<>(edges);
     }
 
@@ -150,20 +168,20 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     }
 
     @Override
-    public Set<Vertex<VertexNameType>> getVertices() {
+    public Set<Vertex<V>> getVertices() {
         return new HashSet<>(incidentMatrix.keySet());
     }
 
     @Override
-    public Set<Vertex<VertexNameType>> getNeighbors(Vertex<VertexNameType> vertex)
+    public Set<Vertex<V>> getNeighbors(Vertex<V> vertex)
             throws VertexNotFoundException {
         if (!incidentMatrix.containsKey(vertex)) {
             throw new VertexNotFoundException();
         }
 
-        HashSet<Vertex<VertexNameType>> result = new HashSet<>();
+        HashSet<Vertex<V>> result = new HashSet<>();
 
-        for (Edge<VertexNameType, EdgeWeightType> edge : edges) {
+        for (Edge<V, E> edge : edges) {
             if (edge.getFrom().equals(vertex)) {
                 result.add(edge.getTo());
             }
@@ -175,12 +193,12 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
     @Override
     public String toString() {
         String result = "";
-        Set<Vertex<VertexNameType>> vertices = getVertices();
+        Set<Vertex<V>> vertices = getVertices();
         int verteciesCount = vertices.size();
 
         if (verteciesCount > 0) {
             result += "vertices: ";
-            for (Vertex<VertexNameType> vertex : vertices) {
+            for (Vertex<V> vertex : vertices) {
                 result += vertex;
                 if (--verteciesCount > 0) {
                     result += ", ";
@@ -192,7 +210,7 @@ public class IncidentMatrixGraph<VertexNameType, EdgeWeightType extends Number>
 
             if (edgesCount > 0) {
 
-                for (Vertex<VertexNameType> vertex : vertices) {
+                for (Vertex<V> vertex : vertices) {
                     for (Integer element : incidentMatrix.get(vertex)) {
                         result += String.format("%2d ", element.intValue());
                     }

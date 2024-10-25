@@ -8,6 +8,11 @@ import org.junit.jupiter.api.Test;
 import ru.nsu.svirsky.graph.Edge;
 import ru.nsu.svirsky.graph.Vertex;
 
+/**
+ * Edge tests.
+ *
+ * @author Bogdan Svirsky
+ */
 public class EdgeTest {
     @Test
     void test() {

@@ -1,5 +1,10 @@
 package ru.nsu.svirsky.graph;
 
+/**
+ * Vertex class.
+ *
+ * @author Bogdan Svirsky
+ */
 public class Vertex<T> {
     private T name;
 

@@ -1,30 +1,51 @@
 package ru.nsu.svirsky.uitls;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 import ru.nsu.svirsky.graph.Vertex;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashMap;
-import java.util.HashSet;
-
-public class VertexEnumeration<VertexNameType> {
+/**
+ * Vertex enumeration class.
+ *
+ * @author Bogdan Svirsky
+ */
+public class VertexEnumeration<V> {
     private int verticesCount = 0;
-    private final HashMap<Vertex<VertexNameType>, Integer> vertexToIndex;
-    private final ArrayList<Vertex<VertexNameType>> vertices;
+    private final HashMap<Vertex<V>, Integer> vertexToIndex;
+    private final ArrayList<Vertex<V>> vertices;
 
+    /**
+     * Constructor.
+     *
+     * @return object of this class
+     */
     public VertexEnumeration() {
-        vertexToIndex = new HashMap<Vertex<VertexNameType>, Integer>();
+        vertexToIndex = new HashMap<Vertex<V>, Integer>();
         vertices = new ArrayList<>();
     }
 
-    public void add(Vertex<VertexNameType> vertex) {
+    /**
+     * Add vertex to enumeration.
+     *
+     * @param vertex vertex to add
+     */
+    public void add(Vertex<V> vertex) {
         vertexToIndex.put(vertex, verticesCount);
         vertices.add(vertex);
         verticesCount++;
     }
 
-    public void remove(Vertex<VertexNameType> deletedVertex) throws VertexNotFoundException {
+    /**
+     * Removes vertex from graph.
+     *
+     * @param deletedVertex vertex to remove
+     * @throws VertexNotFoundException if enumeration doesn't contain vertex
+     */
+    public void remove(Vertex<V> deletedVertex) throws VertexNotFoundException {
         if (!contains(deletedVertex)) {
             throw new VertexNotFoundException();
         }
@@ -37,7 +58,7 @@ public class VertexEnumeration<VertexNameType> {
         vertexToIndex.remove(deletedVertex);
         vertices.remove(deletedIndex);
 
-        for (Vertex<VertexNameType> vertex : vertexToIndex.keySet()) {
+        for (Vertex<V> vertex : vertexToIndex.keySet()) {
             vertexIndex = vertexToIndex.get(vertex).intValue();
 
             if (vertexIndex > deletedIndex) {
@@ -48,7 +69,14 @@ public class VertexEnumeration<VertexNameType> {
         verticesCount--;
     }
 
-    public int get(Vertex<VertexNameType> vertex) throws VertexNotFoundException {
+    /**
+     * Get index of vertex.
+     *
+     * @param vertex vertex which index we need
+     * @return index
+     * @throws VertexNotFoundException if enumeration doesn't contain vertex
+     */
+    public int get(Vertex<V> vertex) throws VertexNotFoundException {
         if (!contains(vertex)) {
             throw new VertexNotFoundException();
         }
@@ -56,7 +84,7 @@ public class VertexEnumeration<VertexNameType> {
         return vertexToIndex.get(vertex);
     }
 
-    public Vertex<VertexNameType> get(int index) {
+    public Vertex<V> get(int index) {
         return vertices.get(index);
     }
 
@@ -64,11 +92,11 @@ public class VertexEnumeration<VertexNameType> {
         return verticesCount;
     }
 
-    public Set<Vertex<VertexNameType>> getVertices() {
+    public Set<Vertex<V>> getVertices() {
         return new HashSet<>(vertices);
     }
 
-    public boolean contains(Vertex<VertexNameType> vertex) {
+    public boolean contains(Vertex<V> vertex) {
         return vertices.contains(vertex);
     }
 

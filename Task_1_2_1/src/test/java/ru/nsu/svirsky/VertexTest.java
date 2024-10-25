@@ -7,6 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import ru.nsu.svirsky.graph.Vertex;
 
+/**
+ * Vertex tests class.
+ *
+ * @author Bogdan Svirsky
+ */
 public class VertexTest {
     @Test
     void test() {

@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 import ru.nsu.svirsky.graph.AdjacencyListsGraph;
@@ -14,6 +15,11 @@ import ru.nsu.svirsky.graph.Graph;
 import ru.nsu.svirsky.graph.Vertex;
 import ru.nsu.svirsky.uitls.exceptions.CycleFoundException;
 
+/**
+ * Toposort tests.
+ *
+ * @author Bogdan Svirsky
+ */
 public class ToposortTest {
     @Test
     void test() {
