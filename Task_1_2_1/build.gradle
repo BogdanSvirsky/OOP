@@ -6,9 +6,14 @@ plugins {
 group = 'ru.nsu.svirsky'
 version = '1.0-SNAPSHOT'
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
 repositories {
     mavenCentral()
-
 }
 
 dependencies {
