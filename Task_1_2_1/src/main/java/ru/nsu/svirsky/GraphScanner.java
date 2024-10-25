@@ -15,7 +15,7 @@ import ru.nsu.svirsky.uitls.exceptions.MultipleEdgesFoundException;
 import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
 /**
- * Class for graph scanning
+ * Class for graph scanning.
  *
  * @author Bogdan Svirsky
  */
