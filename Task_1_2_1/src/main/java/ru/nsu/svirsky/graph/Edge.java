@@ -1,17 +1,17 @@
 package ru.nsu.svirsky.graph;
 
-public class Edge<T> {
-    private Vertex<?> from;
-    private Vertex<?> to;
-    private T weight = null;
+public class Edge<VertexNameType, EdgeWeightType extends Number> {
+    private Vertex<VertexNameType> from;
+    private Vertex<VertexNameType> to;
+    private EdgeWeightType weight = null;
 
-    public Edge(Vertex<?> from, Vertex<?> to, T weight) {
+    public Edge(Vertex<VertexNameType> from, Vertex<VertexNameType> to, EdgeWeightType weight) {
         this.from = from;
         this.to = to;
         this.weight = weight;
     }
 
-    public Edge(Vertex<?> from, Vertex<?> to) {
+    public Edge(Vertex<VertexNameType> from, Vertex<VertexNameType> to) {
         this.from = from;
         this.to = to;
     }
@@ -19,7 +19,8 @@ public class Edge<T> {
     @Override
     public final boolean equals(Object obj) {
         if (obj instanceof Edge other) {
-            return this.from.equals(other.from) && this.to.equals(other.to);
+            return this.from.equals(other.from) && this.to.equals(other.to)
+                    && this.weight.equals(other.weight);
         } else {
             return false;
         }
@@ -27,24 +28,24 @@ public class Edge<T> {
 
     @Override
     public String toString() {
-        return from.toString() + " -" + (weight != null ? "-(" + weight.toString() + ")-" : "")
-            + "> " + to.toString(); 
+        return from.toString() + " -> " + to.toString()
+         + (weight != null ? " (" + weight.toString() + ")" : "");
     }
 
-    public Vertex<?> getFrom() {
+    public Vertex<VertexNameType> getFrom() {
         return from;
     }
 
-    public Vertex<?> getTo() {
+    public Vertex<VertexNameType> getTo() {
         return to;
     }
 
-    public T getWeight() {
+    public EdgeWeightType getWeight() {
         return weight;
     }
 
     @Override
-    protected Edge<T> clone() throws CloneNotSupportedException {
-        return new Edge<T>(from.clone(), to.clone());
+    protected Edge<VertexNameType, EdgeWeightType> clone() {
+        return new Edge<VertexNameType, EdgeWeightType>(from.clone(), to.clone());
     }
 }

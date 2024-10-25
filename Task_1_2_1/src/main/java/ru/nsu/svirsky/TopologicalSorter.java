@@ -1,14 +1,18 @@
-package ru.nsu.svirsky.graph;
+package ru.nsu.svirsky;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Collections;
 
-import ru.nsu.svirsky.uitls.CycleFoundException;
-import ru.nsu.svirsky.uitls.VertexNotFoundException;
+import ru.nsu.svirsky.graph.Graph;
+import ru.nsu.svirsky.graph.Vertex;
+import ru.nsu.svirsky.uitls.exceptions.CycleFoundException;
+import ru.nsu.svirsky.uitls.exceptions.VertexNotFoundException;
 
 public class TopologicalSorter {
     private HashMap<Vertex, Integer> vertexState = new HashMap<>();
-    /* 0 - isn't processed
+    /*
+     * 0 - isn't processed
      * 1 - in processing
      * 2 - is processed
      */
@@ -32,7 +36,9 @@ public class TopologicalSorter {
             }
         }
 
-        return new ArrayList<Vertex>(result.reversed());
+        Collections.reverse(result);
+
+        return new ArrayList<Vertex>(result);
     }
 
     @SuppressWarnings("unchecked")
