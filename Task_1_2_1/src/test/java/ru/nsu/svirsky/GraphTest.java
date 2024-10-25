@@ -7,9 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashSet;
-
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.graph.Edge;
 import ru.nsu.svirsky.graph.Graph;
 import ru.nsu.svirsky.graph.Vertex;

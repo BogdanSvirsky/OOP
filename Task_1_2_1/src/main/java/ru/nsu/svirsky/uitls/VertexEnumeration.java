@@ -20,8 +20,6 @@ public class VertexEnumeration<V> {
 
     /**
      * Constructor.
-     *
-     * @return object of this class
      */
     public VertexEnumeration() {
         vertexToIndex = new HashMap<Vertex<V>, Integer>();

@@ -175,7 +175,8 @@ public class AdjacencyListsGraph<V, E extends Number>
                 int remainingEdgesNumber = adjacencyLists.get(vertex).size();
 
                 for (Edge<V, E> edge : adjacencyLists.get(vertex)) {
-                    result += edge.getTo() + (edge.getWeight() != null ? " (" + edge.getWeight() + ")" : "");
+                    result += edge.getTo()
+                            + (edge.getWeight() != null ? " (" + edge.getWeight() + ")" : "");
 
                     if (--remainingEdgesNumber != 0) {
                         result += ", ";
