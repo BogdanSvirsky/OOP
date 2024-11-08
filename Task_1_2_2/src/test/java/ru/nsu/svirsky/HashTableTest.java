@@ -12,7 +12,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Set;
-
 import org.junit.jupiter.api.Test;
 
 public class HashTableTest {
@@ -154,7 +153,9 @@ public class HashTableTest {
         assertNotEquals(hashTable1, hashTable2);
     }
 
-    Set<Entry<Integer, Integer>> generateHashTable(HashTable<Integer, Integer> hashTable, int elementsCount) {
+    Set<Entry<Integer, Integer>> generateHashTable(
+            HashTable<Integer, Integer> hashTable,
+            int elementsCount) {
         HashSet<Entry<Integer, Integer>> entries = new HashSet<>();
         Random random = new Random();
         int key;

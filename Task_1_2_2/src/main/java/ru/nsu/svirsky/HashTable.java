@@ -135,8 +135,8 @@ public class HashTable<K, V> implements Iterable<Entry<K, V>> {
     private void checkSize() {
         if (elementsCount > size) {
             size *= 2;
-            LinkedList<Entry<K, V>>[] newBuckets = (LinkedList<Entry<K, V>>[]) Array.newInstance(LinkedList.class,
-                    size);
+            LinkedList<Entry<K, V>>[] newBuckets = 
+                    (LinkedList<Entry<K, V>>[]) Array.newInstance(LinkedList.class, size);
 
             for (int i = 0; i < size; i++) {
                 newBuckets[i] = new LinkedList<>();
