@@ -4,35 +4,30 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.CharBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Module to find a substring in a file.
+ */
 public class SubstringFinder {
-    private static final int bufferSize = 1000;
-    private static CharBuffer charBuffer = CharBuffer.allocate(bufferSize);
-
-    public static List<Integer> find(String filename, String substring) throws FileNotFoundException, IOException {
-        ArrayList<Integer> result = new ArrayList<>();
+    public static List<Long> find(String filename, String substring) throws FileNotFoundException, IOException {
+        ArrayList<Long> result = new ArrayList<>();
 
         BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
 
         RabinKarpAlgorithm algorithm = new RabinKarpAlgorithm(substring);
 
-        int globalIndex = 0;
+        long index = 0;
 
         while (bufferedReader.ready()) {
-            bufferedReader.read(charBuffer);
-
-            for (int i = 0; i < bufferSize; i++) {
-                algorithm.addStringCharacter(charBuffer.get(i));
+            for (char c : Character.toChars(bufferedReader.read())) {
+                algorithm.addStringCharacter(c);
                 if (algorithm.isSubstringFounded()) {
-                    result.add(globalIndex + i);
+                    result.add(index - substring.length() + 1);
                 }
+                index++;
             }
-
-            globalIndex += 1000;
-            charBuffer.clear();
         }
 
         bufferedReader.close();
