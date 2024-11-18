@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.svirsky","l":"RabinKarpAlgorithm"},{"p":"ru.nsu.svirsky","l":"SubstringFinder"}];updateSearchResults();
