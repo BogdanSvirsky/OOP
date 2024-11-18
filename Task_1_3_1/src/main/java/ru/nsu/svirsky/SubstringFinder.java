@@ -11,7 +11,8 @@ import java.util.List;
  * Module to find a substring in a file.
  */
 public class SubstringFinder {
-    public static List<Long> find(String filename, String substring) throws FileNotFoundException, IOException {
+    public static List<Long> find(String filename, String substring)
+            throws FileNotFoundException, IOException {
         ArrayList<Long> result = new ArrayList<>();
 
         BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));

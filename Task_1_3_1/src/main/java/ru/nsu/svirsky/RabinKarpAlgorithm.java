@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class RabinKarpAlgorithm {
     private Queue<Character> currentCharacters = new LinkedBlockingQueue<>();
     private String substring;
-    private long P = 3;
+    private long p = 3;
     private final long substringHash;
     private long currentStringHash = 0;
     private long powerOfP = 1;
@@ -24,7 +24,7 @@ public class RabinKarpAlgorithm {
 
         for (int i = 0; i < substring.length(); i++) {
             substringHash = module(substringHash + module(powerOfP * substring.charAt(i)));
-            powerOfP = module(powerOfP * P);
+            powerOfP = module(powerOfP * p);
         }
 
         this.substringHash = substringHash;
@@ -34,7 +34,7 @@ public class RabinKarpAlgorithm {
         if (currentCharacters.size() == substring.length()) {
             currentStringHash = module(currentStringHash - currentCharacters.remove());
             if (!isInversedPCalculated) {
-                inversedP = inv(P);
+                inversedP = inv(p);
                 isInversedPCalculated = true;
             }
             currentStringHash = module(currentStringHash * inversedP);
@@ -42,7 +42,7 @@ public class RabinKarpAlgorithm {
         } else {
             currentStringHash = module(currentStringHash + module(powerOfP * symb));
             if (currentCharacters.size() + 1 != substring.length()) {
-                powerOfP = module(powerOfP * P);
+                powerOfP = module(powerOfP * p);
             }
         }
         currentCharacters.add(symb);
@@ -71,7 +71,8 @@ public class RabinKarpAlgorithm {
     }
 
     private static long inv(long n) {
-        long res, power;
+        long res;
+        long power;
         res = 1;
         power = 1;
         if (n == 0) {

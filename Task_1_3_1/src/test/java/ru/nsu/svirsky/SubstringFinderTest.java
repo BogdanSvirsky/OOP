@@ -12,7 +12,6 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import org.junit.jupiter.api.Test;
 
 /*
@@ -33,12 +32,12 @@ public class SubstringFinderTest {
         Path path = Path.of("res/test/" + filename);
         Random random = new Random();
         List<Long> correctResult = new ArrayList<>();
-        long MAXIMUM_PATTERNS_COUNT = 1_000_000;
+        long maxPatternsCount = 1_000_000;
         long patternsCount = 0;
 
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardOpenOption.CREATE)) {
             for (long i = 0; i < fileSize; i++) {
-                if (pattern.length() + i <= fileSize && patternsCount < MAXIMUM_PATTERNS_COUNT
+                if (pattern.length() + i <= fileSize && patternsCount < maxPatternsCount
                         && random.nextBoolean() && random.nextBoolean()) {
                     correctResult.add(i);
                     writer.write(pattern);
