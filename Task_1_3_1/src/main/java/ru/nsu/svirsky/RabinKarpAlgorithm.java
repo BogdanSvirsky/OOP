@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class RabinKarpAlgorithm {
     private Queue<Character> currentCharacters = new LinkedBlockingQueue<>();
     private String substring;
-    private long p = 3;
+    private long p = 17;
     private final long substringHash;
     private long currentStringHash = 0;
     private long powerOfP = 1;
@@ -71,13 +71,8 @@ public class RabinKarpAlgorithm {
     }
 
     private static long inv(long n) {
-        long res;
-        long power;
-        res = 1;
-        power = 1;
-        if (n == 0) {
-            return -1;
-        }
+        long res = 1;
+        long power = 1;
         for (int j = 1; j < 64; j++) {
             if (((module(-1) - 1) & power) != 0) {
                 res *= n;

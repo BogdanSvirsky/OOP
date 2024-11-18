@@ -14,11 +14,8 @@ public class SubstringFinder {
     public static List<Long> find(String filename, String substring)
             throws FileNotFoundException, IOException {
         ArrayList<Long> result = new ArrayList<>();
-
         BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
-
         RabinKarpAlgorithm algorithm = new RabinKarpAlgorithm(substring);
-
         long index = 0;
 
         while (bufferedReader.ready()) {
@@ -32,7 +29,6 @@ public class SubstringFinder {
         }
 
         bufferedReader.close();
-
         return result;
     }
 }

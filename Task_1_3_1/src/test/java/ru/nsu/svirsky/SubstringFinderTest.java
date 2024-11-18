@@ -3,18 +3,21 @@ package ru.nsu.svirsky;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.charset.Charset;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import org.junit.jupiter.api.Test;
 
-/*
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestTemplate;
+
+/**
  * SubstringFinderTest.
  */
 public class SubstringFinderTest {
@@ -28,7 +31,8 @@ public class SubstringFinderTest {
      *                   different characters
      * @param fileSize   size of generated file
      */
-    public void test(String characters, String pattern, long fileSize, String filename) {
+    @TestTemplate
+    private void test(String characters, String pattern, long fileSize, String filename) {
         Path path = Path.of("res/test/" + filename);
         Random random = new Random();
         List<Long> correctResult = new ArrayList<>();
@@ -72,6 +76,22 @@ public class SubstringFinderTest {
     }
 
     @Test
+    void simpleTest() throws IOException {
+        String text = "fsdkfhhsdkfkskfhsdkjfhjksdhjfksdhjkdjhkfkjsdfhvcnchhsh";
+        String pattern = "aaaJJJJ";
+        Path path = Path.of("res/test/simpleTest.txt");
+        Files.createDirectories(Path.of("res"));
+        Files.createDirectories(Path.of("res/test"));
+        Files.write(path, pattern.concat(text).getBytes(),
+                StandardOpenOption.CREATE_NEW, StandardOpenOption.WRITE);
+        List<Long> correctResult = new ArrayList<>();
+        correctResult.add(0L);
+        assertEquals(
+                SubstringFinder.find(path.toString(), pattern), correctResult);
+        Files.delete(path);
+    }
+
+    @Test
     void basicTest() {
         test("abcdefgs", "shdfsdfhsd", 100000, "basicTest.txt");
     }
@@ -80,19 +100,24 @@ public class SubstringFinderTest {
     void hugeFileTest() {
         test("abcdefgihABCDEFGH",
                 "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaJ",
-                419_430_400l, "hugeFile.txt");
+                419_430_400L, "hugeFile.txt");
     }
 
     @Test
     void veryHugeFileTest() {
         test("abcdefgihABCDEFGH",
                 "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaJ",
-                2_147_483_648l, "veryHugeFile.txt");
+                2_147_483_648L, "veryHugeFile.txt");
     }
 
     @Test
     void chineseTest() {
         test("马吾伊艾哦儿屁艾勒艾[]';杰艾尺吉弗艾迪娜艾西吉比艾开",
                 "艾诶哦艾尺吉弗艾迪娜哦伊艾艾", 100000, "chineseTest.txt");
+    }
+
+    @Test
+    void russianTest() {
+        test("абвгдеёжзийклмн", "ЫЫЫЫЫЫЫА", 100000, "RUSSIA.txt");
     }
 }
