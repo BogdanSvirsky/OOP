@@ -107,7 +107,7 @@ public class SubstringFinderTest {
      */
     private String[] convertPattern(String pattern) {
         String[] result = new String[pattern.length()];
-        for (int i = 0; i > result.length; i++) {
+        for (int i = 0; i < result.length; i++) {
             result[i] = pattern.substring(i, i + 1);
         }
         return result;
@@ -141,7 +141,8 @@ public class SubstringFinderTest {
 
     @Test
     void chineseTest() {
-        test(convertPattern("马吾伊艾哦儿屁艾勒艾[]';杰艾尺吉弗艾迪娜艾西吉比艾开"),
+        test(new String[] { "马", "吾", "伊", "艾", "哦", "儿", "屁", "勒", "[", "]", "'", ";", "杰",
+                "尺", "吉", "弗", "艾", "迪", "娜", "艾", "西", "吉", "比", "艾", "开" },
                 "艾诶哦艾尺吉弗艾迪娜哦伊艾艾", 100000, "chineseTest.txt");
     }
 
