@@ -5,12 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-
 import ru.nsu.svirsky.entities.CourseUnit;
 import ru.nsu.svirsky.entities.enums.ControlType;
 import ru.nsu.svirsky.entities.enums.Mark;
 import ru.nsu.svirsky.entities.enums.Semester;
 
+/**
+ * Tests for recrod book.
+ */
 public class RecordBookTest {
     @Test
     void arithmeticMeanTest() throws Exception {
@@ -18,16 +20,18 @@ public class RecordBookTest {
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.FIRST, DITCourse.DECLAR_PROG, ControlType.DIFF_PASS, Mark.EXCELLENT));
+                        Semester.FIRST, ProgrammingCourse.DECLAR_PROG, ControlType.DIFF_PASS,
+                        Mark.EXCELLENT));
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.FIRST, DITCourse.IMPERAT_PROG, ControlType.DIFF_PASS, Mark.EXCELLENT));
+                        Semester.FIRST, ProgrammingCourse.IMPERAT_PROG, ControlType.DIFF_PASS,
+                        Mark.EXCELLENT));
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.FIRST, DITCourse.HISTORY, ControlType.EXAM, Mark.GOOD));
+                        Semester.FIRST, ProgrammingCourse.HISTORY, ControlType.EXAM, Mark.GOOD));
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.FIRST, DITCourse.ORG, ControlType.DIFF_PASS, Mark.GOOD));
+                        Semester.FIRST, ProgrammingCourse.ORG, ControlType.DIFF_PASS, Mark.GOOD));
         assertEquals(recordBook.getArithmeticMean(), (double) 4.5);
     }
 
@@ -39,16 +43,19 @@ public class RecordBookTest {
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.FIRST, DITCourse.DIGITAL_PLAT, ControlType.DIFF_PASS, Mark.GOOD));
+                        Semester.FIRST, ProgrammingCourse.DIGITAL_PLAT, ControlType.DIFF_PASS,
+                        Mark.GOOD));
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.SECOND, DITCourse.DIGITAL_PLAT, ControlType.DIFF_PASS, Mark.GOOD));
+                        Semester.SECOND, ProgrammingCourse.DIGITAL_PLAT, ControlType.DIFF_PASS,
+                        Mark.GOOD));
         assertTrue(recordBook.canTransferToBudget());
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.SECOND, DITCourse.DISCRETE_MATH, ControlType.EXAM, Mark.SATIS));
+                        Semester.SECOND, ProgrammingCourse.DISCRETE_MATH, ControlType.EXAM, 
+                        Mark.SATIS));
 
         assertFalse(recordBook.canTransferToBudget());
     }
@@ -59,25 +66,30 @@ public class RecordBookTest {
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.FIRST, DITCourse.HISTORY, ControlType.EXAM, Mark.EXCELLENT));
+                        Semester.FIRST, ProgrammingCourse.HISTORY, ControlType.EXAM, 
+                        Mark.EXCELLENT));
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.SECOND, DITCourse.ENGLISH, ControlType.DIFF_PASS, Mark.EXCELLENT));
+                        Semester.SECOND, ProgrammingCourse.ENGLISH, ControlType.DIFF_PASS, 
+                        Mark.EXCELLENT));
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.THIRD, DITCourse.SPORT, ControlType.DIFF_PASS, Mark.EXCELLENT));
+                        Semester.THIRD, ProgrammingCourse.SPORT, ControlType.DIFF_PASS, 
+                        Mark.EXCELLENT));
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.THIRD, DITCourse.MATH_ANALYSIS, ControlType.DIFF_PASS, Mark.GOOD));
+                        Semester.THIRD, ProgrammingCourse.MATH_ANALYSIS, ControlType.DIFF_PASS, 
+                        Mark.GOOD));
 
         assertTrue(recordBook.canGetRedDiploma());
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.THIRD, DITCourse.DISCRETE_MATH, ControlType.EXAM, Mark.GOOD));
+                        Semester.THIRD, ProgrammingCourse.DISCRETE_MATH, ControlType.EXAM, 
+                        Mark.GOOD));
 
         assertFalse(recordBook.canGetRedDiploma());
     }
@@ -90,21 +102,25 @@ public class RecordBookTest {
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.THIRD, DITCourse.HISTORY, ControlType.EXAM, Mark.EXCELLENT));
+                        Semester.THIRD, ProgrammingCourse.HISTORY, ControlType.EXAM, 
+                        Mark.EXCELLENT));
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.THIRD, DITCourse.ENGLISH, ControlType.DIFF_PASS, Mark.EXCELLENT));
+                        Semester.THIRD, ProgrammingCourse.ENGLISH, ControlType.DIFF_PASS, 
+                        Mark.EXCELLENT));
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.THIRD, DITCourse.SPORT, ControlType.DIFF_PASS, Mark.EXCELLENT));
+                        Semester.THIRD, ProgrammingCourse.SPORT, ControlType.DIFF_PASS, 
+                        Mark.EXCELLENT));
 
         assertTrue(recordBook.canGetIncreasedScholarShip());
 
         recordBook.addCourseUnit(
                 new CourseUnit(
-                        Semester.THIRD, DITCourse.DISCRETE_MATH, ControlType.EXAM, Mark.GOOD));
+                        Semester.THIRD, ProgrammingCourse.DISCRETE_MATH, ControlType.EXAM, 
+                        Mark.GOOD));
 
         assertFalse(recordBook.canGetIncreasedScholarShip());
 

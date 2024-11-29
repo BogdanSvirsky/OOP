@@ -1,5 +1,8 @@
 package ru.nsu.svirsky.entities.enums;
 
+/**
+ * Type of control in record book row.
+ */
 public enum ControlType {
     TASK("Задание"), CONTROL_WORK("Контрольная работа"), COLLOQUIM("Коллоквиум"),
     EXAM("Экзамен"), DIFF_PASS("Дифференцированный зачет"), PASS("Зачет"),

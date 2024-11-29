@@ -2,14 +2,15 @@ package ru.nsu.svirsky;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Stream;
-
 import ru.nsu.svirsky.entities.Course;
 import ru.nsu.svirsky.entities.CourseUnit;
 import ru.nsu.svirsky.entities.enums.ControlType;
 import ru.nsu.svirsky.entities.enums.Mark;
 import ru.nsu.svirsky.entities.enums.Semester;
 
+/**
+ * Record book implementation.
+ */
 public class RecordBook {
     public static final double RED_DIPLOMA_PERCENT = 0.75;
     public Semester currentSemester = Semester.FIRST;

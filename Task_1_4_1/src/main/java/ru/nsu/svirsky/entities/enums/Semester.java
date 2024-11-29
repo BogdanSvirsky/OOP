@@ -1,5 +1,8 @@
 package ru.nsu.svirsky.entities.enums;
 
+/**
+ * Number of semester in record book row.
+ */
 public enum Semester {
     FIRST, SECOND, THIRD, FOURTH, FIVETH, SIXTH, SEVENTH, EIGHTH;
 

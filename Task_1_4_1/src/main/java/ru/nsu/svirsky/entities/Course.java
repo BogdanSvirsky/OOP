@@ -1,5 +1,8 @@
 package ru.nsu.svirsky.entities;
 
+/**
+ * Course in record book row.
+ */
 public class Course {
     private String name;
 
