@@ -14,37 +14,41 @@ public class PrimesFinder {
 
     public static boolean sequentialCheck(List<Integer> numbers) {
         for (int j : numbers) {
-            if (isPrime(j)) {
+            if (!isPrime(j)) {
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean parallelCheck(List<Integer> numbers, int workingThreadsCount) {
-        List<Integer> synchronizedList = Collections.synchronizedList(numbers);
+    public static boolean parallelCheck(List<Integer> numbers, int workingThreadsCount) throws InterruptedException {
         Thread[] threads = new Thread[workingThreadsCount];
-        final AtomicBoolean result = new AtomicBoolean(false);
+        final boolean[] result = {false};
 
         for (int i = 0; i < workingThreadsCount; i++) {
+            final int threadNumber = i;
             threads[i] = new Thread(() -> {
-                while (!synchronizedList.isEmpty() && !result.get()) {
-                    result.compareAndExchange(true, isPrime(synchronizedList.getLast()));
+                int countProcessedNumber = 0;
+                while (threadNumber + countProcessedNumber * workingThreadsCount < numbers.size()) {
+                    if (!isPrime(numbers.get(threadNumber + countProcessedNumber * workingThreadsCount))) {
+                        synchronized (result) {
+                            result[0] = true;
+                        }
+                        break;
+                    }
+                    countProcessedNumber++;
                 }
             });
         }
 
         for (Thread thread : threads) {
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                System.err.println("Prime numbers check was interrupted: " + e.getMessage());
-            }
+            thread.join();
         }
-        return result.get();
+
+        return result[0];
     }
 
-    public boolean parallelStreamCheck(List<Integer> numbers) {
-        return numbers.parallelStream().anyMatch(PrimesFinder::isPrime);
+    public static boolean parallelStreamCheck(List<Integer> numbers) {
+        return numbers.parallelStream().anyMatch(x -> !isPrime(x));
     }
 }

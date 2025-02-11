@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,22 +28,33 @@ class PrimeFinderTest {
     @Test
     void sequentialTest() {
         ArrayList<Integer> arrayList = new ArrayList<>();
+        Collections.addAll(arrayList, 2, 3, 5, 7, 11, 101, 131, 151, 181, 191, 313, 353, 373, 383, 727, 757, 787, 797, 919, 929, 10301, 10501, 10601);
+        assertFalse(PrimesFinder.sequentialCheck(arrayList));
         for (int i = 4; i < 100; i++) {
             arrayList.add(i * i * i * i);
         }
-        assertFalse(PrimesFinder.sequentialCheck(arrayList));
-        Collections.addAll(arrayList, 2, 3, 5, 7, 11, 101, 131, 151, 181, 191, 313, 353, 373, 383, 727, 757, 787, 797, 919, 929, 10301, 10501, 10601);
         assertTrue(PrimesFinder.sequentialCheck(arrayList));
     }
 
     @Test
-    void parallelTest() {
+    void parallelTest() throws InterruptedException {
         ArrayList<Integer> arrayList = new ArrayList<>();
+        Collections.addAll(arrayList, 2, 3, 5, 7, 11, 101, 131, 151, 181, 191, 313, 353, 373, 383, 727, 757, 787, 797, 919, 929, 10301, 10501, 10601);
+        assertFalse(PrimesFinder.parallelCheck(arrayList, 4));
         for (int i = 4; i < 100; i++) {
             arrayList.add(i * i * i * i);
         }
-        assertFalse(PrimesFinder.sequentialCheck(arrayList));
+        assertTrue(PrimesFinder.sequentialCheck(arrayList));
+    }
+
+    @Test
+    void parallelStreamTest() {
+        ArrayList<Integer> arrayList = new ArrayList<>();
         Collections.addAll(arrayList, 2, 3, 5, 7, 11, 101, 131, 151, 181, 191, 313, 353, 373, 383, 727, 757, 787, 797, 919, 929, 10301, 10501, 10601);
-        assertTrue(PrimesFinder.parallelCheck(arrayList, 4));
+        assertFalse(PrimesFinder.parallelStreamCheck(arrayList));
+        for (int i = 4; i < 100; i++) {
+            arrayList.add(i * i * i * i);
+        }
+        assertTrue(PrimesFinder.sequentialCheck(arrayList));
     }
 }
