@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"PrimesFinder"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"CompositeNumberFinder"},{"p":"<Unnamed>","l":"MultiThreadFinder"},{"p":"<Unnamed>","l":"ParallelStreamFinder"},{"p":"<Unnamed>","l":"SequentialFinder"}];updateSearchResults();
