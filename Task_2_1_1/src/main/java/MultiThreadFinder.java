@@ -2,6 +2,7 @@ import java.util.List;
 
 public class MultiThreadFinder extends CompositeNumberFinder {
     private final int workingThreadsCount;
+    private boolean isSomeoneInterrupted = false;
 
     public MultiThreadFinder(int workingThreadsCount) {
         this.workingThreadsCount = workingThreadsCount;
@@ -29,7 +30,21 @@ public class MultiThreadFinder extends CompositeNumberFinder {
             threads[i].start();
         }
 
-        boolean isSomeoneInterrupted = false;
+        waitAllThreads(threads);
+        while (isSomeoneInterrupted) {
+            for (Thread thread : threads) {
+                if (thread.isInterrupted()) {
+                    thread.start();
+                }
+            }
+            waitAllThreads(threads);
+        }
+
+        return result[0];
+    }
+
+    private void waitAllThreads(Thread[] threads) {
+        isSomeoneInterrupted = false;
 
         for (Thread thread : threads) {
             try {
@@ -39,23 +54,5 @@ public class MultiThreadFinder extends CompositeNumberFinder {
                 isSomeoneInterrupted = true;
             }
         }
-
-        while (isSomeoneInterrupted) {
-            for (Thread thread : threads) {
-                if (thread.isInterrupted()) {
-                    thread.start();
-                }
-            }
-            isSomeoneInterrupted = false;
-            for (Thread thread : threads) {
-                try {
-                    thread.join();
-                } catch (InterruptedException e) {
-                    isSomeoneInterrupted = true;
-                }
-            }
-        }
-
-        return result[0];
     }
 }
