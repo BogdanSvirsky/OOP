@@ -10,4 +10,9 @@ public class SequentialFinder extends CompositeNumberFinder {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "Sequential search for composite numbers";
+    }
 }

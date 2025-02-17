@@ -55,4 +55,9 @@ public class MultiThreadFinder extends CompositeNumberFinder {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Multi-thread search for composite number, number of threads - " + workingThreadsCount;
+    }
 }
