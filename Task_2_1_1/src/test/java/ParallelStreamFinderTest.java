@@ -2,6 +2,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests for parallel stream API finder implementation.
+ *
+ * @author BogdanSvirsky
+ */
 class ParallelStreamFinderTest {
     @Test
     void parallelStreamFindTest() {

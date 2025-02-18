@@ -1,12 +1,16 @@
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
+/**
+ * Test for finder implementations.
+ *
+ * @author BogdanSvirsky
+ */
 class CompositeNumberFinderTest {
     @Test
     void isCompositeTest() {
