@@ -1,5 +1,10 @@
 import java.util.List;
 
+/**
+ * Implementation of multi-thread composite number search.
+ *
+ * @author BogdanSvirsky
+ */
 public class MultiThreadFinder extends CompositeNumberFinder {
     private final int workingThreadsCount;
 
@@ -16,8 +21,11 @@ public class MultiThreadFinder extends CompositeNumberFinder {
             final int threadNumber = i;
             threads[i] = new Thread(() -> {
                 int countProcessedNumbers = 0;
-                while (threadNumber + countProcessedNumbers * workingThreadsCount < numbers.size() && !result[0]) {
-                    if (isComposite(numbers.get(threadNumber + countProcessedNumbers * workingThreadsCount))) {
+                while (threadNumber + countProcessedNumbers * workingThreadsCount < numbers.size()
+                        && !result[0]) {
+                    if (isComposite(
+                            numbers.get(threadNumber + countProcessedNumbers * workingThreadsCount))
+                    ) {
                         synchronized (result) {
                             result[0] = true;
                         }
@@ -42,6 +50,7 @@ public class MultiThreadFinder extends CompositeNumberFinder {
 
     @Override
     public String toString() {
-        return "Multi-thread search for composite number, number of threads - " + workingThreadsCount;
+        return "Multi-thread search for composite number, number of threads - "
+                + workingThreadsCount;
     }
 }

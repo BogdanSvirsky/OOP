@@ -1,6 +1,10 @@
-
 import java.util.List;
 
+/**
+ * Implementation of composite number finder by parallel stream API.
+ *
+ * @author BogdanSvirsky
+ */
 public class ParallelStreamFinder extends CompositeNumberFinder {
     @Override
     boolean find(List<Integer> numbers) {

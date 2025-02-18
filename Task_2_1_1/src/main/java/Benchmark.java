@@ -2,12 +2,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Benchmarks for finders working time.
+ *
+ * @author BogdanSvirsky
+ */
 public class Benchmark {
+    /**
+     * Run a benchmark for finder implementation.
+     *
+     * @param finder implementation of finder
+     */
     public static void run(CompositeNumberFinder finder) {
         System.out.println("Run benchmarks for: " + finder);
         ArrayList<Integer> arrayList = new ArrayList<>();
-        List<Integer> primeNums = Arrays.asList(2, 3, 5, 7, 11, 101, 131, 151, 181, 191, 313, 353, 373, 383, 727,
-                757, 787, 797, 919, 929, 10301, 10501, 10601, 1000003, 2000423, 5000981, 7503077, 60001199);
+        List<Integer> primeNums = Arrays.asList(2, 3, 5, 7, 11, 101, 131, 151, 181, 191, 313, 353,
+                373, 383, 727, 757, 787, 797, 919, 929, 10301, 10501, 10601, 1000003, 2000423,
+                5000981, 7503077, 60001199);
 
         final int countTries = 3;
 
@@ -16,7 +27,9 @@ public class Benchmark {
                 arrayList.addAll(primeNums);
             }
 
-            long resultTime = 0, startTime, endTime;
+            long resultTime = 0;
+            long startTime;
+            long endTime;
 
             for (int j = 0; j < countTries; j++) {
                 startTime = System.currentTimeMillis();
@@ -26,11 +39,17 @@ public class Benchmark {
             }
 
             System.out.printf(
-                    "Calculation time for %d prime numbers: %d ms\n", primeNums.size() * i, resultTime / countTries);
+                    "Calculation time for %d prime numbers: %d ms\n", primeNums.size() * i,
+                    resultTime / countTries);
             System.out.flush();
         }
     }
 
+    /**
+     * Main function to start all benchmark.
+     *
+     * @param args args to main
+     */
     public static void main(String[] args) {
         run(new SequentialFinder());
 

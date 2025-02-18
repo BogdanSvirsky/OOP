@@ -1,5 +1,10 @@
 import java.util.List;
 
+/**
+ * Abstract class for implementation of finder.
+ *
+ * @author BogdanSvirsky
+ */
 public abstract class CompositeNumberFinder {
     static boolean isComposite(int number) {
         for (int i = 2; i <= Math.sqrt(number); i++) {
