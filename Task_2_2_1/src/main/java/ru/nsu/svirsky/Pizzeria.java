@@ -2,14 +2,12 @@ package ru.nsu.svirsky;
 
 import ru.nsu.svirsky.exceptions.HasNoOrderQueueException;
 import ru.nsu.svirsky.exceptions.HasNoPizzaStorageException;
-import ru.nsu.svirsky.exceptions.QueueClosedException;
-import ru.nsu.svirsky.interfaces.OrderAdder;
 import ru.nsu.svirsky.interfaces.QueueForProducer;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pizzeria implements OrderAdder {
+public class Pizzeria {
     private final BlockingQueue<PizzaOrder> orderQueue;
     private final BlockingQueue<Pizza> pizzaStorage;
     private final List<Baker> bakers;
@@ -52,28 +50,34 @@ public class Pizzeria implements OrderAdder {
     }
 
     public void finishWork() {
-        orderQueue.close();
+        new Thread(() -> {
+            orderQueue.close();
 
-        for (Baker baker : bakers) {
-            baker.finishWork();
-        }
-
-        for (Baker baker : bakers) {
-            try {
-                baker.waitExecution();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+            for (Baker baker : bakers) {
+                baker.finishWork();
             }
+            for (Baker baker : bakers) {
+                try {
+                    baker.waitExecution();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            for (Courier courier : couriers) {
+                courier.finishWork();
+            }
+        }).start();
+    }
+
+    public void waitAll() throws InterruptedException {
+        for (Baker baker : bakers) {
+            baker.waitExecution();
         }
 
         for (Courier courier : couriers) {
-            courier.finishWork();
+            courier.waitExecution();
         }
-    }
-
-    @Override
-    public void makeAnOrder(PizzaOrder order) throws QueueClosedException, InterruptedException {
-        orderQueue.add(order);
     }
 
     public QueueForProducer<PizzaOrder> getQueueForProducer() {

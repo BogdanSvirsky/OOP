@@ -27,33 +27,36 @@ public class BlockingQueue<T> implements QueueForConsumer<T>, QueueForProducer<T
         if (isClosed.get()) {
             throw new QueueClosedException();
         }
+
         synchronized (putLock) {
             while (isFull()) {
                 putLock.wait();
             }
             push(element);
-            synchronized (getLock) {
-                getLock.notify();
-            }
+        }
+
+        synchronized (getLock) {
+            getLock.notify();
         }
     }
 
     public T get() throws InterruptedException {
+        T element;
         synchronized (getLock) {
             while (isEmpty()) {
                 getLock.wait();
             }
-            T element = pop();
-            synchronized (putLock) {
-                putLock.notify();
-            }
-            return element;
+            element = pop();
         }
+        synchronized (putLock) {
+            putLock.notify();
+        }
+        return element;
     }
 
     public T noWaitGet() {
         synchronized (getLock) {
-            if (elements.isEmpty()) {
+            if (isEmpty()) {
                 return null;
             } else {
                 return elements.removeFirst();

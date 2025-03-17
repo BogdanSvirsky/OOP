@@ -2,9 +2,8 @@ package ru.nsu.svirsky;
 
 import ru.nsu.svirsky.exceptions.HasNoOrderQueueException;
 import ru.nsu.svirsky.exceptions.HasNoPizzaStorageException;
-import ru.nsu.svirsky.exceptions.InvalidExecutorExecption;
+import ru.nsu.svirsky.exceptions.InvalidExecutorExeception;
 import ru.nsu.svirsky.interfaces.IdGetter;
-import ru.nsu.svirsky.interfaces.OrderQueueForBaker;
 import ru.nsu.svirsky.interfaces.QueueForConsumer;
 import ru.nsu.svirsky.interfaces.QueueForProducer;
 
@@ -19,7 +18,7 @@ public class Baker<IdType> {
     private final Thread executor = new Thread(() -> {
         try {
             runLifecycle();
-        } catch (InvalidExecutorExecption e) {
+        } catch (InvalidExecutorExeception e) {
             throw new RuntimeException("Courier's executor can run its code!");
         }
     });
@@ -27,13 +26,6 @@ public class Baker<IdType> {
     public Baker(IdGetter<IdType> idGetter, long workingTimeMillis) {
         this.bakerId = idGetter.get();
         this.workingTimeMillis = workingTimeMillis;
-    }
-
-    public Baker(IdGetter<IdType> idGetter, long workingTimeMillis,
-                 QueueForConsumer<PizzaOrder> orderQueue, QueueForProducer<Pizza> pizzaStorage) {
-        this(idGetter, workingTimeMillis);
-        this.orderQueue = orderQueue;
-        this.pizzaStorage = pizzaStorage;
     }
 
     public void beginWork() throws HasNoOrderQueueException, HasNoPizzaStorageException {
@@ -46,9 +38,9 @@ public class Baker<IdType> {
         executor.start();
     }
 
-    private void runLifecycle() throws InvalidExecutorExecption {
+    private void runLifecycle() throws InvalidExecutorExeception {
         if (Thread.currentThread() != executor) {
-            throw new InvalidExecutorExecption();
+            throw new InvalidExecutorExeception();
         }
 
         System.out.printf("%s start working\n", this);
@@ -78,9 +70,9 @@ public class Baker<IdType> {
         System.out.printf("%s finish working\n", this);
     }
 
-    private void processOrder(PizzaOrder order) {
+    private void processOrder(PizzaOrder order) throws InvalidExecutorExeception {
         if (Thread.currentThread() != executor) {
-            return;
+            throw new InvalidExecutorExeception();
         }
 
         order.startCooking();
@@ -123,7 +115,9 @@ public class Baker<IdType> {
     }
 
     public void waitExecution() throws InterruptedException {
-        executor.join();
+        if (executor.isAlive()) {
+            executor.join();
+        }
     }
 
     @Override

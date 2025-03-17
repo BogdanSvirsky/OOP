@@ -1,6 +1,6 @@
 package ru.nsu.svirsky;
 
-import ru.nsu.svirsky.exceptions.InvalidExecutorExecption;
+import ru.nsu.svirsky.exceptions.InvalidExecutorExeception;
 import ru.nsu.svirsky.interfaces.IdGetter;
 import ru.nsu.svirsky.interfaces.QueueForConsumer;
 
@@ -23,7 +23,7 @@ public class Courier<IdType> {
     private final Thread executor = new Thread(() -> {
         try {
             runLifecycle();
-        } catch (InvalidExecutorExecption e) {
+        } catch (InvalidExecutorExeception e) {
             throw new RuntimeException("Courier's executor can run its code!");
         }
     });
@@ -34,9 +34,9 @@ public class Courier<IdType> {
         courierId = idGetter.get();
     }
 
-    private void runLifecycle() throws InvalidExecutorExecption {
+    private void runLifecycle() throws InvalidExecutorExeception {
         if (Thread.currentThread() != executor) {
-            throw new InvalidExecutorExecption();
+            throw new InvalidExecutorExeception();
         }
         while (!finishWork.get()) {
             fillBackpack(true);
@@ -53,9 +53,9 @@ public class Courier<IdType> {
         System.out.printf("%s finish work\n", this);
     }
 
-    private void fillBackpack(boolean isWaiting) throws InvalidExecutorExecption {
+    private void fillBackpack(boolean isWaiting) throws InvalidExecutorExeception {
         if (Thread.currentThread() != executor) {
-            throw new InvalidExecutorExecption();
+            throw new InvalidExecutorExeception();
         }
         while (currentPizzas.size() < backpackSize && !storage.isEmpty()) {
             if (isWaiting) {
@@ -82,9 +82,9 @@ public class Courier<IdType> {
         System.out.printf("%s has filled backpack\n", this);
     }
 
-    private void deliver() throws InvalidExecutorExecption {
+    private void deliver() throws InvalidExecutorExeception {
         if (Thread.currentThread() != executor) {
-            throw new InvalidExecutorExecption();
+            throw new InvalidExecutorExeception();
         }
         try {
             Thread.sleep(deliveringTime);
@@ -114,5 +114,11 @@ public class Courier<IdType> {
     @Override
     public String toString() {
         return String.format("Courier{id: %s}", courierId);
+    }
+
+    public void waitExecution() throws InterruptedException {
+        if (executor.isAlive()) {
+            executor.join();
+        }
     }
 }
