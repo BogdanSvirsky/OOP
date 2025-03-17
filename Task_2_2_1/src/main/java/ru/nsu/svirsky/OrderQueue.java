@@ -1,18 +1,20 @@
 package ru.nsu.svirsky;
 
-import ru.nsu.svirsky.exceptions.OrderQueueClosedException;
+import ru.nsu.svirsky.exceptions.QueueClosedException;
+import ru.nsu.svirsky.interfaces.OrderAdder;
+import ru.nsu.svirsky.interfaces.OrderQueueForBaker;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class OrderQueue {
+public class OrderQueue implements OrderQueueForBaker, OrderAdder {
     private final List<PizzaOrder> orders = new ArrayList<>();
     private final AtomicBoolean isClosed = new AtomicBoolean(false);
 
-    public void add(PizzaOrder order) throws OrderQueueClosedException {
+    public void makeAnOrder(PizzaOrder order) throws QueueClosedException {
         if (isClosed.get()) {
-            throw new OrderQueueClosedException();
+            throw new QueueClosedException();
         }
         synchronized (orders) {
             orders.add(order);
@@ -24,6 +26,9 @@ public class OrderQueue {
         synchronized (orders) {
             while (orders.isEmpty()) {
                 orders.wait();
+                if (isClosed.get()) {
+                    return null;
+                }
             }
             return orders.removeFirst();
         }

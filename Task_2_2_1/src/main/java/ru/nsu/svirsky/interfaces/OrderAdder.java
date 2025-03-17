@@ -1,8 +1,8 @@
 package ru.nsu.svirsky.interfaces;
 
 import ru.nsu.svirsky.PizzaOrder;
-import ru.nsu.svirsky.exceptions.OrderQueueClosedException;
+import ru.nsu.svirsky.exceptions.QueueClosedException;
 
 public interface OrderAdder {
-    void add(PizzaOrder order) throws OrderQueueClosedException;
+    void makeAnOrder(PizzaOrder order) throws QueueClosedException, InterruptedException;
 }

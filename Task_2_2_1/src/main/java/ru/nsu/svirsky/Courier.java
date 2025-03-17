@@ -1,37 +1,49 @@
 package ru.nsu.svirsky;
 
+import ru.nsu.svirsky.exceptions.InvalidExecutorExecption;
 import ru.nsu.svirsky.interfaces.IdGetter;
-import ru.nsu.svirsky.interfaces.StorageForCourier;
+import ru.nsu.svirsky.interfaces.QueueForConsumer;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class Courier<IdType> extends Thread {
+public class Courier<IdType> {
     private final IdType courierId;
     private final int backpackSize;
     private final List<Pizza> currentPizzas = new ArrayList<>();
     private final int deliveringTime;
+    private QueueForConsumer<Pizza> storage;
     private final AtomicBoolean finishWork = new AtomicBoolean(false);
-    private final StorageForCourier storage;
 
-    public Courier(IdGetter<IdType> idGetter, int backpackSize, StorageForCourier storage,
-                   int deliveringTime) {
-        this.backpackSize = backpackSize;
+    public void setStorage(QueueForConsumer<Pizza> storage) {
         this.storage = storage;
-        this.deliveringTime = deliveringTime;
-        courierId = idGetter.get();
-        start();
     }
 
-    @Override
-    public void run() {
+    private final Thread executor = new Thread(() -> {
+        try {
+            runLifecycle();
+        } catch (InvalidExecutorExecption e) {
+            throw new RuntimeException("Courier's executor can run its code!");
+        }
+    });
+
+    public Courier(IdGetter<IdType> idGetter, int backpackSize, int deliveringTime) {
+        this.backpackSize = backpackSize;
+        this.deliveringTime = deliveringTime;
+        courierId = idGetter.get();
+    }
+
+    private void runLifecycle() throws InvalidExecutorExecption {
+        if (Thread.currentThread() != executor) {
+            throw new InvalidExecutorExecption();
+        }
         while (!finishWork.get()) {
             fillBackpack(true);
             deliver();
         }
 
-        fillBackpack(false);
+        fillBackpack(true);
 
         while (!currentPizzas.isEmpty()) {
             deliver();
@@ -41,7 +53,10 @@ public class Courier<IdType> extends Thread {
         System.out.printf("%s finish work\n", this);
     }
 
-    private void fillBackpack(boolean isWaiting) {
+    private void fillBackpack(boolean isWaiting) throws InvalidExecutorExecption {
+        if (Thread.currentThread() != executor) {
+            throw new InvalidExecutorExecption();
+        }
         while (currentPizzas.size() < backpackSize && !storage.isEmpty()) {
             if (isWaiting) {
                 try {
@@ -49,8 +64,10 @@ public class Courier<IdType> extends Thread {
                 } catch (InterruptedException e) {
                     if (!finishWork.get()) {
                         System.err.printf("%s backpack filling was interrupted!", this);
+                        return;
+                    } else {
+                        break;
                     }
-                    return;
                 }
             } else {
                 Pizza pizza = storage.noWaitGet();
@@ -62,12 +79,15 @@ public class Courier<IdType> extends Thread {
                 }
             }
         }
-        System.out.printf("%s backpack was filled\n", this);
+        System.out.printf("%s has filled backpack\n", this);
     }
 
-    private void deliver() {
+    private void deliver() throws InvalidExecutorExecption {
+        if (Thread.currentThread() != executor) {
+            throw new InvalidExecutorExecption();
+        }
         try {
-            sleep(deliveringTime);
+            Thread.sleep(deliveringTime);
         } catch (InterruptedException e) {
             System.err.printf("%s delivering was interrupted\n", this);
             return;
@@ -79,10 +99,15 @@ public class Courier<IdType> extends Thread {
         }
     }
 
+    public void beginWork() {
+        finishWork.set(false);
+        executor.start();
+    }
+
     public void finishWork() {
         finishWork.set(true);
-        if (getState() == State.WAITING) {
-            interrupt();
+        if (executor.getState() == Thread.State.WAITING) {
+            executor.interrupt();
         }
     }
 
