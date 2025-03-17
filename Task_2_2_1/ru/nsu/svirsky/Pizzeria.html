@@ -88,14 +88,9 @@ loadScripts(document, 'script');</script>
 <div class="inheritance">ru.nsu.svirsky.Pizzeria</div>
 </div>
 <section class="class-description" id="class-description">
-<dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="interfaces/OrderAdder.html" title="interface in ru.nsu.svirsky.interfaces">OrderAdder</a></code></dd>
-</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Pizzeria</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="interfaces/OrderAdder.html" title="interface in ru.nsu.svirsky.interfaces">OrderAdder</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -137,7 +132,7 @@ implements <a href="interfaces/OrderAdder.html" title="interface in ru.nsu.svirs
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getQueueForProducer()" class="member-name-link">getQueueForProducer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeAnOrder(ru.nsu.svirsky.PizzaOrder)" class="member-name-link">makeAnOrder</a><wbr>(<a href="PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a>&nbsp;order)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#waitAll()" class="member-name-link">waitAll</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -191,16 +186,12 @@ implements <a href="interfaces/OrderAdder.html" title="interface in ru.nsu.svirs
 </section>
 </li>
 <li>
-<section class="detail" id="makeAnOrder(ru.nsu.svirsky.PizzaOrder)">
-<h3>makeAnOrder</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">makeAnOrder</span><wbr><span class="parameters">(<a href="PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a>&nbsp;order)</span>
-                 throws <span class="exceptions"><a href="exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a>,
-<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
+<section class="detail" id="waitAll()">
+<h3>waitAll</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">waitAll</span>()
+             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="interfaces/OrderAdder.html#makeAnOrder(ru.nsu.svirsky.PizzaOrder)">makeAnOrder</a></code>&nbsp;in interface&nbsp;<code><a href="interfaces/OrderAdder.html" title="interface in ru.nsu.svirsky.interfaces">OrderAdder</a></code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code></dd>
 </dl>
 </section>
