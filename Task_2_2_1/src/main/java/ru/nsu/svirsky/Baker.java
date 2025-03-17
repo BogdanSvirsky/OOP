@@ -7,6 +7,7 @@ import ru.nsu.svirsky.interfaces.IdGetter;
 import ru.nsu.svirsky.interfaces.QueueForConsumer;
 import ru.nsu.svirsky.interfaces.QueueForProducer;
 
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Baker<IdType> {
@@ -131,5 +132,18 @@ public class Baker<IdType> {
 
     public void setPizzaStorage(QueueForProducer<Pizza> pizzaStorage) {
         this.pizzaStorage = pizzaStorage;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Baker<?> baker = (Baker<?>) o;
+        return workingTimeMillis == baker.workingTimeMillis;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(workingTimeMillis);
     }
 }

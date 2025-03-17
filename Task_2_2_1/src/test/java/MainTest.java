@@ -7,11 +7,9 @@ import ru.nsu.svirsky.exceptions.QueueClosedException;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
     @Test
@@ -78,5 +76,9 @@ public class MainTest {
         Client client = new Client(() -> 1, queue);
         queue.close();
         assertThrows(QueueClosedException.class, () -> client.makeAnOrder(() -> 1, ""));
+
+        Client client2 = new Client(() -> 1, new BlockingQueue<>());
+        assertDoesNotThrow(() -> client2.makeAnOrder(() -> 1, "dsdad"));
+        assertThrows(AlreadyHasOrderException.class, () -> client2.makeAnOrder(() -> 1, "dsdad"));
     }
 }

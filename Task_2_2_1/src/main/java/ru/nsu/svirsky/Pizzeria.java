@@ -35,6 +35,10 @@ public class Pizzeria {
         }
     }
 
+    public Pizzeria(PizzeriaConfig config) {
+        this(config.getBakers(), config.getCouriers(), config.getPizzaStorageCapacity());
+    }
+
     public void beginWork() {
         for (Baker baker : bakers) {
             try {
