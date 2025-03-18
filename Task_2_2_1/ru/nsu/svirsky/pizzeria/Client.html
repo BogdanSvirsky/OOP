@@ -82,18 +82,18 @@ loadScripts(document, 'script');</script>
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.svirsky.pizzeria</a></div>
-<h1 title="Class Client" class="title">Class Client&lt;IdType&gt;</h1>
+<h1 title="Class Client" class="title">Class Client&lt;T&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">ru.nsu.svirsky.pizzeria.Client&lt;IdType&gt;</div>
+<div class="inheritance">ru.nsu.svirsky.pizzeria.Client&lt;T&gt;</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Type Parameters:</dt>
-<dd><code>IdType</code> - The type of the client's ID.</dd>
+<dd><code>T</code> - The type of the client's ID.</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Client&lt;IdType&gt;</span>
+<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Client&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Represents a client who places pizza orders and waits for their completion.</div>
 </section>
@@ -107,7 +107,7 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,ru.nsu.svirsky.interfaces.QueueForProducer)" class="member-name-link">Client</a><wbr>(<a href="../interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter</a>&lt;<a href="Client.html" title="type parameter in Client">IdType</a>&gt;&nbsp;idGetter,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,ru.nsu.svirsky.interfaces.QueueForProducer)" class="member-name-link">Client</a><wbr>(<a href="../interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter</a>&lt;<a href="Client.html" title="type parameter in Client">T</a>&gt;&nbsp;idGetter,
  <a href="../interfaces/QueueForProducer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForProducer</a>&lt;<a href="PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a>&gt;&nbsp;orderQueue)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Constructs a new client.</div>
@@ -127,7 +127,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeAnOrder(ru.nsu.svirsky.interfaces.IdGetter,java.lang.String)" class="member-name-link">makeAnOrder</a><wbr>(<a href="../interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter</a>&lt;<a href="Client.html" title="type parameter in Client">IdType</a>&gt;&nbsp;orderIdGetter,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeAnOrder(ru.nsu.svirsky.interfaces.IdGetter,java.lang.String)" class="member-name-link">makeAnOrder</a><wbr>(<a href="../interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter</a>&lt;?&gt;&nbsp;orderIdGetter,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;pizzaName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Places a new pizza order.</div>
@@ -160,7 +160,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(ru.nsu.svirsky.interfaces.IdGetter,ru.nsu.svirsky.interfaces.QueueForProducer)">
 <h3>Client</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Client</span><wbr><span class="parameters">(<a href="../interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter</a>&lt;<a href="Client.html" title="type parameter in Client">IdType</a>&gt;&nbsp;idGetter,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Client</span><wbr><span class="parameters">(<a href="../interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter</a>&lt;<a href="Client.html" title="type parameter in Client">T</a>&gt;&nbsp;idGetter,
  <a href="../interfaces/QueueForProducer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForProducer</a>&lt;<a href="PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a>&gt;&nbsp;orderQueue)</span></div>
 <div class="block">Constructs a new client.</div>
 <dl class="notes">
@@ -181,7 +181,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="makeAnOrder(ru.nsu.svirsky.interfaces.IdGetter,java.lang.String)">
 <h3>makeAnOrder</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></span>&nbsp;<span class="element-name">makeAnOrder</span><wbr><span class="parameters">(<a href="../interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter</a>&lt;<a href="Client.html" title="type parameter in Client">IdType</a>&gt;&nbsp;orderIdGetter,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></span>&nbsp;<span class="element-name">makeAnOrder</span><wbr><span class="parameters">(<a href="../interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter</a>&lt;?&gt;&nbsp;orderIdGetter,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;pizzaName)</span>
                        throws <span class="exceptions"><a href="../exceptions/AlreadyHasOrderException.html" title="class in ru.nsu.svirsky.exceptions">AlreadyHasOrderException</a>,
 <a href="../exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a>,

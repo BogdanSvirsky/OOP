@@ -89,19 +89,20 @@ loadScripts(document, 'script');</script>
 </li>
 <li>
 <div id="class-summary">
-<div class="caption"><span>Classes</span></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a>&lt;IdType&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Represents a baker in the pizzeria who processes pizza orders.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Client.html" title="class in ru.nsu.svirsky.pizzeria">Client</a>&lt;IdType&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Client.html" title="class in ru.nsu.svirsky.pizzeria">Client</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Represents a client who places pizza orders and waits for their completion.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a>&lt;IdType&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Represents a courier who delivers pizzas from the storage to clients.</div>
 </div>
@@ -113,9 +114,12 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Represents a pizza order with its current status and recipient.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="PizzaOrderStatus.html" title="enum class in ru.nsu.svirsky.pizzeria">PizzaOrderStatus</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab3">&nbsp;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Represents a pizzeria that manages bakers, couriers, and pizza orders.</div>
+</div>
 </div>
 </div>
 </div>
