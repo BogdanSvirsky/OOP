@@ -56,41 +56,77 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="ru/nsu/svirsky/exceptions/AlreadyHasOrderException.html" title="class in ru.nsu.svirsky.exceptions">AlreadyHasOrderException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker&lt;IdType&gt;</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="block">Thrown when a client attempts to place an order while already having an active order.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker&lt;IdType&gt;</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Represents a baker in the pizzeria who processes pizza orders.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue&lt;T&gt;</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/Client.html" title="class in ru.nsu.svirsky">Client&lt;IdType&gt;</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/Courier.html" title="class in ru.nsu.svirsky">Courier&lt;IdType&gt;</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A thread-safe blocking queue implementation that supports producer-consumer operations.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/pizzeria/Client.html" title="class in ru.nsu.svirsky.pizzeria">Client&lt;IdType&gt;</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Represents a client who places pizza orders and waits for their completion.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/pizzeria/Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier&lt;IdType&gt;</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Represents a courier who delivers pizzas from the storage to clients.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="ru/nsu/svirsky/exceptions/HasNoOrderQueueException.html" title="class in ru.nsu.svirsky.exceptions">HasNoOrderQueueException</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
+<div class="block">Thrown when a baker attempts to work without an assigned order queue.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="ru/nsu/svirsky/exceptions/HasNoPizzaStorageException.html" title="class in ru.nsu.svirsky.exceptions">HasNoPizzaStorageException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="block">Thrown when a baker attempts to work without an assigned pizza storage.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/svirsky/interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter&lt;IdType&gt;</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Interface for retrieving an ID of a specified type.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="ru/nsu/svirsky/exceptions/InvalidExecutorExeception.html" title="class in ru.nsu.svirsky.exceptions">InvalidExecutorExeception</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/Pizza.html" title="class in ru.nsu.svirsky">Pizza</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder&lt;IdType&gt;</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="block">Thrown when an invalid thread attempts to execute restricted operations.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/pizzeria/Pizza.html" title="class in ru.nsu.svirsky.pizzeria">Pizza</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Represents a pizza with an associated order.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder&lt;IdType&gt;</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Represents a pizza order with its current status and recipient.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/svirsky/interfaces/PizzaRecipient.html" title="interface in ru.nsu.svirsky.interfaces">PizzaRecipient</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/Pizzeria.html" title="class in ru.nsu.svirsky">Pizzeria</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/svirsky/PizzeriaConfig.html" title="interface in ru.nsu.svirsky">PizzeriaConfig</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Interface for receiving a pizza.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/pizzeria/Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Represents a pizzeria that manages bakers, couriers, and pizza orders.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/svirsky/config/PizzeriaConfig.html" title="interface in ru.nsu.svirsky.config">PizzeriaConfig</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Configuration interface for a pizzeria.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="ru/nsu/svirsky/exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="block">Thrown when an operation is attempted on a closed queue.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/svirsky/interfaces/QueueForConsumer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer&lt;T&gt;</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Interface for a queue that supports consumer operations.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/svirsky/interfaces/QueueForProducer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForProducer&lt;T&gt;</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky">SimplePizzeriaConfig</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Interface for a queue that supports producer operations.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky.config">SimplePizzeriaConfig</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Loads pizzeria configuration from a JSON file.</div>
+</div>
 </div>
 </div>
 </div>

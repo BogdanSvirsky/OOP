@@ -89,6 +89,10 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - The type of elements stored in the queue.</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer</a>&lt;T&gt;</code>, <code><a href="interfaces/QueueForProducer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForProducer</a>&lt;T&gt;</code></dd>
 </dl>
@@ -96,6 +100,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">BlockingQueue&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer</a>&lt;T&gt;, <a href="interfaces/QueueForProducer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForProducer</a>&lt;T&gt;</span></div>
+<div class="block">A thread-safe blocking queue implementation that supports producer-consumer operations.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,9 +113,13 @@ implements <a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">BlockingQueue</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructs an unbounded blocking queue.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">BlockingQueue</a><wbr>(int&nbsp;capacity)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Constructs a blocking queue with the specified capacity.</div>
+</div>
 </div>
 </section>
 </li>
@@ -127,19 +136,29 @@ implements <a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#add(T)" class="member-name-link">add</a><wbr>(<a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a>&nbsp;element)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds an element to the queue.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Closes the queue, preventing further additions.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get()" class="member-name-link">get</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves and removes an element from the queue.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if the queue is empty.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#noWaitGet()" class="member-name-link">noWaitGet</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retrieves and removes an element from the queue without blocking.</div>
+</div>
 </div>
 </div>
 </div>
@@ -161,12 +180,18 @@ implements <a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu
 <section class="detail" id="&lt;init&gt;(int)">
 <h3>BlockingQueue</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BlockingQueue</span><wbr><span class="parameters">(int&nbsp;capacity)</span></div>
+<div class="block">Constructs a blocking queue with the specified capacity.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>capacity</code> - The maximum capacity of the queue. If 0, the queue is unbounded.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>BlockingQueue</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BlockingQueue</span>()</div>
+<div class="block">Constructs an unbounded blocking queue.</div>
 </section>
 </li>
 </ul>
@@ -183,12 +208,15 @@ implements <a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a>&nbsp;element)</span>
          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a>,
 <a href="exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a></span></div>
+<div class="block">Adds an element to the queue. Blocks if the queue is full.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="interfaces/QueueForProducer.html#add(T)">add</a></code>&nbsp;in interface&nbsp;<code><a href="interfaces/QueueForProducer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForProducer</a>&lt;<a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>element</code> - The element to add.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code></dd>
-<dd><code><a href="exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - If the thread is interrupted while waiting.</dd>
+<dd><code><a href="exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a></code> - If the queue is closed.</dd>
 </dl>
 </section>
 </li>
@@ -197,11 +225,14 @@ implements <a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu
 <h3>get</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a></span>&nbsp;<span class="element-name">get</span>()
       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
+<div class="block">Retrieves and removes an element from the queue. Blocks if the queue is empty.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="interfaces/QueueForConsumer.html#get()">get</a></code>&nbsp;in interface&nbsp;<code><a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer</a>&lt;<a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a>&gt;</code></dd>
+<dt>Returns:</dt>
+<dd>The retrieved element.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - If the thread is interrupted while waiting.</dd>
 </dl>
 </section>
 </li>
@@ -209,9 +240,12 @@ implements <a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu
 <section class="detail" id="noWaitGet()">
 <h3>noWaitGet</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a></span>&nbsp;<span class="element-name">noWaitGet</span>()</div>
+<div class="block">Retrieves and removes an element from the queue without blocking.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="interfaces/QueueForConsumer.html#noWaitGet()">noWaitGet</a></code>&nbsp;in interface&nbsp;<code><a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer</a>&lt;<a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a>&gt;</code></dd>
+<dt>Returns:</dt>
+<dd>The retrieved element, or null if the queue is empty.</dd>
 </dl>
 </section>
 </li>
@@ -219,9 +253,12 @@ implements <a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu
 <section class="detail" id="isEmpty()">
 <h3>isEmpty</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
+<div class="block">Checks if the queue is empty.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="interfaces/QueueForConsumer.html#isEmpty()">isEmpty</a></code>&nbsp;in interface&nbsp;<code><a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer</a>&lt;<a href="BlockingQueue.html" title="type parameter in BlockingQueue">T</a>&gt;</code></dd>
+<dt>Returns:</dt>
+<dd>True if the queue is empty, false otherwise.</dd>
 </dl>
 </section>
 </li>
@@ -229,6 +266,7 @@ implements <a href="interfaces/QueueForConsumer.html" title="interface in ru.nsu
 <section class="detail" id="close()">
 <h3>close</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()</div>
+<div class="block">Closes the queue, preventing further additions.</div>
 </section>
 </li>
 </ul>

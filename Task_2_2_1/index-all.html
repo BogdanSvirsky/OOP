@@ -53,227 +53,361 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:A">A</h2>
 <dl class="index">
 <dt><a href="ru/nsu/svirsky/BlockingQueue.html#add(T)" class="member-name-link">add(T)</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Adds an element to the queue.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/interfaces/QueueForProducer.html#add(T)" class="member-name-link">add(T)</a> - Method in interface ru.nsu.svirsky.interfaces.<a href="ru/nsu/svirsky/interfaces/QueueForProducer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForProducer</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Adds an element to the queue.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/exceptions/AlreadyHasOrderException.html" class="type-name-link" title="class in ru.nsu.svirsky.exceptions">AlreadyHasOrderException</a> - Exception Class in <a href="ru/nsu/svirsky/exceptions/package-summary.html">ru.nsu.svirsky.exceptions</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/exceptions/AlreadyHasOrderException.html#%3Cinit%3E(ru.nsu.svirsky.Client)" class="member-name-link">AlreadyHasOrderException(Client)</a> - Constructor for exception class ru.nsu.svirsky.exceptions.<a href="ru/nsu/svirsky/exceptions/AlreadyHasOrderException.html" title="class in ru.nsu.svirsky.exceptions">AlreadyHasOrderException</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Thrown when a client attempts to place an order while already having an active order.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/exceptions/AlreadyHasOrderException.html#%3Cinit%3E(ru.nsu.svirsky.pizzeria.Client)" class="member-name-link">AlreadyHasOrderException(Client)</a> - Constructor for exception class ru.nsu.svirsky.exceptions.<a href="ru/nsu/svirsky/exceptions/AlreadyHasOrderException.html" title="class in ru.nsu.svirsky.exceptions">AlreadyHasOrderException</a></dt>
+<dd>
+<div class="block">Creates an exception with a message indicating the client already has an order.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:B">B</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Baker.html" class="type-name-link" title="class in ru.nsu.svirsky">Baker&lt;IdType&gt;</a> - Class in <a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Baker.html#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,long)" class="member-name-link">Baker(IdGetter&lt;IdType&gt;, long)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Baker.html#beginWork()" class="member-name-link">beginWork()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Courier.html#beginWork()" class="member-name-link">beginWork()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Courier.html" title="class in ru.nsu.svirsky">Courier</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Pizzeria.html#beginWork()" class="member-name-link">beginWork()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizzeria.html" title="class in ru.nsu.svirsky">Pizzeria</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html" class="type-name-link" title="class in ru.nsu.svirsky.pizzeria">Baker&lt;IdType&gt;</a> - Class in <a href="ru/nsu/svirsky/pizzeria/package-summary.html">ru.nsu.svirsky.pizzeria</a></dt>
+<dd>
+<div class="block">Represents a baker in the pizzeria who processes pizza orders.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,long)" class="member-name-link">Baker(IdGetter&lt;IdType&gt;, long)</a> - Constructor for class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a></dt>
+<dd>
+<div class="block">Constructs a new baker.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html#beginWork()" class="member-name-link">beginWork()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a></dt>
+<dd>
+<div class="block">Starts the baker's work.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Courier.html#beginWork()" class="member-name-link">beginWork()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a></dt>
+<dd>
+<div class="block">Starts the courier's work.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizzeria.html#beginWork()" class="member-name-link">beginWork()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></dt>
+<dd>
+<div class="block">Starts the work of all bakers and couriers in the pizzeria.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/BlockingQueue.html" class="type-name-link" title="class in ru.nsu.svirsky">BlockingQueue&lt;T&gt;</a> - Class in <a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">A thread-safe blocking queue implementation that supports producer-consumer operations.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/BlockingQueue.html#%3Cinit%3E()" class="member-name-link">BlockingQueue()</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Constructs an unbounded blocking queue.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/BlockingQueue.html#%3Cinit%3E(int)" class="member-name-link">BlockingQueue(int)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Constructs a blocking queue with the specified capacity.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:C">C</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Client.html" class="type-name-link" title="class in ru.nsu.svirsky">Client&lt;IdType&gt;</a> - Class in <a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Client.html#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,ru.nsu.svirsky.interfaces.QueueForProducer)" class="member-name-link">Client(IdGetter&lt;IdType&gt;, QueueForProducer&lt;PizzaOrder&gt;)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Client.html" title="class in ru.nsu.svirsky">Client</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Client.html" class="type-name-link" title="class in ru.nsu.svirsky.pizzeria">Client&lt;IdType&gt;</a> - Class in <a href="ru/nsu/svirsky/pizzeria/package-summary.html">ru.nsu.svirsky.pizzeria</a></dt>
+<dd>
+<div class="block">Represents a client who places pizza orders and waits for their completion.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Client.html#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,ru.nsu.svirsky.interfaces.QueueForProducer)" class="member-name-link">Client(IdGetter&lt;IdType&gt;, QueueForProducer&lt;PizzaOrder&gt;)</a> - Constructor for class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Client.html" title="class in ru.nsu.svirsky.pizzeria">Client</a></dt>
+<dd>
+<div class="block">Constructs a new client.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/BlockingQueue.html#close()" class="member-name-link">close()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#complete()" class="member-name-link">complete()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Courier.html" class="type-name-link" title="class in ru.nsu.svirsky">Courier&lt;IdType&gt;</a> - Class in <a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Courier.html#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,int,int)" class="member-name-link">Courier(IdGetter&lt;IdType&gt;, int, int)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Courier.html" title="class in ru.nsu.svirsky">Courier</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Closes the queue, preventing further additions.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#complete()" class="member-name-link">complete()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
+<dd>
+<div class="block">Marks the order as completed.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Courier.html" class="type-name-link" title="class in ru.nsu.svirsky.pizzeria">Courier&lt;IdType&gt;</a> - Class in <a href="ru/nsu/svirsky/pizzeria/package-summary.html">ru.nsu.svirsky.pizzeria</a></dt>
+<dd>
+<div class="block">Represents a courier who delivers pizzas from the storage to clients.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Courier.html#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,int,int)" class="member-name-link">Courier(IdGetter&lt;IdType&gt;, int, int)</a> - Constructor for class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a></dt>
+<dd>
+<div class="block">Constructs a new courier.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:E">E</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Baker.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Courier.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Courier.html" title="class in ru.nsu.svirsky">Courier</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/Courier.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:F">F</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#finishCooking()" class="member-name-link">finishCooking()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Baker.html#finishWork()" class="member-name-link">finishWork()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Courier.html#finishWork()" class="member-name-link">finishWork()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Courier.html" title="class in ru.nsu.svirsky">Courier</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Pizzeria.html#finishWork()" class="member-name-link">finishWork()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizzeria.html" title="class in ru.nsu.svirsky">Pizzeria</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#finishCooking()" class="member-name-link">finishCooking()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
+<dd>
+<div class="block">Marks the order as cooked.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html#finishWork()" class="member-name-link">finishWork()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a></dt>
+<dd>
+<div class="block">Stops the baker's work.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Courier.html#finishWork()" class="member-name-link">finishWork()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a></dt>
+<dd>
+<div class="block">Stops the courier's work.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizzeria.html#finishWork()" class="member-name-link">finishWork()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></dt>
+<dd>
+<div class="block">Stops the work of all bakers and couriers in the pizzeria.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:G">G</h2>
 <dl class="index">
 <dt><a href="ru/nsu/svirsky/BlockingQueue.html#get()" class="member-name-link">get()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retrieves and removes an element from the queue.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/interfaces/IdGetter.html#get()" class="member-name-link">get()</a> - Method in interface ru.nsu.svirsky.interfaces.<a href="ru/nsu/svirsky/interfaces/IdGetter.html" title="interface in ru.nsu.svirsky.interfaces">IdGetter</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retrieves the ID.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/interfaces/QueueForConsumer.html#get()" class="member-name-link">get()</a> - Method in interface ru.nsu.svirsky.interfaces.<a href="ru/nsu/svirsky/interfaces/QueueForConsumer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer</a></dt>
+<dd>
+<div class="block">Retrieves and removes an element from the queue, waiting if necessary.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/interfaces/PizzaRecipient.html#get(ru.nsu.svirsky.pizzeria.Pizza)" class="member-name-link">get(Pizza)</a> - Method in interface ru.nsu.svirsky.interfaces.<a href="ru/nsu/svirsky/interfaces/PizzaRecipient.html" title="interface in ru.nsu.svirsky.interfaces">PizzaRecipient</a></dt>
+<dd>
+<div class="block">Handles the received pizza.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/config/PizzeriaConfig.html#getBakers()" class="member-name-link">getBakers()</a> - Method in interface ru.nsu.svirsky.config.<a href="ru/nsu/svirsky/config/PizzeriaConfig.html" title="interface in ru.nsu.svirsky.config">PizzeriaConfig</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/interfaces/PizzaRecipient.html#get(ru.nsu.svirsky.Pizza)" class="member-name-link">get(Pizza)</a> - Method in interface ru.nsu.svirsky.interfaces.<a href="ru/nsu/svirsky/interfaces/PizzaRecipient.html" title="interface in ru.nsu.svirsky.interfaces">PizzaRecipient</a></dt>
+<dt><a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html#getBakers()" class="member-name-link">getBakers()</a> - Method in class ru.nsu.svirsky.config.<a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky.config">SimplePizzeriaConfig</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzeriaConfig.html#getBakers()" class="member-name-link">getBakers()</a> - Method in interface ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzeriaConfig.html" title="interface in ru.nsu.svirsky">PizzeriaConfig</a></dt>
+<dt><a href="ru/nsu/svirsky/config/PizzeriaConfig.html#getCouriers()" class="member-name-link">getCouriers()</a> - Method in interface ru.nsu.svirsky.config.<a href="ru/nsu/svirsky/config/PizzeriaConfig.html" title="interface in ru.nsu.svirsky.config">PizzeriaConfig</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/SimplePizzeriaConfig.html#getBakers()" class="member-name-link">getBakers()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky">SimplePizzeriaConfig</a></dt>
+<dt><a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html#getCouriers()" class="member-name-link">getCouriers()</a> - Method in class ru.nsu.svirsky.config.<a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky.config">SimplePizzeriaConfig</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzeriaConfig.html#getCouriers()" class="member-name-link">getCouriers()</a> - Method in interface ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzeriaConfig.html" title="interface in ru.nsu.svirsky">PizzeriaConfig</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#getOrderText()" class="member-name-link">getOrderText()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
+<dd>
+<div class="block">Retrieves the description of the order.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/config/PizzeriaConfig.html#getPizzaStorageCapacity()" class="member-name-link">getPizzaStorageCapacity()</a> - Method in interface ru.nsu.svirsky.config.<a href="ru/nsu/svirsky/config/PizzeriaConfig.html" title="interface in ru.nsu.svirsky.config">PizzeriaConfig</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/SimplePizzeriaConfig.html#getCouriers()" class="member-name-link">getCouriers()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky">SimplePizzeriaConfig</a></dt>
+<dt><a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html#getPizzaStorageCapacity()" class="member-name-link">getPizzaStorageCapacity()</a> - Method in class ru.nsu.svirsky.config.<a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky.config">SimplePizzeriaConfig</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#getOrderText()" class="member-name-link">getOrderText()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzeriaConfig.html#getPizzaStorageCapacity()" class="member-name-link">getPizzaStorageCapacity()</a> - Method in interface ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzeriaConfig.html" title="interface in ru.nsu.svirsky">PizzeriaConfig</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/SimplePizzeriaConfig.html#getPizzaStorageCapacity()" class="member-name-link">getPizzaStorageCapacity()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky">SimplePizzeriaConfig</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Pizzeria.html#getQueueForProducer()" class="member-name-link">getQueueForProducer()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizzeria.html" title="class in ru.nsu.svirsky">Pizzeria</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizzeria.html#getQueueForProducer()" class="member-name-link">getQueueForProducer()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></dt>
+<dd>
+<div class="block">Retrieves the order queue for producers.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:H">H</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Baker.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Courier.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Courier.html" title="class in ru.nsu.svirsky">Courier</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/Courier.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/svirsky/exceptions/HasNoOrderQueueException.html" class="type-name-link" title="class in ru.nsu.svirsky.exceptions">HasNoOrderQueueException</a> - Exception Class in <a href="ru/nsu/svirsky/exceptions/package-summary.html">ru.nsu.svirsky.exceptions</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/exceptions/HasNoOrderQueueException.html#%3Cinit%3E(ru.nsu.svirsky.Baker)" class="member-name-link">HasNoOrderQueueException(Baker)</a> - Constructor for exception class ru.nsu.svirsky.exceptions.<a href="ru/nsu/svirsky/exceptions/HasNoOrderQueueException.html" title="class in ru.nsu.svirsky.exceptions">HasNoOrderQueueException</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Thrown when a baker attempts to work without an assigned order queue.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/exceptions/HasNoOrderQueueException.html#%3Cinit%3E(ru.nsu.svirsky.pizzeria.Baker)" class="member-name-link">HasNoOrderQueueException(Baker)</a> - Constructor for exception class ru.nsu.svirsky.exceptions.<a href="ru/nsu/svirsky/exceptions/HasNoOrderQueueException.html" title="class in ru.nsu.svirsky.exceptions">HasNoOrderQueueException</a></dt>
+<dd>
+<div class="block">Creates an exception with a message indicating the baker has no order queue.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/exceptions/HasNoPizzaStorageException.html" class="type-name-link" title="class in ru.nsu.svirsky.exceptions">HasNoPizzaStorageException</a> - Exception Class in <a href="ru/nsu/svirsky/exceptions/package-summary.html">ru.nsu.svirsky.exceptions</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/exceptions/HasNoPizzaStorageException.html#%3Cinit%3E(ru.nsu.svirsky.Baker)" class="member-name-link">HasNoPizzaStorageException(Baker)</a> - Constructor for exception class ru.nsu.svirsky.exceptions.<a href="ru/nsu/svirsky/exceptions/HasNoPizzaStorageException.html" title="class in ru.nsu.svirsky.exceptions">HasNoPizzaStorageException</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Thrown when a baker attempts to work without an assigned pizza storage.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/exceptions/HasNoPizzaStorageException.html#%3Cinit%3E(ru.nsu.svirsky.pizzeria.Baker)" class="member-name-link">HasNoPizzaStorageException(Baker)</a> - Constructor for exception class ru.nsu.svirsky.exceptions.<a href="ru/nsu/svirsky/exceptions/HasNoPizzaStorageException.html" title="class in ru.nsu.svirsky.exceptions">HasNoPizzaStorageException</a></dt>
+<dd>
+<div class="block">Creates an exception with a message indicating the baker has no pizza storage.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:I">I</h2>
 <dl class="index">
 <dt><a href="ru/nsu/svirsky/interfaces/IdGetter.html" class="type-name-link" title="interface in ru.nsu.svirsky.interfaces">IdGetter&lt;IdType&gt;</a> - Interface in <a href="ru/nsu/svirsky/interfaces/package-summary.html">ru.nsu.svirsky.interfaces</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Interface for retrieving an ID of a specified type.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/exceptions/InvalidExecutorExeception.html" class="type-name-link" title="class in ru.nsu.svirsky.exceptions">InvalidExecutorExeception</a> - Exception Class in <a href="ru/nsu/svirsky/exceptions/package-summary.html">ru.nsu.svirsky.exceptions</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Thrown when an invalid thread attempts to execute restricted operations.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/exceptions/InvalidExecutorExeception.html#%3Cinit%3E()" class="member-name-link">InvalidExecutorExeception()</a> - Constructor for exception class ru.nsu.svirsky.exceptions.<a href="ru/nsu/svirsky/exceptions/InvalidExecutorExeception.html" title="class in ru.nsu.svirsky.exceptions">InvalidExecutorExeception</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#invalidRecipient()" class="member-name-link">invalidRecipient()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#isCompleted()" class="member-name-link">isCompleted()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#invalidRecipient()" class="member-name-link">invalidRecipient()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
+<dd>
+<div class="block">Handles the case where the recipient is invalid.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#isCompleted()" class="member-name-link">isCompleted()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
+<dd>
+<div class="block">Checks if the order is completed.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/BlockingQueue.html#isEmpty()" class="member-name-link">isEmpty()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Checks if the queue is empty.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/interfaces/QueueForConsumer.html#isEmpty()" class="member-name-link">isEmpty()</a> - Method in interface ru.nsu.svirsky.interfaces.<a href="ru/nsu/svirsky/interfaces/QueueForConsumer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Checks if the queue is empty.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:M">M</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Client.html#makeAnOrder(ru.nsu.svirsky.interfaces.IdGetter,java.lang.String)" class="member-name-link">makeAnOrder(IdGetter&lt;IdType&gt;, String)</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Client.html" title="class in ru.nsu.svirsky">Client</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Client.html#makeAnOrder(ru.nsu.svirsky.interfaces.IdGetter,java.lang.String)" class="member-name-link">makeAnOrder(IdGetter&lt;IdType&gt;, String)</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Client.html" title="class in ru.nsu.svirsky.pizzeria">Client</a></dt>
+<dd>
+<div class="block">Places a new pizza order.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:N">N</h2>
 <dl class="index">
 <dt><a href="ru/nsu/svirsky/BlockingQueue.html#noWaitGet()" class="member-name-link">noWaitGet()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retrieves and removes an element from the queue without blocking.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/interfaces/QueueForConsumer.html#noWaitGet()" class="member-name-link">noWaitGet()</a> - Method in interface ru.nsu.svirsky.interfaces.<a href="ru/nsu/svirsky/interfaces/QueueForConsumer.html" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retrieves and removes an element from the queue without waiting.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:O">O</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Pizza.html#order" class="member-name-link">order</a> - Variable in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizza.html" title="class in ru.nsu.svirsky">Pizza</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizza.html#order" class="member-name-link">order</a> - Variable in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizza.html" title="class in ru.nsu.svirsky.pizzeria">Pizza</a></dt>
+<dd>
+<div class="block">The order associated with this pizza.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:P">P</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Pizza.html" class="type-name-link" title="class in ru.nsu.svirsky">Pizza</a> - Class in <a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Pizza.html#%3Cinit%3E(ru.nsu.svirsky.PizzaOrder,java.lang.String)" class="member-name-link">Pizza(PizzaOrder, String)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizza.html" title="class in ru.nsu.svirsky">Pizza</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html" class="type-name-link" title="class in ru.nsu.svirsky">PizzaOrder&lt;IdType&gt;</a> - Class in <a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,java.lang.String,ru.nsu.svirsky.interfaces.PizzaRecipient)" class="member-name-link">PizzaOrder(IdGetter&lt;IdType&gt;, String, PizzaRecipient)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#pizzaRecipient" class="member-name-link">pizzaRecipient</a> - Variable in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizza.html" class="type-name-link" title="class in ru.nsu.svirsky.pizzeria">Pizza</a> - Class in <a href="ru/nsu/svirsky/pizzeria/package-summary.html">ru.nsu.svirsky.pizzeria</a></dt>
+<dd>
+<div class="block">Represents a pizza with an associated order.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizza.html#%3Cinit%3E(ru.nsu.svirsky.pizzeria.PizzaOrder,java.lang.String)" class="member-name-link">Pizza(PizzaOrder, String)</a> - Constructor for class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizza.html" title="class in ru.nsu.svirsky.pizzeria">Pizza</a></dt>
+<dd>
+<div class="block">Constructs a new pizza.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" class="type-name-link" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder&lt;IdType&gt;</a> - Class in <a href="ru/nsu/svirsky/pizzeria/package-summary.html">ru.nsu.svirsky.pizzeria</a></dt>
+<dd>
+<div class="block">Represents a pizza order with its current status and recipient.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#%3Cinit%3E(ru.nsu.svirsky.interfaces.IdGetter,java.lang.String,ru.nsu.svirsky.interfaces.PizzaRecipient)" class="member-name-link">PizzaOrder(IdGetter&lt;IdType&gt;, String, PizzaRecipient)</a> - Constructor for class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
+<dd>
+<div class="block">Constructs a new pizza order.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#pizzaRecipient" class="member-name-link">pizzaRecipient</a> - Variable in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/svirsky/interfaces/PizzaRecipient.html" class="type-name-link" title="interface in ru.nsu.svirsky.interfaces">PizzaRecipient</a> - Interface in <a href="ru/nsu/svirsky/interfaces/package-summary.html">ru.nsu.svirsky.interfaces</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Pizzeria.html" class="type-name-link" title="class in ru.nsu.svirsky">Pizzeria</a> - Class in <a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Pizzeria.html#%3Cinit%3E(int)" class="member-name-link">Pizzeria(int)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizzeria.html" title="class in ru.nsu.svirsky">Pizzeria</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Pizzeria.html#%3Cinit%3E(java.util.List,java.util.List,int)" class="member-name-link">Pizzeria(List&lt;Baker&gt;, List&lt;Courier&gt;, int)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizzeria.html" title="class in ru.nsu.svirsky">Pizzeria</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Pizzeria.html#%3Cinit%3E(ru.nsu.svirsky.PizzeriaConfig)" class="member-name-link">Pizzeria(PizzeriaConfig)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizzeria.html" title="class in ru.nsu.svirsky">Pizzeria</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzeriaConfig.html" class="type-name-link" title="interface in ru.nsu.svirsky">PizzeriaConfig</a> - Interface in <a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Interface for receiving a pizza.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizzeria.html" class="type-name-link" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a> - Class in <a href="ru/nsu/svirsky/pizzeria/package-summary.html">ru.nsu.svirsky.pizzeria</a></dt>
+<dd>
+<div class="block">Represents a pizzeria that manages bakers, couriers, and pizza orders.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizzeria.html#%3Cinit%3E(int)" class="member-name-link">Pizzeria(int)</a> - Constructor for class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></dt>
+<dd>
+<div class="block">Constructs a new pizzeria with the specified pizza storage capacity.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizzeria.html#%3Cinit%3E(java.util.List,java.util.List,int)" class="member-name-link">Pizzeria(List&lt;Baker&gt;, List&lt;Courier&gt;, int)</a> - Constructor for class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></dt>
+<dd>
+<div class="block">Constructs a new pizzeria with the specified bakers, couriers, and pizza storage capacity.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizzeria.html#%3Cinit%3E(ru.nsu.svirsky.config.PizzeriaConfig)" class="member-name-link">Pizzeria(PizzeriaConfig)</a> - Constructor for class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></dt>
+<dd>
+<div class="block">Constructs a new pizzeria using the provided configuration.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/config/PizzeriaConfig.html" class="type-name-link" title="interface in ru.nsu.svirsky.config">PizzeriaConfig</a> - Interface in <a href="ru/nsu/svirsky/config/package-summary.html">ru.nsu.svirsky.config</a></dt>
+<dd>
+<div class="block">Configuration interface for a pizzeria.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:Q">Q</h2>
 <dl class="index">
 <dt><a href="ru/nsu/svirsky/exceptions/QueueClosedException.html" class="type-name-link" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a> - Exception Class in <a href="ru/nsu/svirsky/exceptions/package-summary.html">ru.nsu.svirsky.exceptions</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Thrown when an operation is attempted on a closed queue.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/exceptions/QueueClosedException.html#%3Cinit%3E()" class="member-name-link">QueueClosedException()</a> - Constructor for exception class ru.nsu.svirsky.exceptions.<a href="ru/nsu/svirsky/exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/svirsky/interfaces/QueueForConsumer.html" class="type-name-link" title="interface in ru.nsu.svirsky.interfaces">QueueForConsumer&lt;T&gt;</a> - Interface in <a href="ru/nsu/svirsky/interfaces/package-summary.html">ru.nsu.svirsky.interfaces</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Interface for a queue that supports consumer operations.</div>
+</dd>
 <dt><a href="ru/nsu/svirsky/interfaces/QueueForProducer.html" class="type-name-link" title="interface in ru.nsu.svirsky.interfaces">QueueForProducer&lt;T&gt;</a> - Interface in <a href="ru/nsu/svirsky/interfaces/package-summary.html">ru.nsu.svirsky.interfaces</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Interface for a queue that supports producer operations.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:R">R</h2>
 <dl class="index">
 <dt><a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a> - package ru.nsu.svirsky</dt>
 <dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/config/package-summary.html">ru.nsu.svirsky.config</a> - package ru.nsu.svirsky.config</dt>
+<dd>&nbsp;</dd>
 <dt><a href="ru/nsu/svirsky/exceptions/package-summary.html">ru.nsu.svirsky.exceptions</a> - package ru.nsu.svirsky.exceptions</dt>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/svirsky/interfaces/package-summary.html">ru.nsu.svirsky.interfaces</a> - package ru.nsu.svirsky.interfaces</dt>
 <dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/package-summary.html">ru.nsu.svirsky.pizzeria</a> - package ru.nsu.svirsky.pizzeria</dt>
+<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:S">S</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Baker.html#setOrderQueue(ru.nsu.svirsky.interfaces.QueueForConsumer)" class="member-name-link">setOrderQueue(QueueForConsumer&lt;PizzaOrder&gt;)</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Baker.html#setPizzaStorage(ru.nsu.svirsky.interfaces.QueueForProducer)" class="member-name-link">setPizzaStorage(QueueForProducer&lt;Pizza&gt;)</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Courier.html#setStorage(ru.nsu.svirsky.interfaces.QueueForConsumer)" class="member-name-link">setStorage(QueueForConsumer&lt;Pizza&gt;)</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Courier.html" title="class in ru.nsu.svirsky">Courier</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/SimplePizzeriaConfig.html" class="type-name-link" title="class in ru.nsu.svirsky">SimplePizzeriaConfig</a> - Class in <a href="ru/nsu/svirsky/package-summary.html">ru.nsu.svirsky</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/SimplePizzeriaConfig.html#%3Cinit%3E(java.lang.String)" class="member-name-link">SimplePizzeriaConfig(String)</a> - Constructor for class ru.nsu.svirsky.<a href="ru/nsu/svirsky/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky">SimplePizzeriaConfig</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#startCooking()" class="member-name-link">startCooking()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Client.html#status()" class="member-name-link">status()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Client.html" title="class in ru.nsu.svirsky">Client</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html#setOrderQueue(ru.nsu.svirsky.interfaces.QueueForConsumer)" class="member-name-link">setOrderQueue(QueueForConsumer&lt;PizzaOrder&gt;)</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a></dt>
+<dd>
+<div class="block">Sets the order queue for the baker.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html#setPizzaStorage(ru.nsu.svirsky.interfaces.QueueForProducer)" class="member-name-link">setPizzaStorage(QueueForProducer&lt;Pizza&gt;)</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a></dt>
+<dd>
+<div class="block">Sets the pizza storage for the baker.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Courier.html#setStorage(ru.nsu.svirsky.interfaces.QueueForConsumer)" class="member-name-link">setStorage(QueueForConsumer&lt;Pizza&gt;)</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a></dt>
+<dd>
+<div class="block">Sets the pizza storage for the courier.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html" class="type-name-link" title="class in ru.nsu.svirsky.config">SimplePizzeriaConfig</a> - Class in <a href="ru/nsu/svirsky/config/package-summary.html">ru.nsu.svirsky.config</a></dt>
+<dd>
+<div class="block">Loads pizzeria configuration from a JSON file.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html#%3Cinit%3E(java.lang.String)" class="member-name-link">SimplePizzeriaConfig(String)</a> - Constructor for class ru.nsu.svirsky.config.<a href="ru/nsu/svirsky/config/SimplePizzeriaConfig.html" title="class in ru.nsu.svirsky.config">SimplePizzeriaConfig</a></dt>
+<dd>
+<div class="block">Creates a new configuration from a JSON file.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#startCooking()" class="member-name-link">startCooking()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
+<dd>
+<div class="block">Marks the order as being cooked.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Client.html#status()" class="member-name-link">status()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Client.html" title="class in ru.nsu.svirsky.pizzeria">Client</a></dt>
+<dd>
+<div class="block">Retrieves the current status of the client's thread.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Baker.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Client.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Client.html" title="class in ru.nsu.svirsky">Client</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/Client.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Client.html" title="class in ru.nsu.svirsky.pizzeria">Client</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Courier.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Courier.html" title="class in ru.nsu.svirsky">Courier</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/Courier.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Pizza.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizza.html" title="class in ru.nsu.svirsky">Pizza</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizza.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizza.html" title="class in ru.nsu.svirsky.pizzeria">Pizza</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/PizzaOrder.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/PizzaOrder.html" title="class in ru.nsu.svirsky">PizzaOrder</a></dt>
+<dt><a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html#toString()" class="member-name-link">toString()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/PizzaOrder.html" title="class in ru.nsu.svirsky.pizzeria">PizzaOrder</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:W">W</h2>
 <dl class="index">
-<dt><a href="ru/nsu/svirsky/Pizzeria.html#waitAll()" class="member-name-link">waitAll()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Pizzeria.html" title="class in ru.nsu.svirsky">Pizzeria</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Baker.html#waitExecution()" class="member-name-link">waitExecution()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Baker.html" title="class in ru.nsu.svirsky">Baker</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="ru/nsu/svirsky/Courier.html#waitExecution()" class="member-name-link">waitExecution()</a> - Method in class ru.nsu.svirsky.<a href="ru/nsu/svirsky/Courier.html" title="class in ru.nsu.svirsky">Courier</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Pizzeria.html#waitAll()" class="member-name-link">waitAll()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Pizzeria.html" title="class in ru.nsu.svirsky.pizzeria">Pizzeria</a></dt>
+<dd>
+<div class="block">Waits for all bakers and couriers to finish their tasks.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Baker.html#waitExecution()" class="member-name-link">waitExecution()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Baker.html" title="class in ru.nsu.svirsky.pizzeria">Baker</a></dt>
+<dd>
+<div class="block">Waits for the baker to finish all tasks.</div>
+</dd>
+<dt><a href="ru/nsu/svirsky/pizzeria/Courier.html#waitExecution()" class="member-name-link">waitExecution()</a> - Method in class ru.nsu.svirsky.pizzeria.<a href="ru/nsu/svirsky/pizzeria/Courier.html" title="class in ru.nsu.svirsky.pizzeria">Courier</a></dt>
+<dd>
+<div class="block">Waits for the courier to finish all tasks.</div>
+</dd>
 </dl>
 <a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:Q">Q</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="serialized-form.html">Serialized&nbsp;Form</a></main>
 </div>

@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.svirsky"},{"l":"ru.nsu.svirsky.exceptions"},{"l":"ru.nsu.svirsky.interfaces"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.svirsky"},{"l":"ru.nsu.svirsky.config"},{"l":"ru.nsu.svirsky.exceptions"},{"l":"ru.nsu.svirsky.interfaces"},{"l":"ru.nsu.svirsky.pizzeria"}];updateSearchResults();

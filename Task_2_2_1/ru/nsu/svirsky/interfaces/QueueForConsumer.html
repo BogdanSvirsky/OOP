@@ -86,11 +86,16 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - The type of elements in the queue.</dd>
+</dl>
+<dl class="notes">
 <dt>All Known Implementing Classes:</dt>
 <dd><code><a href="../BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">QueueForConsumer&lt;T&gt;</span></div>
+<div class="block">Interface for a queue that supports consumer operations.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,13 +112,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="QueueForConsumer.html" title="type parameter in QueueForConsumer">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get()" class="member-name-link">get</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Retrieves and removes an element from the queue, waiting if necessary.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Checks if the queue is empty.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="QueueForConsumer.html" title="type parameter in QueueForConsumer">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#noWaitGet()" class="member-name-link">noWaitGet</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Retrieves and removes an element from the queue without waiting.</div>
+</div>
 </div>
 </div>
 </div>
@@ -133,9 +144,12 @@ loadScripts(document, 'script');</script>
 <h3>get</h3>
 <div class="member-signature"><span class="return-type"><a href="QueueForConsumer.html" title="type parameter in QueueForConsumer">T</a></span>&nbsp;<span class="element-name">get</span>()
 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></span></div>
+<div class="block">Retrieves and removes an element from the queue, waiting if necessary.</div>
 <dl class="notes">
+<dt>Returns:</dt>
+<dd>The retrieved element.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - If the thread is interrupted while waiting.</dd>
 </dl>
 </section>
 </li>
@@ -143,12 +157,22 @@ throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/
 <section class="detail" id="noWaitGet()">
 <h3>noWaitGet</h3>
 <div class="member-signature"><span class="return-type"><a href="QueueForConsumer.html" title="type parameter in QueueForConsumer">T</a></span>&nbsp;<span class="element-name">noWaitGet</span>()</div>
+<div class="block">Retrieves and removes an element from the queue without waiting.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The retrieved element, or null if the queue is empty.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="isEmpty()">
 <h3>isEmpty</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
+<div class="block">Checks if the queue is empty.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>True if the queue is empty, false otherwise.</dd>
+</dl>
 </section>
 </li>
 </ul>

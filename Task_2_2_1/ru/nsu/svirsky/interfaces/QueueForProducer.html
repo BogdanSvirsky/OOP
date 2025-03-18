@@ -86,11 +86,16 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - The type of elements in the queue.</dd>
+</dl>
+<dl class="notes">
 <dt>All Known Implementing Classes:</dt>
 <dd><code><a href="../BlockingQueue.html" title="class in ru.nsu.svirsky">BlockingQueue</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">QueueForProducer&lt;T&gt;</span></div>
+<div class="block">Interface for a queue that supports producer operations.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,7 +112,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#add(T)" class="member-name-link">add</a><wbr>(<a href="QueueForProducer.html" title="type parameter in QueueForProducer">T</a>&nbsp;element)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Adds an element to the queue.</div>
+</div>
 </div>
 </div>
 </div>
@@ -128,10 +135,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="QueueForProducer.html" title="type parameter in QueueForProducer">T</a>&nbsp;element)</span>
   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a>,
 <a href="../exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a></span></div>
+<div class="block">Adds an element to the queue.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>element</code> - The element to add.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code></dd>
-<dd><code><a href="../exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InterruptedException.html" title="class or interface in java.lang" class="external-link">InterruptedException</a></code> - If the thread is interrupted while waiting.</dd>
+<dd><code><a href="../exceptions/QueueClosedException.html" title="class in ru.nsu.svirsky.exceptions">QueueClosedException</a></code> - If the queue is closed and cannot accept new elements.</dd>
 </dl>
 </section>
 </li>
