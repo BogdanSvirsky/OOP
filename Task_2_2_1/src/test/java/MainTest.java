@@ -12,7 +12,9 @@ import ru.nsu.svirsky.pizzeria.Client;
 import ru.nsu.svirsky.pizzeria.Courier;
 import ru.nsu.svirsky.pizzeria.PizzaOrder;
 import ru.nsu.svirsky.pizzeria.Pizzeria;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Main test class for verifying the functionality of the pizzeria system.
@@ -60,7 +62,8 @@ public class MainTest {
         List<Client> clients = new ArrayList<>();
         List<PizzaOrder> orders = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            Client client = new Client(() -> clientsCount.addAndGet(1), pizzeria.getQueueForProducer());
+            Client client = new Client(() -> clientsCount.addAndGet(1),
+                    pizzeria.getQueueForProducer());
             clients.add(client);
             orders.add(client.makeAnOrder(() -> ordersCount.addAndGet(1), "Пицца барбекю"));
         }

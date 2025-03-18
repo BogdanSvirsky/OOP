@@ -11,16 +11,23 @@ import ru.nsu.svirsky.interfaces.QueueForConsumer;
 /**
  * Represents a courier who delivers pizzas from the storage to clients.
  *
- * @param <IdType> The type of the courier's ID.
+ * @param <T> The type of the courier's ID.
  * @author BogdanSvirsky
  */
-public class Courier<IdType> {
-    private final IdType courierId;
+public class Courier<T> {
+    private final T courierId;
     private final int backpackSize;
     private final List<Pizza> currentPizzas = new ArrayList<>();
     private final int deliveringTime;
     private final AtomicBoolean finishWork = new AtomicBoolean(false);
     private QueueForConsumer<Pizza> storage;
+    private final Thread executor = new Thread(() -> {
+        try {
+            runLifecycle();
+        } catch (InvalidExecutorExeception e) {
+            throw new RuntimeException("Courier's executor can run its code!");
+        }
+    });
 
     /**
      * Constructs a new courier.
@@ -29,7 +36,7 @@ public class Courier<IdType> {
      * @param backpackSize   The maximum number of pizzas the courier can carry.
      * @param deliveringTime The time it takes to deliver pizzas.
      */
-    public Courier(IdGetter<IdType> idGetter, int backpackSize, int deliveringTime) {
+    public Courier(IdGetter<T> idGetter, int backpackSize, int deliveringTime) {
         this.backpackSize = backpackSize;
         this.deliveringTime = deliveringTime;
         courierId = idGetter.get();
@@ -67,20 +74,21 @@ public class Courier<IdType> {
         if (Thread.currentThread() != executor) {
             throw new InvalidExecutorExeception();
         }
+        Pizza pizza;
         while (currentPizzas.size() < backpackSize && !storage.isEmpty()) {
             if (isWaiting) {
                 try {
-                    currentPizzas.add(storage.get());
+                    pizza = storage.get();
                 } catch (InterruptedException e) {
-                    if (!finishWork.get()) {
-                        System.err.printf("%s backpack filling was interrupted!", this);
-                        return;
-                    } else {
-                        break;
-                    }
+                    System.err.printf("%s backpack filling was interrupted!", this);
+                    return;
                 }
+                if (pizza == null) {
+                    return;
+                }
+                currentPizzas.add(pizza);
             } else {
-                Pizza pizza = storage.noWaitGet();
+                pizza = storage.noWaitGet();
                 if (pizza == null) {
                     System.out.printf("%s can't find pizza in storage\n", this);
                     return;
@@ -115,22 +123,13 @@ public class Courier<IdType> {
     public void beginWork() {
         finishWork.set(false);
         executor.start();
-    }    private final Thread executor = new Thread(() -> {
-        try {
-            runLifecycle();
-        } catch (InvalidExecutorExeception e) {
-            throw new RuntimeException("Courier's executor can run its code!");
-        }
-    });
+    }
 
     /**
      * Stops the courier's work.
      */
     public void finishWork() {
         finishWork.set(true);
-        if (executor.getState() == Thread.State.WAITING) {
-            executor.interrupt();
-        }
     }
 
     @Override
@@ -151,8 +150,12 @@ public class Courier<IdType> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Courier<?> courier = (Courier<?>) o;
         return backpackSize == courier.backpackSize && deliveringTime == courier.deliveringTime;
     }
@@ -161,8 +164,6 @@ public class Courier<IdType> {
     public int hashCode() {
         return Objects.hash(backpackSize, deliveringTime);
     }
-
-
 
 
 }

@@ -12,15 +12,22 @@ import ru.nsu.svirsky.interfaces.QueueForProducer;
 /**
  * Represents a baker in the pizzeria who processes pizza orders.
  *
- * @param <IdType> The type of the baker's ID.
+ * @param <T> The type of the baker's ID.
  * @author BogdanSvirsky
  */
-public class Baker<IdType> {
-    private final IdType bakerId;
+public class Baker<T> {
+    private final T bakerId;
     private final long workingTimeMillis;
     private final AtomicBoolean finishWork = new AtomicBoolean(false);
     private QueueForConsumer<PizzaOrder> orderQueue;
     private QueueForProducer<Pizza> pizzaStorage;
+    private final Thread executor = new Thread(() -> {
+        try {
+            runLifecycle();
+        } catch (InvalidExecutorExeception e) {
+            throw new RuntimeException("Courier's executor can run its code!");
+        }
+    });
 
     /**
      * Constructs a new baker.
@@ -28,7 +35,7 @@ public class Baker<IdType> {
      * @param idGetter          Provides the baker's ID.
      * @param workingTimeMillis The time it takes to cook a pizza.
      */
-    public Baker(IdGetter<IdType> idGetter, long workingTimeMillis) {
+    public Baker(IdGetter<T> idGetter, long workingTimeMillis) {
         this.bakerId = idGetter.get();
         this.workingTimeMillis = workingTimeMillis;
     }
@@ -60,12 +67,12 @@ public class Baker<IdType> {
             try {
                 order = orderQueue.get();
             } catch (InterruptedException e) {
-                if (!finishWork.get()) {
-                    System.err.printf("%s order getting was interrupted!\n", this);
-                    return;
-                } else {
-                    break;
-                }
+                System.err.printf("%s order getting was interrupted!\n", this);
+                return;
+            }
+
+            if (order == null) {
+                break;
             }
 
             processOrder(order);
@@ -122,16 +129,7 @@ public class Baker<IdType> {
      */
     public void finishWork() {
         finishWork.set(true);
-        if (executor.getState() == Thread.State.WAITING) {
-            executor.interrupt();
-        }
-    }    private final Thread executor = new Thread(() -> {
-        try {
-            runLifecycle();
-        } catch (InvalidExecutorExeception e) {
-            throw new RuntimeException("Courier's executor can run its code!");
-        }
-    });
+    }
 
     /**
      * Waits for the baker to finish all tasks.
@@ -169,8 +167,12 @@ public class Baker<IdType> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Baker<?> baker = (Baker<?>) o;
         return workingTimeMillis == baker.workingTimeMillis;
     }
@@ -179,8 +181,6 @@ public class Baker<IdType> {
     public int hashCode() {
         return Objects.hash(workingTimeMillis);
     }
-
-
 
 
 }

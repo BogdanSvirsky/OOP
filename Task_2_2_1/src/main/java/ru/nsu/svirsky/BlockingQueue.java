@@ -69,10 +69,16 @@ public class BlockingQueue<T> implements QueueForConsumer<T>, QueueForProducer<T
      */
     @Override
     public T get() throws InterruptedException {
+        if (isClosed.get()) {
+            return null;
+        }
         T element;
         synchronized (getLock) {
             while (isEmpty()) {
                 getLock.wait();
+                if (isClosed.get()) {
+                    return null;
+                }
             }
             element = pop();
         }
@@ -148,5 +154,11 @@ public class BlockingQueue<T> implements QueueForConsumer<T>, QueueForProducer<T
      */
     public void close() {
         isClosed.set(true);
+    }
+
+    public void wakeUpWaiters() {
+        synchronized (getLock) {
+            getLock.notifyAll();
+        }
     }
 }

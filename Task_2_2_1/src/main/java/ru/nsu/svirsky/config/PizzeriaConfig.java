@@ -11,16 +11,22 @@ import ru.nsu.svirsky.pizzeria.Courier;
  */
 public interface PizzeriaConfig {
     /**
+     * Get pizzeria bakers.
+     *
      * @return List of bakers.
      */
     List<Baker> getBakers();
 
     /**
+     * Get pizzeria couriers.
+     *
      * @return List of couriers.
      */
     List<Courier> getCouriers();
 
     /**
+     * Get pizza storage capacity.
+     *
      * @return Pizza storage capacity.
      */
     int getPizzaStorageCapacity();

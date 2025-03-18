@@ -89,6 +89,9 @@ public class Pizzeria {
             for (Baker baker : bakers) {
                 baker.finishWork();
             }
+
+            orderQueue.wakeUpWaiters();
+
             for (Baker baker : bakers) {
                 try {
                     baker.waitExecution();
@@ -100,6 +103,8 @@ public class Pizzeria {
             for (Courier courier : couriers) {
                 courier.finishWork();
             }
+
+            pizzaStorage.wakeUpWaiters();
         }).start();
     }
 

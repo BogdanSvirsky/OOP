@@ -4,13 +4,6 @@ import ru.nsu.svirsky.interfaces.IdGetter;
 import ru.nsu.svirsky.interfaces.PizzaRecipient;
 
 /**
- * Represents the status of a pizza order.
- */
-enum PizzaOrderStatus {
-    CREATED, COOKING, COOKED, COMPLETED
-}
-
-/**
  * Represents a pizza order with its current status and recipient.
  *
  * @param <IdType> The type of the order's ID.
