@@ -1,12 +1,12 @@
 package ru.nsu.svirsky.config;
 
+import java.util.List;
 import ru.nsu.svirsky.pizzeria.Baker;
 import ru.nsu.svirsky.pizzeria.Courier;
 
-import java.util.List;
-
 /**
  * Configuration interface for a pizzeria.
+ *
  * @author BogdanSvirsky
  */
 public interface PizzeriaConfig {

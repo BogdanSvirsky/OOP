@@ -17,11 +17,10 @@ enum PizzaOrderStatus {
  * @author BogdanSvirsky
  */
 public class PizzaOrder<IdType> {
+    public final PizzaRecipient pizzaRecipient;
     private final IdType id;
     private final String orderText;
-
     private PizzaOrderStatus status = PizzaOrderStatus.CREATED;
-    public final PizzaRecipient pizzaRecipient;
 
     /**
      * Constructs a new pizza order.

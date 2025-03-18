@@ -1,13 +1,12 @@
 package ru.nsu.svirsky.pizzeria;
 
-import ru.nsu.svirsky.exceptions.InvalidExecutorExeception;
-import ru.nsu.svirsky.interfaces.IdGetter;
-import ru.nsu.svirsky.interfaces.QueueForConsumer;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
+import ru.nsu.svirsky.exceptions.InvalidExecutorExeception;
+import ru.nsu.svirsky.interfaces.IdGetter;
+import ru.nsu.svirsky.interfaces.QueueForConsumer;
 
 /**
  * Represents a courier who delivers pizzas from the storage to clients.
@@ -20,25 +19,8 @@ public class Courier<IdType> {
     private final int backpackSize;
     private final List<Pizza> currentPizzas = new ArrayList<>();
     private final int deliveringTime;
-    private QueueForConsumer<Pizza> storage;
     private final AtomicBoolean finishWork = new AtomicBoolean(false);
-
-    /**
-     * Sets the pizza storage for the courier.
-     *
-     * @param storage The storage from which pizzas are taken.
-     */
-    public void setStorage(QueueForConsumer<Pizza> storage) {
-        this.storage = storage;
-    }
-
-    private final Thread executor = new Thread(() -> {
-        try {
-            runLifecycle();
-        } catch (InvalidExecutorExeception e) {
-            throw new RuntimeException("Courier's executor can run its code!");
-        }
-    });
+    private QueueForConsumer<Pizza> storage;
 
     /**
      * Constructs a new courier.
@@ -51,6 +33,15 @@ public class Courier<IdType> {
         this.backpackSize = backpackSize;
         this.deliveringTime = deliveringTime;
         courierId = idGetter.get();
+    }
+
+    /**
+     * Sets the pizza storage for the courier.
+     *
+     * @param storage The storage from which pizzas are taken.
+     */
+    public void setStorage(QueueForConsumer<Pizza> storage) {
+        this.storage = storage;
     }
 
     private void runLifecycle() throws InvalidExecutorExeception {
@@ -70,7 +61,13 @@ public class Courier<IdType> {
         }
 
         System.out.printf("%s finish work\n", this);
-    }
+    }    private final Thread executor = new Thread(() -> {
+        try {
+            runLifecycle();
+        } catch (InvalidExecutorExeception e) {
+            throw new RuntimeException("Courier's executor can run its code!");
+        }
+    });
 
     private void fillBackpack(boolean isWaiting) throws InvalidExecutorExeception {
         if (Thread.currentThread() != executor) {
@@ -164,4 +161,8 @@ public class Courier<IdType> {
     public int hashCode() {
         return Objects.hash(backpackSize, deliveringTime);
     }
+
+
+
+
 }

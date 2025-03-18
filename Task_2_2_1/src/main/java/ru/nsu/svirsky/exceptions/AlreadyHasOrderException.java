@@ -4,6 +4,7 @@ import ru.nsu.svirsky.pizzeria.Client;
 
 /**
  * Thrown when a client attempts to place an order while already having an active order.
+ *
  * @author BogdanSvirsky
  */
 public class AlreadyHasOrderException extends Exception {

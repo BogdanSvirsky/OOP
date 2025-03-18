@@ -1,12 +1,11 @@
 package ru.nsu.svirsky;
 
-import ru.nsu.svirsky.exceptions.QueueClosedException;
-import ru.nsu.svirsky.interfaces.QueueForProducer;
-import ru.nsu.svirsky.interfaces.QueueForConsumer;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import ru.nsu.svirsky.exceptions.QueueClosedException;
+import ru.nsu.svirsky.interfaces.QueueForConsumer;
+import ru.nsu.svirsky.interfaces.QueueForProducer;
 
 /**
  * A thread-safe blocking queue implementation that supports producer-consumer operations.

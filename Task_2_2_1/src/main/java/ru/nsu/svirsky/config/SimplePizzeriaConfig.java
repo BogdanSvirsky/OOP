@@ -2,17 +2,17 @@ package ru.nsu.svirsky.config;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ru.nsu.svirsky.pizzeria.Baker;
-import ru.nsu.svirsky.pizzeria.Courier;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import ru.nsu.svirsky.pizzeria.Baker;
+import ru.nsu.svirsky.pizzeria.Courier;
 
 /**
  * Loads pizzeria configuration from a JSON file.
+ *
  * @author BogdanSvirsky
  */
 public class SimplePizzeriaConfig implements PizzeriaConfig {

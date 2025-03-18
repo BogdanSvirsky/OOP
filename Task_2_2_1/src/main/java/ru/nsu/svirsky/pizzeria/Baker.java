@@ -1,14 +1,13 @@
 package ru.nsu.svirsky.pizzeria;
 
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
 import ru.nsu.svirsky.exceptions.HasNoOrderQueueException;
 import ru.nsu.svirsky.exceptions.HasNoPizzaStorageException;
 import ru.nsu.svirsky.exceptions.InvalidExecutorExeception;
 import ru.nsu.svirsky.interfaces.IdGetter;
 import ru.nsu.svirsky.interfaces.QueueForConsumer;
 import ru.nsu.svirsky.interfaces.QueueForProducer;
-
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Represents a baker in the pizzeria who processes pizza orders.
@@ -22,18 +21,11 @@ public class Baker<IdType> {
     private final AtomicBoolean finishWork = new AtomicBoolean(false);
     private QueueForConsumer<PizzaOrder> orderQueue;
     private QueueForProducer<Pizza> pizzaStorage;
-    private final Thread executor = new Thread(() -> {
-        try {
-            runLifecycle();
-        } catch (InvalidExecutorExeception e) {
-            throw new RuntimeException("Courier's executor can run its code!");
-        }
-    });
 
     /**
      * Constructs a new baker.
      *
-     * @param idGetter         Provides the baker's ID.
+     * @param idGetter          Provides the baker's ID.
      * @param workingTimeMillis The time it takes to cook a pizza.
      */
     public Baker(IdGetter<IdType> idGetter, long workingTimeMillis) {
@@ -55,7 +47,13 @@ public class Baker<IdType> {
             throw new HasNoPizzaStorageException(this);
         }
         executor.start();
-    }
+    }    private final Thread executor = new Thread(() -> {
+        try {
+            runLifecycle();
+        } catch (InvalidExecutorExeception e) {
+            throw new RuntimeException("Courier's executor can run its code!");
+        }
+    });
 
     private void runLifecycle() throws InvalidExecutorExeception {
         if (Thread.currentThread() != executor) {
@@ -181,4 +179,8 @@ public class Baker<IdType> {
     public int hashCode() {
         return Objects.hash(workingTimeMillis);
     }
+
+
+
+
 }

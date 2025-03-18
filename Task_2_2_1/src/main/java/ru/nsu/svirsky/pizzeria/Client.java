@@ -13,9 +13,9 @@ import ru.nsu.svirsky.interfaces.QueueForProducer;
  */
 public class Client<IdType> {
     private final IdType id;
-    private PizzaOrder currentOrder;
     private final Object orderLock = new Object();
     private final QueueForProducer<PizzaOrder> orderQueue;
+    private PizzaOrder currentOrder;
     private final Thread executor = new Thread(this::waitOrder);
 
     /**
@@ -36,8 +36,8 @@ public class Client<IdType> {
      * @param pizzaName     The name of the pizza.
      * @return The created pizza order.
      * @throws AlreadyHasOrderException If the client already has an active order.
-     * @throws QueueClosedException    If the order queue is closed.
-     * @throws InterruptedException   If the thread is interrupted.
+     * @throws QueueClosedException     If the order queue is closed.
+     * @throws InterruptedException     If the thread is interrupted.
      */
     public PizzaOrder makeAnOrder(IdGetter<IdType> orderIdGetter, String pizzaName)
             throws AlreadyHasOrderException, QueueClosedException, InterruptedException {

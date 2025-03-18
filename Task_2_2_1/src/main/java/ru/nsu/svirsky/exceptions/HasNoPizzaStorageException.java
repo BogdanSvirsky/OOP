@@ -4,6 +4,7 @@ import ru.nsu.svirsky.pizzeria.Baker;
 
 /**
  * Thrown when a baker attempts to work without an assigned pizza storage.
+ *
  * @author BogdanSvirsky
  */
 public class HasNoPizzaStorageException extends Exception {

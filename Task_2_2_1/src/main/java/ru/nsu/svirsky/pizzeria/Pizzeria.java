@@ -1,13 +1,12 @@
 package ru.nsu.svirsky.pizzeria;
 
+import java.util.ArrayList;
+import java.util.List;
 import ru.nsu.svirsky.BlockingQueue;
 import ru.nsu.svirsky.config.PizzeriaConfig;
 import ru.nsu.svirsky.exceptions.HasNoOrderQueueException;
 import ru.nsu.svirsky.exceptions.HasNoPizzaStorageException;
 import ru.nsu.svirsky.interfaces.QueueForProducer;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Represents a pizzeria that manages bakers, couriers, and pizza orders.
