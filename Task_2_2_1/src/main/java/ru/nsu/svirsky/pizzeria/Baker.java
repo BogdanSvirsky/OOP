@@ -47,13 +47,7 @@ public class Baker<IdType> {
             throw new HasNoPizzaStorageException(this);
         }
         executor.start();
-    }    private final Thread executor = new Thread(() -> {
-        try {
-            runLifecycle();
-        } catch (InvalidExecutorExeception e) {
-            throw new RuntimeException("Courier's executor can run its code!");
-        }
-    });
+    }
 
     private void runLifecycle() throws InvalidExecutorExeception {
         if (Thread.currentThread() != executor) {
@@ -131,7 +125,13 @@ public class Baker<IdType> {
         if (executor.getState() == Thread.State.WAITING) {
             executor.interrupt();
         }
-    }
+    }    private final Thread executor = new Thread(() -> {
+        try {
+            runLifecycle();
+        } catch (InvalidExecutorExeception e) {
+            throw new RuntimeException("Courier's executor can run its code!");
+        }
+    });
 
     /**
      * Waits for the baker to finish all tasks.

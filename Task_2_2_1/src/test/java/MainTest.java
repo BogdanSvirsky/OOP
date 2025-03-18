@@ -1,15 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
-import ru.nsu.svirsky.*;
+import ru.nsu.svirsky.BlockingQueue;
 import ru.nsu.svirsky.exceptions.AlreadyHasOrderException;
 import ru.nsu.svirsky.exceptions.HasNoOrderQueueException;
 import ru.nsu.svirsky.exceptions.HasNoPizzaStorageException;
 import ru.nsu.svirsky.exceptions.QueueClosedException;
-import ru.nsu.svirsky.pizzeria.*;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-
+import ru.nsu.svirsky.pizzeria.Baker;
+import ru.nsu.svirsky.pizzeria.Client;
+import ru.nsu.svirsky.pizzeria.Courier;
+import ru.nsu.svirsky.pizzeria.PizzaOrder;
+import ru.nsu.svirsky.pizzeria.Pizzeria;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -24,7 +26,7 @@ public class MainTest {
      *
      * @throws AlreadyHasOrderException If a client tries to place an order while already having one.
      * @throws QueueClosedException     If the order queue is closed.
-     * @throws InterruptedException    If the thread is interrupted.
+     * @throws InterruptedException     If the thread is interrupted.
      */
     @Test
     void test() throws AlreadyHasOrderException, QueueClosedException, InterruptedException {

@@ -61,13 +61,7 @@ public class Courier<IdType> {
         }
 
         System.out.printf("%s finish work\n", this);
-    }    private final Thread executor = new Thread(() -> {
-        try {
-            runLifecycle();
-        } catch (InvalidExecutorExeception e) {
-            throw new RuntimeException("Courier's executor can run its code!");
-        }
-    });
+    }
 
     private void fillBackpack(boolean isWaiting) throws InvalidExecutorExeception {
         if (Thread.currentThread() != executor) {
@@ -121,7 +115,13 @@ public class Courier<IdType> {
     public void beginWork() {
         finishWork.set(false);
         executor.start();
-    }
+    }    private final Thread executor = new Thread(() -> {
+        try {
+            runLifecycle();
+        } catch (InvalidExecutorExeception e) {
+            throw new RuntimeException("Courier's executor can run its code!");
+        }
+    });
 
     /**
      * Stops the courier's work.

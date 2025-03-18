@@ -1,12 +1,10 @@
-import org.junit.jupiter.api.Test;
-
-import ru.nsu.svirsky.pizzeria.Baker;
-import ru.nsu.svirsky.pizzeria.Courier;
-import ru.nsu.svirsky.config.SimplePizzeriaConfig;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.jupiter.api.Test;
+import ru.nsu.svirsky.config.SimplePizzeriaConfig;
+import ru.nsu.svirsky.pizzeria.Baker;
+import ru.nsu.svirsky.pizzeria.Courier;
 
 /**
  * Test class for verifying the configuration loading functionality.
