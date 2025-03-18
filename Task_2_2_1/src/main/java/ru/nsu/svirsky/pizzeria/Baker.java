@@ -1,4 +1,4 @@
-package ru.nsu.svirsky;
+package ru.nsu.svirsky.pizzeria;
 
 import ru.nsu.svirsky.exceptions.HasNoOrderQueueException;
 import ru.nsu.svirsky.exceptions.HasNoPizzaStorageException;
@@ -10,6 +10,12 @@ import ru.nsu.svirsky.interfaces.QueueForProducer;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * Represents a baker in the pizzeria who processes pizza orders.
+ *
+ * @param <IdType> The type of the baker's ID.
+ * @author BogdanSvirsky
+ */
 public class Baker<IdType> {
     private final IdType bakerId;
     private final long workingTimeMillis;
@@ -24,11 +30,23 @@ public class Baker<IdType> {
         }
     });
 
+    /**
+     * Constructs a new baker.
+     *
+     * @param idGetter         Provides the baker's ID.
+     * @param workingTimeMillis The time it takes to cook a pizza.
+     */
     public Baker(IdGetter<IdType> idGetter, long workingTimeMillis) {
         this.bakerId = idGetter.get();
         this.workingTimeMillis = workingTimeMillis;
     }
 
+    /**
+     * Starts the baker's work.
+     *
+     * @throws HasNoOrderQueueException   If the order queue is not set.
+     * @throws HasNoPizzaStorageException If the pizza storage is not set.
+     */
     public void beginWork() throws HasNoOrderQueueException, HasNoPizzaStorageException {
         if (orderQueue == null) {
             throw new HasNoOrderQueueException(this);
@@ -107,7 +125,9 @@ public class Baker<IdType> {
         }
     }
 
-
+    /**
+     * Stops the baker's work.
+     */
     public void finishWork() {
         finishWork.set(true);
         if (executor.getState() == Thread.State.WAITING) {
@@ -115,6 +135,11 @@ public class Baker<IdType> {
         }
     }
 
+    /**
+     * Waits for the baker to finish all tasks.
+     *
+     * @throws InterruptedException If the thread is interrupted.
+     */
     public void waitExecution() throws InterruptedException {
         if (executor.isAlive()) {
             executor.join();
@@ -126,10 +151,20 @@ public class Baker<IdType> {
         return String.format("Baker{id: %s}", bakerId);
     }
 
+    /**
+     * Sets the order queue for the baker.
+     *
+     * @param orderQueue The queue from which orders are taken.
+     */
     public void setOrderQueue(QueueForConsumer<PizzaOrder> orderQueue) {
         this.orderQueue = orderQueue;
     }
 
+    /**
+     * Sets the pizza storage for the baker.
+     *
+     * @param pizzaStorage The storage where cooked pizzas are placed.
+     */
     public void setPizzaStorage(QueueForProducer<Pizza> pizzaStorage) {
         this.pizzaStorage = pizzaStorage;
     }

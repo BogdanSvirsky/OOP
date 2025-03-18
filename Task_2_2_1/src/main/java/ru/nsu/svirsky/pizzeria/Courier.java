@@ -1,4 +1,4 @@
-package ru.nsu.svirsky;
+package ru.nsu.svirsky.pizzeria;
 
 import ru.nsu.svirsky.exceptions.InvalidExecutorExeception;
 import ru.nsu.svirsky.interfaces.IdGetter;
@@ -9,6 +9,12 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * Represents a courier who delivers pizzas from the storage to clients.
+ *
+ * @param <IdType> The type of the courier's ID.
+ * @author BogdanSvirsky
+ */
 public class Courier<IdType> {
     private final IdType courierId;
     private final int backpackSize;
@@ -17,6 +23,11 @@ public class Courier<IdType> {
     private QueueForConsumer<Pizza> storage;
     private final AtomicBoolean finishWork = new AtomicBoolean(false);
 
+    /**
+     * Sets the pizza storage for the courier.
+     *
+     * @param storage The storage from which pizzas are taken.
+     */
     public void setStorage(QueueForConsumer<Pizza> storage) {
         this.storage = storage;
     }
@@ -29,6 +40,13 @@ public class Courier<IdType> {
         }
     });
 
+    /**
+     * Constructs a new courier.
+     *
+     * @param idGetter       Provides the courier's ID.
+     * @param backpackSize   The maximum number of pizzas the courier can carry.
+     * @param deliveringTime The time it takes to deliver pizzas.
+     */
     public Courier(IdGetter<IdType> idGetter, int backpackSize, int deliveringTime) {
         this.backpackSize = backpackSize;
         this.deliveringTime = deliveringTime;
@@ -100,11 +118,17 @@ public class Courier<IdType> {
         }
     }
 
+    /**
+     * Starts the courier's work.
+     */
     public void beginWork() {
         finishWork.set(false);
         executor.start();
     }
 
+    /**
+     * Stops the courier's work.
+     */
     public void finishWork() {
         finishWork.set(true);
         if (executor.getState() == Thread.State.WAITING) {
@@ -117,6 +141,11 @@ public class Courier<IdType> {
         return String.format("Courier{id: %s}", courierId);
     }
 
+    /**
+     * Waits for the courier to finish all tasks.
+     *
+     * @throws InterruptedException If the thread is interrupted.
+     */
     public void waitExecution() throws InterruptedException {
         if (executor.isAlive()) {
             executor.join();
