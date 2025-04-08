@@ -1,0 +1,8 @@
+module:ru.nsu.svirsky.task_2_3_1
+ru.nsu.svirsky.task_2_3_1
+ru.nsu.svirsky.task_2_3_1.controllers
+ru.nsu.svirsky.task_2_3_1.models
+ru.nsu.svirsky.task_2_3_1.utils
+ru.nsu.svirsky.task_2_3_1.utils.exceptions
+ru.nsu.svirsky.task_2_3_1.utils.interfaces
+ru.nsu.svirsky.task_2_3_1.views
