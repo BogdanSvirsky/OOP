@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ru.nsu.svirsky.task_2_3_1.controllers.SnakeGameController"
+      onKeyReleased="#onKeyReleased">
+    <Canvas fx:id="canvas" width="500" height="500"/>
+</VBox>
