@@ -1,0 +1,150 @@
+@startuml
+' Пакеты
+package ru.nsu.svirsky.config {
+    interface PizzeriaConfig {
+        +List<Baker> getBakers()
+        +List<Courier> getCouriers()
+        +int getPizzaStorageCapacity()
+    }
+
+    class SimplePizzeriaConfig {
+        -JsonNode configHead
+        -AtomicInteger bakersCount
+        -AtomicInteger couriersCount
+        +SimplePizzeriaConfig(String pathToConfig)
+        +List<Baker> getBakers()
+        +List<Courier> getCouriers()
+        +int getPizzaStorageCapacity()
+    }
+}
+
+package ru.nsu.svirsky.exceptions {
+    class AlreadyHasOrderException
+    class HasNoOrderQueueException
+    class HasNoPizzaStorageException
+    class InvalidExecutorExeception
+    class QueueClosedException
+}
+
+package ru.nsu.svirsky.interfaces {
+    interface IdGetter<IdType> {
+        +IdType get()
+    }
+
+    interface PizzaRecipient {
+        +void get(Pizza pizza)
+    }
+
+    interface QueueForConsumer<T> {
+        +T get()
+        +T noWaitGet()
+        +boolean isEmpty()
+    }
+
+    interface QueueForProducer<T> {
+        +void add(T element)
+    }
+}
+
+package ru.nsu.svirsky.pizzeria {
+    class Baker<IdType> {
+        -IdType bakerId
+        -long workingTimeMillis
+        -AtomicBoolean finishWork
+        -QueueForConsumer<PizzaOrder> orderQueue
+        -QueueForProducer<Pizza> pizzaStorage
+        -Thread executor
+        +Baker(IdGetter<IdType> idGetter, long workingTimeMillis)
+        +void beginWork()
+        +void finishWork()
+        +void waitExecution()
+        +void setOrderQueue(QueueForConsumer<PizzaOrder> orderQueue)
+        +void setPizzaStorage(QueueForProducer<Pizza> pizzaStorage)
+    }
+
+    class Client<IdType> {
+        -IdType id
+        -PizzaOrder currentOrder
+        -Object orderLock
+        -QueueForProducer<PizzaOrder> orderQueue
+        -Thread executor
+        +Client(IdGetter<IdType> idGetter, QueueForProducer<PizzaOrder> orderQueue)
+        +PizzaOrder makeAnOrder(IdGetter<IdType> orderIdGetter, String pizzaName)
+        +String status()
+    }
+
+    class Courier<IdType> {
+        -IdType courierId
+        -int backpackSize
+        -List<Pizza> currentPizzas
+        -int deliveringTime
+        -QueueForConsumer<Pizza> storage
+        -AtomicBoolean finishWork
+        -Thread executor
+        +Courier(IdGetter<IdType> idGetter, int backpackSize, int deliveringTime)
+        +void beginWork()
+        +void finishWork()
+        +void waitExecution()
+        +void setStorage(QueueForConsumer<Pizza> storage)
+    }
+
+    class Pizza {
+        +PizzaOrder order
+        +String name
+        +Pizza(PizzaOrder order, String name)
+    }
+
+    class PizzaOrder<IdType> {
+        -IdType id
+        -String orderText
+        -PizzaOrderStatus status
+        +PizzaRecipient pizzaRecipient
+        +PizzaOrder(IdGetter<IdType> idGetter, String orderText, PizzaRecipient pizzaRecipient)
+        +void startCooking()
+        +void finishCooking()
+        +void complete()
+        +void invalidRecipient()
+        +boolean isCompleted()
+    }
+
+    class Pizzeria {
+        -BlockingQueue<PizzaOrder> orderQueue
+        -BlockingQueue<Pizza> pizzaStorage
+        -List<Baker> bakers
+        -List<Courier> couriers
+        +Pizzeria(int pizzaStorageCapacity)
+        +Pizzeria(List<Baker> bakers, List<Courier> couriers, int pizzaStorageCapacity)
+        +Pizzeria(PizzeriaConfig config)
+        +void beginWork()
+        +void finishWork()
+        +void waitAll()
+        +QueueForProducer<PizzaOrder> getQueueForProducer()
+    }
+}
+
+' Взаимосвязи
+PizzeriaConfig <|.. SimplePizzeriaConfig
+PizzeriaConfig --> Baker
+PizzeriaConfig --> Courier
+
+Baker --> PizzaOrder
+Baker --> Pizza
+Baker --> QueueForConsumer
+Baker --> QueueForProducer
+
+Client --> PizzaOrder
+Client --> QueueForProducer
+
+Courier --> Pizza
+Courier --> QueueForConsumer
+
+PizzaOrder --> PizzaRecipient
+PizzaOrder --> IdGetter
+
+Pizzeria --> Baker
+Pizzeria --> Courier
+Pizzeria --> PizzaOrder
+Pizzeria --> Pizza
+Pizzeria --> QueueForProducer
+Pizzeria --> QueueForConsumer
+@enduml

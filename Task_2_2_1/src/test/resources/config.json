@@ -1,0 +1,21 @@
+{
+  "pizzaStorageCapacity": 10,
+  "bakers": [
+    {
+      "workingTimeMillis": 1000
+    },
+    {
+      "workingTimeMillis": 500
+    }
+  ],
+  "couriers": [
+    {
+      "backpackSize": 3,
+      "deliveringTime": 1000
+    },
+    {
+      "backpackSize": 1,
+      "deliveringTime": 500
+    }
+  ]
+}
